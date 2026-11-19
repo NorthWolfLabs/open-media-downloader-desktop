@@ -1,0 +1,1632 @@
+{
+  "schema": "omd-materials-contract-fixtures-v1",
+  "required": {
+    "fixture": {
+      "version": "1",
+      "prefix": "bin/fixture"
+    }
+  },
+  "target": "fixture",
+  "version": "1",
+  "locks": {
+    "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+  },
+  "cases": [
+    {
+      "name": "complete",
+      "valid": true,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "unreviewed",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": false,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "pending",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [
+          "unresolved"
+        ],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "wrong-target",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "other",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "wrong-release",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "2",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "empty",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": []
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "stale-lock",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {},
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "changed-bytes",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "0000000000000000000000000000000000000000000000000000000000000000",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "missing-source",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "empty-material",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {},
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "component-version",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "2",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "component-identity",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "other",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "extra-installed-file",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "bin/uncovered": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "missing-artifact",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "unreviewed-component",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "pending",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "portable-path",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+              "../bad": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    },
+    {
+      "name": "wrong-component-artifact",
+      "valid": false,
+      "manifest": {
+        "schema": "omd-materials-v1",
+        "reviewed": true,
+        "pending": [],
+        "target": "fixture",
+        "version": "1",
+        "locks": {
+          "Cargo.lock": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+        },
+        "components": [
+          {
+            "id": "fixture",
+            "version": "1",
+            "status": "reviewed",
+            "pending": [],
+            "artifacts": {
+              "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+            },
+            "materials": {
+              "notices": {
+                "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "source": {
+                "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "instructions": {
+                "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              },
+              "provenance": {
+                "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+              }
+            }
+          }
+        ]
+      },
+      "files": {
+        "bin/fixture": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/notices": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/source": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/instructions": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+        "third-party/provenance": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d"
+      }
+    }
+  ],
+  "native": {
+    "receipt": {
+      "schema": "omd-native-notices-v2",
+      "pending": [],
+      "lock_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "target": "aarch64-apple-darwin",
+      "toolchain": "rustc 1.0.0 (synthetic)\nbinary: rustc\nhost: aarch64-apple-darwin\nrelease: 1.0.0",
+      "coverage": "Synthetic receipt; not release evidence",
+      "requested_features": "",
+      "default_features": true,
+      "roots": [
+        "org-example-root"
+      ],
+      "binaries": [
+        "fixture"
+      ],
+      "binary_roots": {
+        "fixture": "org-example-root"
+      },
+      "artifacts": [
+        {
+          "name": "fixture",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "bytes": 1
+        }
+      ],
+      "packages": [
+        {
+          "name": "org-example-root",
+          "version": "1",
+          "source": null,
+          "features": [],
+          "texts": [
+            {
+              "path": "texts/org-example-root/LICENSE",
+              "sha256": "39b22f68f0426b66966d755a9b9cce0cdcb13305b28c563f912297c905c13561",
+              "offset": 0,
+              "bytes": 29
+            }
+          ],
+          "license_metadata": "MIT"
+        },
+        {
+          "name": "org-example-dep",
+          "version": "2.0.0",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "features": [],
+          "license_metadata": "MIT",
+          "texts": [
+            {
+              "path": "review/dep-missing-terms/e380825dd6b20d61-LICENSE",
+              "sha256": "e380825dd6b20d612408d1a8b116915e0d128529d3c2449459606921ac59b4af",
+              "offset": 29,
+              "bytes": 41,
+              "review_finding": "dep-missing-terms",
+              "kind": "legal-text",
+              "reason": "Synthetic full terms for a package without packaged terms",
+              "origin": {
+                "type": "upstream-revision",
+                "url": "https://example.org/dep/raw/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/LICENSE",
+                "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+              }
+            },
+            {
+              "path": "review/dep-native/430c485967437e66-chaos.rs",
+              "sha256": "430c485967437e660e2565c5e5949eac42ee9b6fe2dd240e5d02ea80ddc6fa15",
+              "offset": 70,
+              "bytes": 59,
+              "review_finding": "dep-native",
+              "kind": "source-notice",
+              "reason": "Synthetic adaptation notice",
+              "origin": {
+                "type": "archive-member",
+                "archive": "crates/org-example-dep-2.0.0.crate",
+                "member": "org-example-dep-2.0.0/src/chaos.rs",
+                "archive_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            },
+            {
+              "path": "review/dep-native/85db3fcfb49231d6-LICENSE-MIT",
+              "sha256": "85db3fcfb49231d6d7ffc83f8bfbcec51af7f079fea699b49a37a39c55b94dfe",
+              "offset": 129,
+              "bytes": 30,
+              "review_finding": "dep-native",
+              "kind": "legal-text",
+              "reason": "Synthetic terms of the copied source",
+              "origin": {
+                "type": "archive-member",
+                "archive": "crates/org-example-copied-1.0.0.crate",
+                "member": "org-example-copied-1.0.0/LICENSE-MIT",
+                "archive_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+              }
+            }
+          ]
+        }
+      ],
+      "notices": {
+        "path": "native-NOTICES.txt",
+        "sha256": "e1d6dc13427b9f2e8fb24c71f44619bb2f3597db43b61e201ce739897d3a350d",
+        "bytes": 189
+      },
+      "runtime_materials": [
+        {
+          "path": "review/toolchain-runtime/4fc12a92823f1089-COPYRIGHT",
+          "sha256": "4fc12a92823f108989490961661879209a606180e78ad0bb39928b11009e3a02",
+          "offset": 159,
+          "bytes": 30,
+          "review_finding": "toolchain-runtime",
+          "kind": "attribution",
+          "reason": "Synthetic runtime attribution",
+          "origin": {
+            "type": "archive-member",
+            "archive": "dist/rust-std-1.0.0-aarch64-apple-darwin.tar.xz",
+            "member": "rust-std/COPYRIGHT",
+            "archive_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+          }
+        }
+      ],
+      "review": {
+        "schema": "omd-native-review-v1",
+        "input": "review-input.json",
+        "input_sha256": "ea14f13f0cda9b485c709f566f340a3cae323d67151f89f2b9eceef0e0e4682c",
+        "findings": [
+          {
+            "id": "dep-missing-terms",
+            "category": "missing-packaged-texts",
+            "subject": {
+              "name": "org-example-dep",
+              "version": "2.0.0",
+              "source": "registry+https://github.com/rust-lang/crates.io-index"
+            },
+            "facts": [
+              "Synthetic: the published archive has no packaged terms"
+            ],
+            "limits": [
+              "Synthetic fixture; not release evidence"
+            ],
+            "evidence": [
+              {
+                "path": "crates/org-example-dep-2.0.0.crate",
+                "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                "bytes": 10,
+                "role": "crate-archive"
+              }
+            ],
+            "materials": [
+              "review/dep-missing-terms/e380825dd6b20d61-LICENSE"
+            ]
+          },
+          {
+            "id": "dep-native",
+            "category": "native-applicability",
+            "subject": {
+              "name": "org-example-dep",
+              "version": "2.0.0",
+              "source": "registry+https://github.com/rust-lang/crates.io-index"
+            },
+            "facts": [
+              "Synthetic: one file adapts copied source"
+            ],
+            "limits": [
+              "Synthetic fixture; not release evidence"
+            ],
+            "evidence": [
+              {
+                "path": "crates/org-example-dep-2.0.0.crate",
+                "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                "bytes": 10,
+                "role": "crate-archive"
+              },
+              {
+                "path": "crates/org-example-copied-1.0.0.crate",
+                "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+                "bytes": 10,
+                "role": "published-archive",
+                "url": "https://static.crates.io/crates/org-example-copied/org-example-copied-1.0.0.crate"
+              },
+              {
+                "path": "inspection/dep-native.txt",
+                "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "bytes": 10,
+                "role": "inspection"
+              }
+            ],
+            "materials": [
+              "review/dep-native/430c485967437e66-chaos.rs",
+              "review/dep-native/85db3fcfb49231d6-LICENSE-MIT"
+            ],
+            "copied_sources": [
+              {
+                "name": "org-example-copied",
+                "version": "1.0.0",
+                "archive": "crates/org-example-copied-1.0.0.crate",
+                "archive_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+                "members": [
+                  "org-example-copied-1.0.0/src/shuffle.rs"
+                ],
+                "materials": [
+                  "review/dep-native/430c485967437e66-chaos.rs",
+                  "review/dep-native/85db3fcfb49231d6-LICENSE-MIT"
+                ],
+                "facts": [
+                  "Synthetic: chaos.rs adapts shuffle.rs"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "toolchain-runtime",
+            "category": "toolchain-runtime",
+            "subject": {
+              "toolchain": "rustc 1.0.0 (synthetic)\nbinary: rustc\nhost: aarch64-apple-darwin\nrelease: 1.0.0"
+            },
+            "facts": [
+              "Synthetic: attribution matches the exact distribution"
+            ],
+            "limits": [
+              "Synthetic: historical link inputs are not reconstructed"
+            ],
+            "evidence": [
+              {
+                "path": "dist/rust-std-1.0.0-aarch64-apple-darwin.tar.xz",
+                "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+                "bytes": 10,
+                "role": "distribution-archive",
+                "url": "https://static.rust-lang.org/dist/rust-std-1.0.0-aarch64-apple-darwin.tar.xz"
+              },
+              {
+                "path": "dist/rustc-1.0.0-aarch64-apple-darwin.tar.xz",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "bytes": 10,
+                "role": "distribution-archive",
+                "url": "https://static.rust-lang.org/dist/rustc-1.0.0-aarch64-apple-darwin.tar.xz"
+              }
+            ],
+            "materials": [
+              "review/toolchain-runtime/4fc12a92823f1089-COPYRIGHT"
+            ]
+          }
+        ]
+      },
+      "release_accepted": false
+    },
+    "notice_text": "MIT synthetic fixture notice\nSynthetic full terms for org-example-dep\n// Adapted from org-example-copied 1.0.0; synthetic notice\nSynthetic copied-source terms\nSynthetic runtime attribution\n",
+    "files": {
+      "bin/fixture": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "third-party/native-NOTICES.txt": "e1d6dc13427b9f2e8fb24c71f44619bb2f3597db43b61e201ce739897d3a350d"
+    },
+    "names": [
+      "fixture"
+    ],
+    "lock": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "target": "aarch64-apple-darwin",
+    "version": "1",
+    "cases": [
+      {
+        "name": "complete native notice inventory",
+        "valid": true
+      },
+      {
+        "name": "missing native roots",
+        "valid": false,
+        "remove": [
+          "roots"
+        ]
+      },
+      {
+        "name": "missing native binaries",
+        "valid": false,
+        "remove": [
+          "binaries"
+        ]
+      },
+      {
+        "name": "missing native binary_roots",
+        "valid": false,
+        "remove": [
+          "binary_roots"
+        ]
+      },
+      {
+        "name": "missing native toolchain",
+        "valid": false,
+        "remove": [
+          "toolchain"
+        ]
+      },
+      {
+        "name": "missing native coverage",
+        "valid": false,
+        "remove": [
+          "coverage"
+        ]
+      },
+      {
+        "name": "missing native requested_features",
+        "valid": false,
+        "remove": [
+          "requested_features"
+        ]
+      },
+      {
+        "name": "missing native default_features",
+        "valid": false,
+        "remove": [
+          "default_features"
+        ]
+      },
+      {
+        "name": "missing native packages",
+        "valid": false,
+        "remove": [
+          "packages"
+        ]
+      },
+      {
+        "name": "missing native notices",
+        "valid": false,
+        "remove": [
+          "notices"
+        ]
+      },
+      {
+        "name": "empty native packages",
+        "valid": false,
+        "set": {
+          "packages": []
+        }
+      },
+      {
+        "name": "missing retained text inventory",
+        "valid": false,
+        "set": {
+          "packages.0.texts": []
+        }
+      },
+      {
+        "name": "wrong retained text bytes",
+        "valid": false,
+        "set": {
+          "packages.0.texts.0.sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      },
+      {
+        "name": "wrong text span",
+        "valid": false,
+        "set": {
+          "packages.0.texts.0.offset": 1
+        }
+      },
+      {
+        "name": "wrong root version",
+        "valid": false,
+        "set": {
+          "packages.0.version": "2"
+        }
+      },
+      {
+        "name": "wrong binary owner",
+        "valid": false,
+        "set": {
+          "binary_roots.fixture": "other"
+        }
+      },
+      {
+        "name": "changed installed native notices",
+        "valid": false,
+        "notice_text": "changed"
+      },
+      {
+        "name": "wrong native pending",
+        "valid": false,
+        "set": {
+          "pending": [
+            "missing"
+          ]
+        }
+      },
+      {
+        "name": "wrong native lock_sha256",
+        "valid": false,
+        "set": {
+          "lock_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      },
+      {
+        "name": "wrong native target",
+        "valid": false,
+        "set": {
+          "target": "other"
+        }
+      },
+      {
+        "name": "wrong native artifacts",
+        "valid": false,
+        "set": {
+          "artifacts": []
+        }
+      },
+      {
+        "name": "native v1 schema without review",
+        "valid": false,
+        "set": {
+          "schema": "omd-native-notices-v1"
+        }
+      },
+      {
+        "name": "native release acceptance claim",
+        "valid": false,
+        "set": {
+          "release_accepted": true
+        }
+      },
+      {
+        "name": "missing native review",
+        "valid": false,
+        "set": {
+          "review": null
+        }
+      },
+      {
+        "name": "wrong native review schema",
+        "valid": false,
+        "set": {
+          "review.schema": "omd-native-review-v0"
+        }
+      },
+      {
+        "name": "malformed review input hash",
+        "valid": false,
+        "set": {
+          "review.input_sha256": "abc"
+        }
+      },
+      {
+        "name": "unknown review category",
+        "valid": false,
+        "set": {
+          "review.findings.0.category": "executable-binding"
+        }
+      },
+      {
+        "name": "duplicate review finding id",
+        "valid": false,
+        "set": {
+          "review.findings.1.id": "dep-missing-terms"
+        }
+      },
+      {
+        "name": "duplicate review finding subject",
+        "valid": false,
+        "set": {
+          "review.findings.0.category": "native-applicability"
+        }
+      },
+      {
+        "name": "review subject outside inventory",
+        "valid": false,
+        "set": {
+          "review.findings.0.subject.version": "9.9.9"
+        }
+      },
+      {
+        "name": "review subject without source",
+        "valid": false,
+        "set": {
+          "review.findings.0.subject": {
+            "name": "org-example-dep",
+            "version": "2.0.0"
+          }
+        }
+      },
+      {
+        "name": "review finding without facts",
+        "valid": false,
+        "set": {
+          "review.findings.0.facts": []
+        }
+      },
+      {
+        "name": "review finding without limits",
+        "valid": false,
+        "set": {
+          "review.findings.0.limits": [
+            ""
+          ]
+        }
+      },
+      {
+        "name": "missing legal text for missing terms",
+        "valid": false,
+        "set": {
+          "packages.1.texts.0.kind": "source-notice"
+        }
+      },
+      {
+        "name": "omitted review material",
+        "valid": false,
+        "set": {
+          "review.findings.0.materials": []
+        }
+      },
+      {
+        "name": "orphan review material",
+        "valid": false,
+        "set": {
+          "packages.1.texts.0.review_finding": "unlisted-finding"
+        }
+      },
+      {
+        "name": "review material attached to other package",
+        "valid": false,
+        "set": {
+          "packages.0.texts": [
+            {
+              "path": "texts/org-example-root/LICENSE",
+              "sha256": "39b22f68f0426b66966d755a9b9cce0cdcb13305b28c563f912297c905c13561",
+              "offset": 0,
+              "bytes": 29
+            },
+            {
+              "path": "review/dep-missing-terms/e380825dd6b20d61-LICENSE",
+              "sha256": "e380825dd6b20d612408d1a8b116915e0d128529d3c2449459606921ac59b4af",
+              "offset": 29,
+              "bytes": 41,
+              "review_finding": "dep-missing-terms",
+              "kind": "legal-text",
+              "reason": "Synthetic full terms for a package without packaged terms",
+              "origin": {
+                "type": "upstream-revision",
+                "url": "https://example.org/dep/raw/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/LICENSE",
+                "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+              }
+            }
+          ],
+          "packages.1.texts": [
+            {
+              "path": "review/dep-native/430c485967437e66-chaos.rs",
+              "sha256": "430c485967437e660e2565c5e5949eac42ee9b6fe2dd240e5d02ea80ddc6fa15",
+              "offset": 70,
+              "bytes": 59,
+              "review_finding": "dep-native",
+              "kind": "source-notice",
+              "reason": "Synthetic adaptation notice",
+              "origin": {
+                "type": "archive-member",
+                "archive": "crates/org-example-dep-2.0.0.crate",
+                "member": "org-example-dep-2.0.0/src/chaos.rs",
+                "archive_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            },
+            {
+              "path": "review/dep-native/85db3fcfb49231d6-LICENSE-MIT",
+              "sha256": "85db3fcfb49231d6d7ffc83f8bfbcec51af7f079fea699b49a37a39c55b94dfe",
+              "offset": 129,
+              "bytes": 30,
+              "review_finding": "dep-native",
+              "kind": "legal-text",
+              "reason": "Synthetic terms of the copied source",
+              "origin": {
+                "type": "archive-member",
+                "archive": "crates/org-example-copied-1.0.0.crate",
+                "member": "org-example-copied-1.0.0/LICENSE-MIT",
+                "archive_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "review material without reason",
+        "valid": false,
+        "set": {
+          "packages.1.texts.1.reason": " "
+        }
+      },
+      {
+        "name": "review material without origin",
+        "valid": false,
+        "set": {
+          "packages.1.texts.1.origin": null
+        }
+      },
+      {
+        "name": "traversal review material path",
+        "valid": false,
+        "set": {
+          "packages.1.texts.0.path": "../LICENSE",
+          "review.findings.0.materials": [
+            "../LICENSE"
+          ]
+        }
+      },
+      {
+        "name": "drive review material path",
+        "valid": false,
+        "set": {
+          "packages.1.texts.0.path": "C:/LICENSE",
+          "review.findings.0.materials": [
+            "C:/LICENSE"
+          ]
+        }
+      },
+      {
+        "name": "absolute review evidence path",
+        "valid": false,
+        "set": {
+          "review.findings.0.evidence.0.path": "/evidence/crate"
+        }
+      },
+      {
+        "name": "unknown review evidence role",
+        "valid": false,
+        "set": {
+          "review.findings.0.evidence.0.role": "blanket-clearance"
+        }
+      },
+      {
+        "name": "wrong runtime material span",
+        "valid": false,
+        "set": {
+          "runtime_materials.0.offset": 0
+        }
+      },
+      {
+        "name": "runtime material without finding",
+        "valid": false,
+        "set": {
+          "runtime_materials": [
+            {
+              "path": "review/toolchain-runtime/4fc12a92823f1089-COPYRIGHT",
+              "sha256": "4fc12a92823f108989490961661879209a606180e78ad0bb39928b11009e3a02",
+              "offset": 159,
+              "bytes": 30,
+              "kind": "attribution",
+              "reason": "Synthetic runtime attribution",
+              "origin": {
+                "type": "archive-member",
+                "archive": "dist/rust-std-1-aarch64-apple-darwin.tar.xz",
+                "member": "rust-std/COPYRIGHT",
+                "archive_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "missing runtime finding",
+        "valid": false,
+        "set": {
+          "runtime_materials": [],
+          "review.findings": [
+            {
+              "id": "dep-missing-terms",
+              "category": "missing-packaged-texts",
+              "subject": {
+                "name": "org-example-dep",
+                "version": "2.0.0",
+                "source": "registry+https://github.com/rust-lang/crates.io-index"
+              },
+              "facts": [
+                "Synthetic: the published archive has no packaged terms"
+              ],
+              "limits": [
+                "Synthetic fixture; not release evidence"
+              ],
+              "evidence": [
+                {
+                  "path": "crates/org-example-dep-2.0.0.crate",
+                  "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "bytes": 10,
+                  "role": "crate-archive"
+                }
+              ],
+              "materials": [
+                "review/dep-missing-terms/e380825dd6b20d61-LICENSE"
+              ]
+            },
+            {
+              "id": "dep-native",
+              "category": "native-applicability",
+              "subject": {
+                "name": "org-example-dep",
+                "version": "2.0.0",
+                "source": "registry+https://github.com/rust-lang/crates.io-index"
+              },
+              "facts": [
+                "Synthetic: one file adapts copied source"
+              ],
+              "limits": [
+                "Synthetic fixture; not release evidence"
+              ],
+              "evidence": [
+                {
+                  "path": "crates/org-example-dep-2.0.0.crate",
+                  "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                  "bytes": 10,
+                  "role": "crate-archive"
+                },
+                {
+                  "path": "crates/org-example-copied-1.0.0.crate",
+                  "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+                  "bytes": 10,
+                  "role": "published-archive",
+                  "url": "https://static.crates.io/crates/org-example-copied/org-example-copied-1.0.0.crate"
+                },
+                {
+                  "path": "inspection/dep-native.txt",
+                  "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                  "bytes": 10,
+                  "role": "inspection"
+                }
+              ],
+              "materials": [
+                "review/dep-native/430c485967437e66-chaos.rs",
+                "review/dep-native/85db3fcfb49231d6-LICENSE-MIT"
+              ],
+              "copied_sources": [
+                {
+                  "name": "org-example-copied",
+                  "version": "1.0.0",
+                  "archive": "crates/org-example-copied-1.0.0.crate",
+                  "archive_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+                  "members": [
+                    "org-example-copied-1.0.0/src/shuffle.rs"
+                  ],
+                  "materials": [
+                    "review/dep-native/430c485967437e66-chaos.rs",
+                    "review/dep-native/85db3fcfb49231d6-LICENSE-MIT"
+                  ],
+                  "facts": [
+                    "Synthetic: chaos.rs adapts shuffle.rs"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "stale runtime toolchain subject",
+        "valid": false,
+        "set": {
+          "review.findings.2.subject.toolchain": "other toolchain"
+        }
+      },
+      {
+        "name": "copied source without its terms",
+        "valid": false,
+        "set": {
+          "review.findings.1.copied_sources.0.materials": [
+            "review/dep-native/430c485967437e66-chaos.rs"
+          ]
+        }
+      },
+      {
+        "name": "copied source attached to runtime",
+        "valid": false,
+        "set": {
+          "review.findings.2.copied_sources": [
+            {
+              "name": "org-example-copied",
+              "version": "1.0.0",
+              "archive": "crates/org-example-copied-1.0.0.crate",
+              "archive_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "members": [
+                "org-example-copied-1.0.0/src/shuffle.rs"
+              ],
+              "materials": [
+                "review/dep-native/430c485967437e66-chaos.rs",
+                "review/dep-native/85db3fcfb49231d6-LICENSE-MIT"
+              ],
+              "facts": [
+                "Synthetic: chaos.rs adapts shuffle.rs"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "all finding evidence omitted",
+        "valid": false,
+        "set": {
+          "review.findings.0.evidence": [],
+          "review.findings.1.evidence": [],
+          "review.findings.2.evidence": []
+        }
+      },
+      {
+        "name": "runtime provenance absent",
+        "valid": false,
+        "set": {
+          "runtime_materials.0.origin": {}
+        }
+      },
+      {
+        "name": "runtime empty span",
+        "valid": false,
+        "set": {
+          "runtime_materials.0.bytes": 0,
+          "runtime_materials.0.sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "name": "runtime wrong archive digest",
+        "valid": false,
+        "set": {
+          "runtime_materials.0.origin.archive_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      {
+        "name": "runtime wrong release",
+        "valid": false,
+        "set": {
+          "review.findings.2.evidence.0.url": "https://static.rust-lang.org/dist/rust-std-11.0.0-aarch64-apple-darwin.tar.xz"
+        }
+      },
+      {
+        "name": "runtime wrong target",
+        "valid": false,
+        "set": {
+          "review.findings.2.evidence.0.url": "https://static.rust-lang.org/dist/rust-std-1.0.0-x86_64-unknown-linux-gnu.tar.xz"
+        }
+      },
+      {
+        "name": "runtime unofficial URL",
+        "valid": false,
+        "set": {
+          "review.findings.2.evidence.0.url": "https://unrelated.example/dist/rust-std-1.0.0-aarch64-apple-darwin.tar.xz"
+        }
+      },
+      {
+        "name": "runtime missing compiler distribution",
+        "valid": false,
+        "set": {
+          "review.findings.2.evidence": [
+            {
+              "path": "dist/rust-std-1.0.0-aarch64-apple-darwin.tar.xz",
+              "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+              "bytes": 10,
+              "role": "distribution-archive",
+              "url": "https://static.rust-lang.org/dist/rust-std-1.0.0-aarch64-apple-darwin.tar.xz"
+            }
+          ]
+        }
+      },
+      {
+        "name": "copied source digest contradiction",
+        "valid": false,
+        "set": {
+          "review.findings.1.copied_sources.0.archive_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      },
+      {
+        "name": "missing crate binding",
+        "valid": false,
+        "set": {
+          "review.findings.0.evidence": []
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "format": 1,
+  "plugins": [],
+  "reserved_private_ids": [
+    "org.example.private"
+  ]
+}

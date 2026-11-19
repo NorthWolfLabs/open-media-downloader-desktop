@@ -1,0 +1,56 @@
+[package]
+name = "open-media-downloader-desktop"
+version = "0.2.1"
+description = "Official desktop frontend for Open Media Downloader"
+authors = ["North Wolf Labs"]
+license = "MIT"
+edition = "2021"
+
+[features]
+# Compatibility no-op: selects no code and changes no build behavior. Kept only
+# because existing build, packaging and CI commands still pass `--features v2`.
+v2 = []
+
+[lib]
+name = "open_media_downloader_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+rand = "0.8"
+fs2 = "0.4"
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tokio = { version = "1", features = ["time", "process", "sync", "rt", "io-util"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+gio = "0.18.4"
+# Already in the lockfile through Tauri; read for the dark/light window background.
+gtk = "0.18.2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_UI_Shell", "Win32_UI_Shell_Common", "Win32_UI_WindowsAndMessaging", "Win32_System_Com", "Win32_System_Registry"] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+tempfile = "3"
+
+# macOS rejects stripped build-time proc-macro dylibs from Rust 1.93.
+# Shipping executables retain the release profile's normal stripping policy.
+[profile.release.build-override]
+strip = "none"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+# 0.6.5 fixes a tail-called objc_retainAutoreleasedReturnValue (objc2 #861).
+# With 0.6.4, macOS 13+ let the title-bar update steal a content-view retain
+# from Tauri's autoreleased NSWindow and AppKit aborted on reopen.
+objc2 = "0.6.5"
+objc2-foundation = { version = "0.3.2", default-features = false, features = ["std", "NSGeometry", "NSObject", "NSNotification"] }
+objc2-app-kit = { version = "0.3.2", default-features = false, features = ["std", "NSView", "NSWindow", "NSButton", "NSControl", "NSEvent", "NSResponder"] }

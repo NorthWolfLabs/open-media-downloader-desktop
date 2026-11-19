@@ -1,0 +1,1167 @@
+{
+  "format": 2,
+  "files": [
+    {
+      "source": ".github/workflows/ci.yml",
+      "destination": ".github/workflows/ci.yml"
+    },
+    {
+      "source": ".gitignore",
+      "destination": ".gitignore"
+    },
+    {
+      "source": ".node-version",
+      "destination": ".node-version"
+    },
+    {
+      "source": "AGENTS.md",
+      "destination": "AGENTS.md"
+    },
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE"
+    },
+    {
+      "source": "README.md",
+      "destination": "README.md"
+    },
+    {
+      "source": "docs/development.md",
+      "destination": "docs/development.md"
+    },
+    {
+      "source": "docs/getting-started.md",
+      "destination": "docs/getting-started.md"
+    },
+    {
+      "source": "docs/manual-updates.md",
+      "destination": "docs/manual-updates.md"
+    },
+    {
+      "source": "docs/packaging.md",
+      "destination": "docs/packaging.md"
+    },
+    {
+      "source": "docs/plugins.md",
+      "destination": "docs/plugins.md"
+    },
+    {
+      "source": "docs/release.md",
+      "destination": "docs/release.md"
+    },
+    {
+      "source": "index.html",
+      "destination": "index.html"
+    },
+    {
+      "source": "package-lock.json",
+      "destination": "package-lock.json"
+    },
+    {
+      "source": "package.json",
+      "destination": "package.json"
+    },
+    {
+      "source": "packaging/final-materials-fixtures-v1.json",
+      "destination": "packaging/final-materials-fixtures-v1.json"
+    },
+    {
+      "source": "packaging/final-materials-fixtures-v2.json",
+      "destination": "packaging/final-materials-fixtures-v2.json"
+    },
+    {
+      "source": "packaging/materials-contract-fixtures-v1.json",
+      "destination": "packaging/materials-contract-fixtures-v1.json"
+    },
+    {
+      "source": "packaging/notarized-materials-fixtures-v1.json",
+      "destination": "packaging/notarized-materials-fixtures-v1.json"
+    },
+    {
+      "source": "packaging/public-plugins.json",
+      "destination": "packaging/public-plugins.json"
+    },
+    {
+      "source": "packaging/public-source-inputs.json",
+      "destination": "packaging/public-source-inputs.json"
+    },
+    {
+      "source": "scripts/build-public.mjs",
+      "destination": "scripts/build-public.mjs"
+    },
+    {
+      "source": "scripts/build-public.test.mjs",
+      "destination": "scripts/build-public.test.mjs"
+    },
+    {
+      "source": "scripts/cross-linux-desktop.py",
+      "destination": "scripts/cross-linux-desktop.py"
+    },
+    {
+      "source": "scripts/export-public-source.py",
+      "destination": "scripts/export-public-source.py"
+    },
+    {
+      "source": "scripts/final-materials-contract.mjs",
+      "destination": "scripts/final-materials-contract.mjs"
+    },
+    {
+      "source": "scripts/final-materials-contract.test.mjs",
+      "destination": "scripts/final-materials-contract.test.mjs"
+    },
+    {
+      "source": "scripts/frontend-css-order.mjs",
+      "destination": "scripts/frontend-css-order.mjs"
+    },
+    {
+      "source": "scripts/frontend-css-order.test.mjs",
+      "destination": "scripts/frontend-css-order.test.mjs"
+    },
+    {
+      "source": "scripts/frontend-notices.mjs",
+      "destination": "scripts/frontend-notices.mjs"
+    },
+    {
+      "source": "scripts/frontend-notices.test.mjs",
+      "destination": "scripts/frontend-notices.test.mjs"
+    },
+    {
+      "source": "scripts/materials-contract.mjs",
+      "destination": "scripts/materials-contract.mjs"
+    },
+    {
+      "source": "scripts/materials-contract.test.mjs",
+      "destination": "scripts/materials-contract.test.mjs"
+    },
+    {
+      "source": "scripts/notarized-materials-contract.mjs",
+      "destination": "scripts/notarized-materials-contract.mjs"
+    },
+    {
+      "source": "scripts/notarized-materials-contract.test.mjs",
+      "destination": "scripts/notarized-materials-contract.test.mjs"
+    },
+    {
+      "source": "scripts/package-linux.py",
+      "destination": "scripts/package-linux.py"
+    },
+    {
+      "source": "scripts/package-windows.ps1",
+      "destination": "scripts/package-windows.ps1"
+    },
+    {
+      "source": "scripts/plugin-policy.mjs",
+      "destination": "scripts/plugin-policy.mjs"
+    },
+    {
+      "source": "scripts/public_inputs.py",
+      "destination": "scripts/public_inputs.py"
+    },
+    {
+      "source": "scripts/stage-v2.mjs",
+      "destination": "scripts/stage-v2.mjs"
+    },
+    {
+      "source": "scripts/stage-v2.test.mjs",
+      "destination": "scripts/stage-v2.test.mjs"
+    },
+    {
+      "source": "src-tauri/Cargo.lock",
+      "destination": "src-tauri/Cargo.lock"
+    },
+    {
+      "source": "src-tauri/Cargo.toml",
+      "destination": "src-tauri/Cargo.toml"
+    },
+    {
+      "source": "src-tauri/build.rs",
+      "destination": "src-tauri/build.rs"
+    },
+    {
+      "source": "src-tauri/capabilities/default.json",
+      "destination": "src-tauri/capabilities/default.json"
+    },
+    {
+      "source": "src-tauri/icons/128x128.png",
+      "destination": "src-tauri/icons/128x128.png",
+      "sha256": "32e4963d20fa5f1558e38f3082d0cca77ddb5fe0fcd31974c33f56772ddcc17e"
+    },
+    {
+      "source": "src-tauri/icons/128x128@2x.png",
+      "destination": "src-tauri/icons/128x128@2x.png",
+      "sha256": "2509fad2b80223c43359ff48bc0fdf2938520bf2c5e6ca8a5351a098928b927f"
+    },
+    {
+      "source": "src-tauri/icons/32x32.png",
+      "destination": "src-tauri/icons/32x32.png",
+      "sha256": "7cc5ab5e47ed343584adc7bae13ddc40e047907771ee503a9f3557b8ec07b3ef"
+    },
+    {
+      "source": "src-tauri/icons/README.md",
+      "destination": "src-tauri/icons/README.md"
+    },
+    {
+      "source": "src-tauri/icons/export-icons.py",
+      "destination": "src-tauri/icons/export-icons.py"
+    },
+    {
+      "source": "src-tauri/icons/icon.icns",
+      "destination": "src-tauri/icons/icon.icns",
+      "sha256": "146d60d71495926661b984a134c0e0763b9c722e708621b3ea68dc28a0e8bb26"
+    },
+    {
+      "source": "src-tauri/icons/icon.ico",
+      "destination": "src-tauri/icons/icon.ico",
+      "sha256": "409d5766e6d2a42194d27b9419f82a3c6d0deba095ceb1f54afe724aa8b37c42"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/Assets/01-receiver-back.svg",
+      "destination": "src-tauri/icons/platform/OMD.icon/Assets/01-receiver-back.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/Assets/02-image.svg",
+      "destination": "src-tauri/icons/platform/OMD.icon/Assets/02-image.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/Assets/03-book.svg",
+      "destination": "src-tauri/icons/platform/OMD.icon/Assets/03-book.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/Assets/04-video.svg",
+      "destination": "src-tauri/icons/platform/OMD.icon/Assets/04-video.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/Assets/05-side-symbols.svg",
+      "destination": "src-tauri/icons/platform/OMD.icon/Assets/05-side-symbols.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/Assets/06-image-symbol.svg",
+      "destination": "src-tauri/icons/platform/OMD.icon/Assets/06-image-symbol.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/Assets/07-receiver-front.svg",
+      "destination": "src-tauri/icons/platform/OMD.icon/Assets/07-receiver-front.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/OMD.icon/icon.json",
+      "destination": "src-tauri/icons/platform/OMD.icon/icon.json",
+      "sha256": "68ea1f8fabb221f6e7136e9532b5ff98269128a6cbcd9291d607670da9154797"
+    },
+    {
+      "source": "src-tauri/icons/platform/build-artwork.mjs",
+      "destination": "src-tauri/icons/platform/build-artwork.mjs"
+    },
+    {
+      "source": "src-tauri/icons/platform/geometry.json",
+      "destination": "src-tauri/icons/platform/geometry.json"
+    },
+    {
+      "source": "src-tauri/icons/platform/omd-linux.svg",
+      "destination": "src-tauri/icons/platform/omd-linux.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/omd-master.svg",
+      "destination": "src-tauri/icons/platform/omd-master.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/omd-symbolic.svg",
+      "destination": "src-tauri/icons/platform/omd-symbolic.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/omd-windows.svg",
+      "destination": "src-tauri/icons/platform/omd-windows.svg"
+    },
+    {
+      "source": "src-tauri/icons/platform/source-sha256.json",
+      "destination": "src-tauri/icons/platform/source-sha256.json"
+    },
+    {
+      "source": "src-tauri/linux/omd-v2-helper.apparmor",
+      "destination": "src-tauri/linux/omd-v2-helper.apparmor"
+    },
+    {
+      "source": "src-tauri/linux/postinst.sh",
+      "destination": "src-tauri/linux/postinst.sh"
+    },
+    {
+      "source": "src-tauri/linux/postrm.sh",
+      "destination": "src-tauri/linux/postrm.sh"
+    },
+    {
+      "source": "src-tauri/src/artifact_opener.rs",
+      "destination": "src-tauri/src/artifact_opener.rs"
+    },
+    {
+      "source": "src-tauri/src/cookie_export.rs",
+      "destination": "src-tauri/src/cookie_export.rs"
+    },
+    {
+      "source": "src-tauri/src/engine_connection.rs",
+      "destination": "src-tauri/src/engine_connection.rs"
+    },
+    {
+      "source": "src-tauri/src/lib.rs",
+      "destination": "src-tauri/src/lib.rs"
+    },
+    {
+      "source": "src-tauri/src/main.rs",
+      "destination": "src-tauri/src/main.rs"
+    },
+    {
+      "source": "src-tauri/src/themes.rs",
+      "destination": "src-tauri/src/themes.rs"
+    },
+    {
+      "source": "src-tauri/src/titlebar.rs",
+      "destination": "src-tauri/src/titlebar.rs"
+    },
+    {
+      "source": "src-tauri/src/v2.rs",
+      "destination": "src-tauri/src/v2.rs"
+    },
+    {
+      "source": "src-tauri/src/webview_runtime.rs",
+      "destination": "src-tauri/src/webview_runtime.rs"
+    },
+    {
+      "source": "src-tauri/src/window_background.rs",
+      "destination": "src-tauri/src/window_background.rs"
+    },
+    {
+      "source": "src-tauri/tauri.conf.json",
+      "destination": "src-tauri/tauri.conf.json"
+    },
+    {
+      "source": "src-tauri/tauri.public.conf.json",
+      "destination": "src-tauri/tauri.public.conf.json"
+    },
+    {
+      "source": "src-tauri/tauri.public.windows.conf.json",
+      "destination": "src-tauri/tauri.public.windows.conf.json"
+    },
+    {
+      "source": "src-tauri/tauri.v2.linux.conf.json",
+      "destination": "src-tauri/tauri.v2.linux.conf.json"
+    },
+    {
+      "source": "src-tauri/tauri.v2.package.conf.json",
+      "destination": "src-tauri/tauri.v2.package.conf.json"
+    },
+    {
+      "source": "src-tauri/windows-hooks.nsh",
+      "destination": "src-tauri/windows-hooks.nsh"
+    },
+    {
+      "source": "src/assets/app-icon-linux.png",
+      "destination": "src/assets/app-icon-linux.png",
+      "sha256": "2509fad2b80223c43359ff48bc0fdf2938520bf2c5e6ca8a5351a098928b927f"
+    },
+    {
+      "source": "src/assets/app-icon-macos.png",
+      "destination": "src/assets/app-icon-macos.png",
+      "sha256": "7ee565c0538965cbf8784722f174addd4dda46b91cbd9638fc3c73ef154ac378"
+    },
+    {
+      "source": "src/assets/app-icon-windows.png",
+      "destination": "src/assets/app-icon-windows.png",
+      "sha256": "8bb43a48eff0859710d0ed58f32d1ef21db832d8d9aae6fa73ad2035d0d62a10"
+    },
+    {
+      "source": "src/v2/AccountPicker.svelte",
+      "destination": "src/v2/AccountPicker.svelte"
+    },
+    {
+      "source": "src/v2/AccountPicker.test.ts",
+      "destination": "src/v2/AccountPicker.test.ts"
+    },
+    {
+      "source": "src/v2/AccountPickerHarness.svelte",
+      "destination": "src/v2/AccountPickerHarness.svelte"
+    },
+    {
+      "source": "src/v2/App.svelte",
+      "destination": "src/v2/App.svelte"
+    },
+    {
+      "source": "src/v2/AppearanceSettings.svelte",
+      "destination": "src/v2/AppearanceSettings.svelte"
+    },
+    {
+      "source": "src/v2/AppearanceSettings.test.ts",
+      "destination": "src/v2/AppearanceSettings.test.ts"
+    },
+    {
+      "source": "src/v2/Artwork.svelte",
+      "destination": "src/v2/Artwork.svelte"
+    },
+    {
+      "source": "src/v2/CacheSettings.svelte",
+      "destination": "src/v2/CacheSettings.svelte"
+    },
+    {
+      "source": "src/v2/CatalogBrowser.svelte",
+      "destination": "src/v2/CatalogBrowser.svelte"
+    },
+    {
+      "source": "src/v2/ChannelCollections.svelte",
+      "destination": "src/v2/ChannelCollections.svelte"
+    },
+    {
+      "source": "src/v2/ChannelOverview.svelte",
+      "destination": "src/v2/ChannelOverview.svelte"
+    },
+    {
+      "source": "src/v2/ChoicePicker.svelte",
+      "destination": "src/v2/ChoicePicker.svelte"
+    },
+    {
+      "source": "src/v2/ChoicePicker.test.ts",
+      "destination": "src/v2/ChoicePicker.test.ts"
+    },
+    {
+      "source": "src/v2/CollectionInfo.svelte",
+      "destination": "src/v2/CollectionInfo.svelte"
+    },
+    {
+      "source": "src/v2/CollectionInfo.test.ts",
+      "destination": "src/v2/CollectionInfo.test.ts"
+    },
+    {
+      "source": "src/v2/CollectionInfoHarness.svelte",
+      "destination": "src/v2/CollectionInfoHarness.svelte"
+    },
+    {
+      "source": "src/v2/CookieFilePicker.svelte",
+      "destination": "src/v2/CookieFilePicker.svelte"
+    },
+    {
+      "source": "src/v2/CookieImportGuide.svelte",
+      "destination": "src/v2/CookieImportGuide.svelte"
+    },
+    {
+      "source": "src/v2/CookieImportGuide.test.ts",
+      "destination": "src/v2/CookieImportGuide.test.ts"
+    },
+    {
+      "source": "src/v2/DestinationChecks.svelte",
+      "destination": "src/v2/DestinationChecks.svelte"
+    },
+    {
+      "source": "src/v2/Dialog.svelte",
+      "destination": "src/v2/Dialog.svelte"
+    },
+    {
+      "source": "src/v2/Dialog.test.ts",
+      "destination": "src/v2/Dialog.test.ts"
+    },
+    {
+      "source": "src/v2/Discovery.svelte",
+      "destination": "src/v2/Discovery.svelte"
+    },
+    {
+      "source": "src/v2/DiscoveryHarness.svelte",
+      "destination": "src/v2/DiscoveryHarness.svelte"
+    },
+    {
+      "source": "src/v2/DownloadCheck.svelte",
+      "destination": "src/v2/DownloadCheck.svelte"
+    },
+    {
+      "source": "src/v2/DownloadChecks.svelte",
+      "destination": "src/v2/DownloadChecks.svelte"
+    },
+    {
+      "source": "src/v2/DownloadList.svelte",
+      "destination": "src/v2/DownloadList.svelte"
+    },
+    {
+      "source": "src/v2/DownloadList.test.ts",
+      "destination": "src/v2/DownloadList.test.ts"
+    },
+    {
+      "source": "src/v2/DownloadOptionsDialog.svelte",
+      "destination": "src/v2/DownloadOptionsDialog.svelte"
+    },
+    {
+      "source": "src/v2/DownloadReview.svelte",
+      "destination": "src/v2/DownloadReview.svelte"
+    },
+    {
+      "source": "src/v2/FileOperations.svelte",
+      "destination": "src/v2/FileOperations.svelte"
+    },
+    {
+      "source": "src/v2/GalleryItem.svelte",
+      "destination": "src/v2/GalleryItem.svelte"
+    },
+    {
+      "source": "src/v2/GalleryNavigation.svelte",
+      "destination": "src/v2/GalleryNavigation.svelte"
+    },
+    {
+      "source": "src/v2/GroupActions.svelte",
+      "destination": "src/v2/GroupActions.svelte"
+    },
+    {
+      "source": "src/v2/GroupActions.test.ts",
+      "destination": "src/v2/GroupActions.test.ts"
+    },
+    {
+      "source": "src/v2/History.svelte",
+      "destination": "src/v2/History.svelte"
+    },
+    {
+      "source": "src/v2/ImageDownloadDialog.svelte",
+      "destination": "src/v2/ImageDownloadDialog.svelte"
+    },
+    {
+      "source": "src/v2/ImageOverview.svelte",
+      "destination": "src/v2/ImageOverview.svelte"
+    },
+    {
+      "source": "src/v2/ImageOverview.test.ts",
+      "destination": "src/v2/ImageOverview.test.ts"
+    },
+    {
+      "source": "src/v2/ImageProfile.svelte",
+      "destination": "src/v2/ImageProfile.svelte"
+    },
+    {
+      "source": "src/v2/InfiniteHarness.svelte",
+      "destination": "src/v2/InfiniteHarness.svelte"
+    },
+    {
+      "source": "src/v2/InfiniteMore.svelte",
+      "destination": "src/v2/InfiniteMore.svelte"
+    },
+    {
+      "source": "src/v2/ItemOverview.svelte",
+      "destination": "src/v2/ItemOverview.svelte"
+    },
+    {
+      "source": "src/v2/LanguagePicker.svelte",
+      "destination": "src/v2/LanguagePicker.svelte"
+    },
+    {
+      "source": "src/v2/LanguagePicker.test.ts",
+      "destination": "src/v2/LanguagePicker.test.ts"
+    },
+    {
+      "source": "src/v2/LayoutPicker.svelte",
+      "destination": "src/v2/LayoutPicker.svelte"
+    },
+    {
+      "source": "src/v2/Notifications.svelte",
+      "destination": "src/v2/Notifications.svelte"
+    },
+    {
+      "source": "src/v2/Notifications.test.ts",
+      "destination": "src/v2/Notifications.test.ts"
+    },
+    {
+      "source": "src/v2/OutputOptions.svelte",
+      "destination": "src/v2/OutputOptions.svelte"
+    },
+    {
+      "source": "src/v2/PluginPrerequisite.svelte",
+      "destination": "src/v2/PluginPrerequisite.svelte"
+    },
+    {
+      "source": "src/v2/PresentationSettings.svelte",
+      "destination": "src/v2/PresentationSettings.svelte"
+    },
+    {
+      "source": "src/v2/PresentationSettings.test.ts",
+      "destination": "src/v2/PresentationSettings.test.ts"
+    },
+    {
+      "source": "src/v2/ProfileSubscriptionDialog.svelte",
+      "destination": "src/v2/ProfileSubscriptionDialog.svelte"
+    },
+    {
+      "source": "src/v2/ProfileSubscriptionDialog.test.ts",
+      "destination": "src/v2/ProfileSubscriptionDialog.test.ts"
+    },
+    {
+      "source": "src/v2/RemovalDialog.svelte",
+      "destination": "src/v2/RemovalDialog.svelte"
+    },
+    {
+      "source": "src/v2/ResultBrowser.svelte",
+      "destination": "src/v2/ResultBrowser.svelte"
+    },
+    {
+      "source": "src/v2/ResultBrowser.test.ts",
+      "destination": "src/v2/ResultBrowser.test.ts"
+    },
+    {
+      "source": "src/v2/SavedFiles.svelte",
+      "destination": "src/v2/SavedFiles.svelte"
+    },
+    {
+      "source": "src/v2/ScrollRegion.svelte",
+      "destination": "src/v2/ScrollRegion.svelte"
+    },
+    {
+      "source": "src/v2/SearchSubscriptionDialog.svelte",
+      "destination": "src/v2/SearchSubscriptionDialog.svelte"
+    },
+    {
+      "source": "src/v2/SearchSubscriptionDialog.test.ts",
+      "destination": "src/v2/SearchSubscriptionDialog.test.ts"
+    },
+    {
+      "source": "src/v2/SelectPicker.svelte",
+      "destination": "src/v2/SelectPicker.svelte"
+    },
+    {
+      "source": "src/v2/SelectPicker.test.ts",
+      "destination": "src/v2/SelectPicker.test.ts"
+    },
+    {
+      "source": "src/v2/SignInPage.svelte",
+      "destination": "src/v2/SignInPage.svelte"
+    },
+    {
+      "source": "src/v2/SignInPage.test.ts",
+      "destination": "src/v2/SignInPage.test.ts"
+    },
+    {
+      "source": "src/v2/SourceAccounts.svelte",
+      "destination": "src/v2/SourceAccounts.svelte"
+    },
+    {
+      "source": "src/v2/SourceAccounts.test.ts",
+      "destination": "src/v2/SourceAccounts.test.ts"
+    },
+    {
+      "source": "src/v2/SourceBadge.svelte",
+      "destination": "src/v2/SourceBadge.svelte"
+    },
+    {
+      "source": "src/v2/SourceRemovals.svelte",
+      "destination": "src/v2/SourceRemovals.svelte"
+    },
+    {
+      "source": "src/v2/SourcesPage.svelte",
+      "destination": "src/v2/SourcesPage.svelte"
+    },
+    {
+      "source": "src/v2/StartupProbeHarness.svelte",
+      "destination": "src/v2/StartupProbeHarness.svelte"
+    },
+    {
+      "source": "src/v2/StoragePanel.svelte",
+      "destination": "src/v2/StoragePanel.svelte"
+    },
+    {
+      "source": "src/v2/SubscriptionsPage.svelte",
+      "destination": "src/v2/SubscriptionsPage.svelte"
+    },
+    {
+      "source": "src/v2/SubscriptionsPage.test.ts",
+      "destination": "src/v2/SubscriptionsPage.test.ts"
+    },
+    {
+      "source": "src/v2/TagPicker.svelte",
+      "destination": "src/v2/TagPicker.svelte"
+    },
+    {
+      "source": "src/v2/TagPicker.test.ts",
+      "destination": "src/v2/TagPicker.test.ts"
+    },
+    {
+      "source": "src/v2/ThemeEditor.svelte",
+      "destination": "src/v2/ThemeEditor.svelte"
+    },
+    {
+      "source": "src/v2/actionFocus.test.ts",
+      "destination": "src/v2/actionFocus.test.ts"
+    },
+    {
+      "source": "src/v2/actionFocus.ts",
+      "destination": "src/v2/actionFocus.ts"
+    },
+    {
+      "source": "src/v2/appIcon.ts",
+      "destination": "src/v2/appIcon.ts"
+    },
+    {
+      "source": "src/v2/artworkCache.test.ts",
+      "destination": "src/v2/artworkCache.test.ts"
+    },
+    {
+      "source": "src/v2/artworkCache.ts",
+      "destination": "src/v2/artworkCache.ts"
+    },
+    {
+      "source": "src/v2/boot.ts",
+      "destination": "src/v2/boot.ts"
+    },
+    {
+      "source": "src/v2/catalogBrowser.test.ts",
+      "destination": "src/v2/catalogBrowser.test.ts"
+    },
+    {
+      "source": "src/v2/client/index.ts",
+      "destination": "src/v2/client/index.ts"
+    },
+    {
+      "source": "src/v2/copy.test.ts",
+      "destination": "src/v2/copy.test.ts"
+    },
+    {
+      "source": "src/v2/copy.ts",
+      "destination": "src/v2/copy.ts"
+    },
+    {
+      "source": "src/v2/credentialImport.test.ts",
+      "destination": "src/v2/credentialImport.test.ts"
+    },
+    {
+      "source": "src/v2/credentialImport.ts",
+      "destination": "src/v2/credentialImport.ts"
+    },
+    {
+      "source": "src/v2/dates.test.ts",
+      "destination": "src/v2/dates.test.ts"
+    },
+    {
+      "source": "src/v2/dates.ts",
+      "destination": "src/v2/dates.ts"
+    },
+    {
+      "source": "src/v2/dialogBackground.test.ts",
+      "destination": "src/v2/dialogBackground.test.ts"
+    },
+    {
+      "source": "src/v2/dialogBackground.ts",
+      "destination": "src/v2/dialogBackground.ts"
+    },
+    {
+      "source": "src/v2/dialogFocus.test.ts",
+      "destination": "src/v2/dialogFocus.test.ts"
+    },
+    {
+      "source": "src/v2/dialogFocus.ts",
+      "destination": "src/v2/dialogFocus.ts"
+    },
+    {
+      "source": "src/v2/discovery.test.ts",
+      "destination": "src/v2/discovery.test.ts"
+    },
+    {
+      "source": "src/v2/discoveryState.ts",
+      "destination": "src/v2/discoveryState.ts"
+    },
+    {
+      "source": "src/v2/diskCache.ts",
+      "destination": "src/v2/diskCache.ts"
+    },
+    {
+      "source": "src/v2/displayCache.test.ts",
+      "destination": "src/v2/displayCache.test.ts"
+    },
+    {
+      "source": "src/v2/displayCache.ts",
+      "destination": "src/v2/displayCache.ts"
+    },
+    {
+      "source": "src/v2/downloadReview.test.ts",
+      "destination": "src/v2/downloadReview.test.ts"
+    },
+    {
+      "source": "src/v2/downloadReview.ts",
+      "destination": "src/v2/downloadReview.ts"
+    },
+    {
+      "source": "src/v2/experience.test.ts",
+      "destination": "src/v2/experience.test.ts"
+    },
+    {
+      "source": "src/v2/fileOpening.test.ts",
+      "destination": "src/v2/fileOpening.test.ts"
+    },
+    {
+      "source": "src/v2/history.test.ts",
+      "destination": "src/v2/history.test.ts"
+    },
+    {
+      "source": "src/v2/history.ts",
+      "destination": "src/v2/history.ts"
+    },
+    {
+      "source": "src/v2/historySnapshot.ts",
+      "destination": "src/v2/historySnapshot.ts"
+    },
+    {
+      "source": "src/v2/historyTransitions.test.ts",
+      "destination": "src/v2/historyTransitions.test.ts"
+    },
+    {
+      "source": "src/v2/imageRendition.ts",
+      "destination": "src/v2/imageRendition.ts"
+    },
+    {
+      "source": "src/v2/imageSelection.test.ts",
+      "destination": "src/v2/imageSelection.test.ts"
+    },
+    {
+      "source": "src/v2/imageSelection.ts",
+      "destination": "src/v2/imageSelection.ts"
+    },
+    {
+      "source": "src/v2/imageWorkflow.test.ts",
+      "destination": "src/v2/imageWorkflow.test.ts"
+    },
+    {
+      "source": "src/v2/intersectionFixture.ts",
+      "destination": "src/v2/intersectionFixture.ts"
+    },
+    {
+      "source": "src/v2/itemCache.ts",
+      "destination": "src/v2/itemCache.ts"
+    },
+    {
+      "source": "src/v2/labelAppearance.test.ts",
+      "destination": "src/v2/labelAppearance.test.ts"
+    },
+    {
+      "source": "src/v2/labelAppearance.ts",
+      "destination": "src/v2/labelAppearance.ts"
+    },
+    {
+      "source": "src/v2/languages.test.ts",
+      "destination": "src/v2/languages.test.ts"
+    },
+    {
+      "source": "src/v2/languages.ts",
+      "destination": "src/v2/languages.ts"
+    },
+    {
+      "source": "src/v2/links.test.ts",
+      "destination": "src/v2/links.test.ts"
+    },
+    {
+      "source": "src/v2/links.ts",
+      "destination": "src/v2/links.ts"
+    },
+    {
+      "source": "src/v2/locale.test.ts",
+      "destination": "src/v2/locale.test.ts"
+    },
+    {
+      "source": "src/v2/locale.ts",
+      "destination": "src/v2/locale.ts"
+    },
+    {
+      "source": "src/v2/main.test.ts",
+      "destination": "src/v2/main.test.ts"
+    },
+    {
+      "source": "src/v2/main.ts",
+      "destination": "src/v2/main.ts"
+    },
+    {
+      "source": "src/v2/mediaPresentation.test.ts",
+      "destination": "src/v2/mediaPresentation.test.ts"
+    },
+    {
+      "source": "src/v2/mediaPresentation.ts",
+      "destination": "src/v2/mediaPresentation.ts"
+    },
+    {
+      "source": "src/v2/metadataGallery.test.ts",
+      "destination": "src/v2/metadataGallery.test.ts"
+    },
+    {
+      "source": "src/v2/nativeConfiguration.test.ts",
+      "destination": "src/v2/nativeConfiguration.test.ts"
+    },
+    {
+      "source": "src/v2/onboarding.test.ts",
+      "destination": "src/v2/onboarding.test.ts"
+    },
+    {
+      "source": "src/v2/pageWindow.ts",
+      "destination": "src/v2/pageWindow.ts"
+    },
+    {
+      "source": "src/v2/paths.test.ts",
+      "destination": "src/v2/paths.test.ts"
+    },
+    {
+      "source": "src/v2/paths.ts",
+      "destination": "src/v2/paths.ts"
+    },
+    {
+      "source": "src/v2/pendingPresentation.test.ts",
+      "destination": "src/v2/pendingPresentation.test.ts"
+    },
+    {
+      "source": "src/v2/platform.ts",
+      "destination": "src/v2/platform.ts"
+    },
+    {
+      "source": "src/v2/platformAppearance.test.ts",
+      "destination": "src/v2/platformAppearance.test.ts"
+    },
+    {
+      "source": "src/v2/pluginReview.test.ts",
+      "destination": "src/v2/pluginReview.test.ts"
+    },
+    {
+      "source": "src/v2/pluginReview.ts",
+      "destination": "src/v2/pluginReview.ts"
+    },
+    {
+      "source": "src/v2/plural.test.ts",
+      "destination": "src/v2/plural.test.ts"
+    },
+    {
+      "source": "src/v2/plural.ts",
+      "destination": "src/v2/plural.ts"
+    },
+    {
+      "source": "src/v2/popoverLayout.test.ts",
+      "destination": "src/v2/popoverLayout.test.ts"
+    },
+    {
+      "source": "src/v2/preferences.test.ts",
+      "destination": "src/v2/preferences.test.ts"
+    },
+    {
+      "source": "src/v2/preferences.ts",
+      "destination": "src/v2/preferences.ts"
+    },
+    {
+      "source": "src/v2/prefetch.test.ts",
+      "destination": "src/v2/prefetch.test.ts"
+    },
+    {
+      "source": "src/v2/prefetch.ts",
+      "destination": "src/v2/prefetch.ts"
+    },
+    {
+      "source": "src/v2/readRetry.test.ts",
+      "destination": "src/v2/readRetry.test.ts"
+    },
+    {
+      "source": "src/v2/readRetry.ts",
+      "destination": "src/v2/readRetry.ts"
+    },
+    {
+      "source": "src/v2/releaseSelection.test.ts",
+      "destination": "src/v2/releaseSelection.test.ts"
+    },
+    {
+      "source": "src/v2/releaseSelection.ts",
+      "destination": "src/v2/releaseSelection.ts"
+    },
+    {
+      "source": "src/v2/releaseVisibility.test.ts",
+      "destination": "src/v2/releaseVisibility.test.ts"
+    },
+    {
+      "source": "src/v2/releaseVisibility.ts",
+      "destination": "src/v2/releaseVisibility.ts"
+    },
+    {
+      "source": "src/v2/resourceInvalidation.test.ts",
+      "destination": "src/v2/resourceInvalidation.test.ts"
+    },
+    {
+      "source": "src/v2/resourceInvalidation.ts",
+      "destination": "src/v2/resourceInvalidation.ts"
+    },
+    {
+      "source": "src/v2/resultSelectionLayout.test.ts",
+      "destination": "src/v2/resultSelectionLayout.test.ts"
+    },
+    {
+      "source": "src/v2/savedSearch.ts",
+      "destination": "src/v2/savedSearch.ts"
+    },
+    {
+      "source": "src/v2/sectionCache.test.ts",
+      "destination": "src/v2/sectionCache.test.ts"
+    },
+    {
+      "source": "src/v2/sectionCache.ts",
+      "destination": "src/v2/sectionCache.ts"
+    },
+    {
+      "source": "src/v2/sidebarSelection.test.ts",
+      "destination": "src/v2/sidebarSelection.test.ts"
+    },
+    {
+      "source": "src/v2/startup.test.ts",
+      "destination": "src/v2/startup.test.ts"
+    },
+    {
+      "source": "src/v2/startup.ts",
+      "destination": "src/v2/startup.ts"
+    },
+    {
+      "source": "src/v2/startupFailure.test.ts",
+      "destination": "src/v2/startupFailure.test.ts"
+    },
+    {
+      "source": "src/v2/style.css",
+      "destination": "src/v2/style.css"
+    },
+    {
+      "source": "src/v2/submissionCounts.test.ts",
+      "destination": "src/v2/submissionCounts.test.ts"
+    },
+    {
+      "source": "src/v2/submissionCounts.ts",
+      "destination": "src/v2/submissionCounts.ts"
+    },
+    {
+      "source": "src/v2/summaryDetails.ts",
+      "destination": "src/v2/summaryDetails.ts"
+    },
+    {
+      "source": "src/v2/testPopover.ts",
+      "destination": "src/v2/testPopover.ts"
+    },
+    {
+      "source": "src/v2/theme.test.ts",
+      "destination": "src/v2/theme.test.ts"
+    },
+    {
+      "source": "src/v2/theme.ts",
+      "destination": "src/v2/theme.ts"
+    },
+    {
+      "source": "src/v2/themeCatalog.ts",
+      "destination": "src/v2/themeCatalog.ts"
+    },
+    {
+      "source": "src/v2/titlebarGeometry.test.ts",
+      "destination": "src/v2/titlebarGeometry.test.ts"
+    },
+    {
+      "source": "src/v2/titlebarGeometry.ts",
+      "destination": "src/v2/titlebarGeometry.ts"
+    },
+    {
+      "source": "src/v2/truncatedTitle.test.ts",
+      "destination": "src/v2/truncatedTitle.test.ts"
+    },
+    {
+      "source": "src/v2/truncatedTitle.ts",
+      "destination": "src/v2/truncatedTitle.ts"
+    },
+    {
+      "source": "src/v2/ui/ActionMenu.svelte",
+      "destination": "src/v2/ui/ActionMenu.svelte"
+    },
+    {
+      "source": "src/v2/ui/BackButton.svelte",
+      "destination": "src/v2/ui/BackButton.svelte"
+    },
+    {
+      "source": "src/v2/ui/Button.svelte",
+      "destination": "src/v2/ui/Button.svelte"
+    },
+    {
+      "source": "src/v2/ui/EmptyState.svelte",
+      "destination": "src/v2/ui/EmptyState.svelte"
+    },
+    {
+      "source": "src/v2/ui/Field.svelte",
+      "destination": "src/v2/ui/Field.svelte"
+    },
+    {
+      "source": "src/v2/ui/PageHeading.svelte",
+      "destination": "src/v2/ui/PageHeading.svelte"
+    },
+    {
+      "source": "src/v2/ui/PendingStatus.svelte",
+      "destination": "src/v2/ui/PendingStatus.svelte"
+    },
+    {
+      "source": "src/v2/ui/ProjectLink.svelte",
+      "destination": "src/v2/ui/ProjectLink.svelte"
+    },
+    {
+      "source": "src/v2/ui/RecordList.svelte",
+      "destination": "src/v2/ui/RecordList.svelte"
+    },
+    {
+      "source": "src/v2/ui/RecordRow.svelte",
+      "destination": "src/v2/ui/RecordRow.svelte"
+    },
+    {
+      "source": "src/v2/ui/SearchBar.svelte",
+      "destination": "src/v2/ui/SearchBar.svelte"
+    },
+    {
+      "source": "src/v2/ui/SelectionToolbar.svelte",
+      "destination": "src/v2/ui/SelectionToolbar.svelte"
+    },
+    {
+      "source": "src/v2/ui/StatCard.svelte",
+      "destination": "src/v2/ui/StatCard.svelte"
+    },
+    {
+      "source": "src/v2/ui/Toast.svelte",
+      "destination": "src/v2/ui/Toast.svelte"
+    },
+    {
+      "source": "src/v2/ui/foundation.css",
+      "destination": "src/v2/ui/foundation.css"
+    },
+    {
+      "source": "src/v2/ui/pendingPresentation.ts",
+      "destination": "src/v2/ui/pendingPresentation.ts"
+    },
+    {
+      "source": "src/v2/ui/tokens.css",
+      "destination": "src/v2/ui/tokens.css"
+    },
+    {
+      "source": "src/v2/windowActivity.test.ts",
+      "destination": "src/v2/windowActivity.test.ts"
+    },
+    {
+      "source": "src/v2/windowActivity.ts",
+      "destination": "src/v2/windowActivity.ts"
+    },
+    {
+      "source": "src/vite-env.d.ts",
+      "destination": "src/vite-env.d.ts"
+    },
+    {
+      "source": "svelte.config.js",
+      "destination": "svelte.config.js"
+    },
+    {
+      "source": "tsconfig.json",
+      "destination": "tsconfig.json"
+    },
+    {
+      "source": "v2.html",
+      "destination": "v2.html"
+    },
+    {
+      "source": "vendor/northwolf-omd-engine-client-0.12.0-licensed.tgz",
+      "destination": "vendor/northwolf-omd-engine-client-0.12.0-licensed.tgz",
+      "sha256": "e22094422b971ca55f1735bc635d5df4075825d97c3fd637b937ea35e0ca023a"
+    },
+    {
+      "source": "vite.config.ts",
+      "destination": "vite.config.ts"
+    },
+    {
+      "source": "vite.v2.config.ts",
+      "destination": "vite.v2.config.ts"
+    },
+    {
+      "source": "vitest.v2.config.ts",
+      "destination": "vitest.v2.config.ts"
+    }
+  ]
+}

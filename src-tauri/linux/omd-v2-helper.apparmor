@@ -1,0 +1,9 @@
+# OMD's root-owned guardian creates namespaces, then installs its own Landlock
+# and seccomp policy before executing any helper. This grants that bootstrap
+# operation only to this installed executable; no global sysctl is changed.
+abi <abi/4.0>,
+include <tunables/global>
+
+profile omd_v2_helper "/usr/lib/OMD/resources/v2/bin/omd-helper-guardian" flags=(unconfined) {
+  userns,
+}

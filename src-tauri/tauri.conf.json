@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "OMD v2 Development",
+  "identifier": "labs.northwolf.omd-v2-development",
+  "build": {
+    "beforeBuildCommand": "vp build",
+    "frontendDist": "../dist-v2",
+    "beforeDevCommand": "vp dev",
+    "devUrl": "http://127.0.0.1:1422"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "OMD v2 Development",
+        "url": "v2.html",
+        "width": 1340,
+        "height": 860,
+        "minWidth": 720,
+        "minHeight": 560,
+        "center": true,
+        "resizable": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true
+      }
+    ],
+    "security": {
+      "csp": {
+        "default-src": "'self'",
+        "connect-src": "'self' ipc: http://ipc.localhost http://127.0.0.1:*",
+        "img-src": "'self' blob: data:",
+        "media-src": "'none'",
+        "style-src": "'self' 'unsafe-inline'",
+        "font-src": "'self' data:"
+      }
+    }
+  },
+  "bundle": {
+    "active": false,
+    "targets": [
+      "app"
+    ],
+    "category": "Utilities",
+    "shortDescription": "Discover and download media through source plugins",
+    "longDescription": "Review downloads, keep portable media files and follow new releases from independently installed sources.",
+    "resources": [],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "13.5"
+    }
+  },
+  "version": "0.2.1"
+}

@@ -1,0 +1,16 @@
+{
+  "OMD.icon/Assets/01-receiver-back.svg": "6ec9685e7a3b7f6d2ec6b6bfe62ec050d3f79cb7ff375e79f3d62276310564b9",
+  "OMD.icon/Assets/02-image.svg": "dca42023d466093926ed922111634ca01188646cf4b37c321ce743e860a0bc5a",
+  "OMD.icon/Assets/03-book.svg": "4c1fa07315ec7d1d6fc33e037a7bdf73edb9ac21a18d0cf8e06604caee9d80d6",
+  "OMD.icon/Assets/04-video.svg": "cb270c74726ee0013c72b010d5363c8e5ac36c3f2d9f5a7dcec8ae7e44202db2",
+  "OMD.icon/Assets/05-side-symbols.svg": "1c7b35b779086c9627e67f0b3935f3cfbb59031576ed5bcade6039376c8d1877",
+  "OMD.icon/Assets/06-image-symbol.svg": "e74e259bdcf8e8fc26b79d13d6a617bdb085fdfdce3ce813567f3c47ca959cbf",
+  "OMD.icon/Assets/07-receiver-front.svg": "bfaa2ed7e1b28c563cf833f4693e66541994477371798885e50306934997029b",
+  "OMD.icon/icon.json": "68ea1f8fabb221f6e7136e9532b5ff98269128a6cbcd9291d607670da9154797",
+  "build-artwork.mjs": "8731d752cb6f60acbb769594c030ccfd23cb55754f7498d2ba9b74751ae0a00f",
+  "geometry.json": "c6736e003d04a56fa520e67925b8335204737c7be54be9efb4c47b6dc0caa0fc",
+  "omd-linux.svg": "4af2afbaea68f2c65027261960502552491698cbc5e2485d8050bc1ca55ae33b",
+  "omd-master.svg": "36af6a064d2552de49f5fb14f9b2e2b7b587c71244945e1654f1c64bff5e396e",
+  "omd-symbolic.svg": "6c0904a7b69aed131e4063acac1813f74b841c4b3810ef53e05084cfe9c8c565",
+  "omd-windows.svg": "2f1e4691f17591510f41823422c6683f3cb1feacc1ffd982ab94a9c6b49b5f6b"
+}

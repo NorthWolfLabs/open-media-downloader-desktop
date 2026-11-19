@@ -1,0 +1,59 @@
+import {beforeEach,afterEach,it,expect,vi} from 'vitest';
+import {render,screen,cleanup,waitFor} from '@testing-library/svelte';
+import {createRawSnippet} from 'svelte';
+import Dialog from './Dialog.svelte';
+const originals=Object.fromEntries(['showModal','close'].map(name=>[name,Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype,name)]));
+beforeEach(()=>{
+ Object.defineProperty(HTMLDialogElement.prototype,'showModal',{configurable:true,value:function(this:HTMLDialogElement){this.open=true;}});
+ Object.defineProperty(HTMLDialogElement.prototype,'close',{configurable:true,value:function(this:HTMLDialogElement){this.open=false;}});
+});
+afterEach(()=>{cleanup();for(const [name,descriptor] of Object.entries(originals)){if(descriptor)Object.defineProperty(HTMLDialogElement.prototype,name,descriptor);else Reflect.deleteProperty(HTMLDialogElement.prototype,name);}});
+it('keeps focus inside the dialog when an async action disables its active control',async()=>{
+ const children=createRawSnippet(()=>({render:()=>'<div><button>Continue</button></div>'}));
+ render(Dialog,{title:'Review source',onclose:()=>{},children});
+ await waitFor(()=>expect(document.activeElement).toBe(screen.getByRole('heading',{name:'Review source'})));
+ const button=screen.getByRole('button',{name:'Continue'}) as HTMLButtonElement;
+ button.focus();expect(document.activeElement).toBe(button);
+ button.disabled=true;
+ await waitFor(()=>expect(document.activeElement).toBe(screen.getByRole('button',{name:'Close dialog'})));
+});
+it('keeps the form open when a native file picker is canceled but allows dialog dismissal',()=>{
+ const onclose=vi.fn();
+ const children=createRawSnippet(()=>({render:()=>'<div><input type="file" aria-label="Cookie file" /></div>'}));
+ render(Dialog,{title:'Connect source',onclose,children});
+ screen.getByLabelText('Cookie file').dispatchEvent(new Event('cancel',{bubbles:true}));
+ expect(onclose).not.toHaveBeenCalled();
+ const dialog=screen.getByRole('dialog');
+ expect((dialog as HTMLDialogElement).open).toBe(true);
+ dialog.dispatchEvent(new Event('cancel',{cancelable:true}));
+ expect(onclose).toHaveBeenCalledOnce();
+});
+it('offers a visible Cancel beside footer actions, which a dialog can rename or omit',async()=>{
+ const onclose=vi.fn();
+ const children=createRawSnippet(()=>({render:()=>'<p>Body</p>'}));
+ const footer=createRawSnippet(()=>({render:()=>'<button>Approve and install</button>'}));
+ const view=render(Dialog,{title:'Install plugin',onclose,children,footer});
+ const buttons=[...view.container.ownerDocument.querySelectorAll('footer button')].map(b=>b.textContent);
+ expect(buttons).toEqual(['Cancel','Approve and install']);
+ screen.getByRole('button',{name:'Cancel'}).click();
+ expect(onclose).toHaveBeenCalledOnce();
+ cleanup();
+ render(Dialog,{title:'Install plugin',onclose,children,footer,cancelLabel:'Don’t install'});
+ expect(screen.getByRole('button',{name:'Don’t install'})).toBeTruthy();
+ cleanup();
+ render(Dialog,{title:'Remove source',onclose,children,footer,cancelLabel:null});
+ expect(screen.queryByRole('button',{name:'Cancel'})).toBeNull();
+});
+it('marks a body that scrolls with more content below, and clears it at the end',async()=>{
+ const children=createRawSnippet(()=>({render:()=>'<p>Long body</p>'}));
+ const footer=createRawSnippet(()=>({render:()=>'<button>Save</button>'}));
+ render(Dialog,{title:'Long dialog',onclose:()=>{},children,footer});
+ const dialog=screen.getByRole('dialog');
+ const region=dialog.querySelector<HTMLElement>('.v2-dialog-content')!;
+ Object.defineProperty(region,'scrollHeight',{configurable:true,value:900});
+ Object.defineProperty(region,'clientHeight',{configurable:true,value:300});
+ region.scrollTop=0;region.dispatchEvent(new Event('scroll'));
+ await waitFor(()=>expect(dialog.classList.contains('scroll-more')).toBe(true));
+ region.scrollTop=600;region.dispatchEvent(new Event('scroll'));
+ await waitFor(()=>expect(dialog.classList.contains('scroll-more')).toBe(false));
+});

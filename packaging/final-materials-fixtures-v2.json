@@ -1,0 +1,5267 @@
+{
+ "base": {
+  "delivery": {
+   "notes/desktop-route.md": {
+    "bytes": 300,
+    "sha256": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+   },
+   "notes/frontend-NOTICES.txt": {
+    "bytes": 300,
+    "sha256": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+   },
+   "notes/frontend-receipt.json": {
+    "bytes": 300,
+    "sha256": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+   },
+   "receipts/desktop/native-NOTICES.txt": {
+    "bytes": 300,
+    "sha256": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+   },
+   "receipts/desktop/receipt.json": {
+    "bytes": 300,
+    "sha256": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+   },
+   "sources/first-party-source.tar.gz": {
+    "bytes": 300,
+    "sha256": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+   },
+   "sources/yt-dlp-source.tar.gz": {
+    "bytes": 300,
+    "sha256": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f"
+   }
+  },
+  "doc": {
+   "components": [
+    {
+     "artifacts": {
+      "Contents/Resources/resources/v2/bin/omd-engine": {
+       "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+       "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+      }
+     },
+     "basis": "initial-review",
+     "id": "omd-engine",
+     "initial_component": "omd-engine",
+     "materials": {
+      "instructions": {
+       "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+      },
+      "notices": {
+       "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+      },
+      "provenance": {
+       "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+      },
+      "source": {
+       "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+      }
+     },
+     "pending": [],
+     "status": "reviewed",
+     "version": "1.0.0"
+    },
+    {
+     "artifacts": {
+      "Contents/Resources/resources/v2/bin/omd": {
+       "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+       "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+      }
+     },
+     "basis": "initial-review",
+     "id": "omd",
+     "initial_component": "omd",
+     "materials": {
+      "instructions": {
+       "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+      },
+      "notices": {
+       "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+      },
+      "provenance": {
+       "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+      },
+      "source": {
+       "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+      }
+     },
+     "pending": [],
+     "status": "reviewed",
+     "version": "1.0.0"
+    },
+    {
+     "artifacts": {
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+       "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+       "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+      }
+     },
+     "basis": "initial-review",
+     "id": "yt_dlp",
+     "initial_component": "yt_dlp",
+     "materials": {
+      "instructions": {
+       "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+      },
+      "notices": {
+       "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+      },
+      "provenance": {
+       "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+      },
+      "source": {
+       "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+       "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+      }
+     },
+     "pending": [],
+     "status": "reviewed",
+     "version": "2026.08.19"
+    },
+    {
+     "artifacts": {
+      "Contents/MacOS/fixture-desktop": {
+       "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+       "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+      }
+     },
+     "basis": "final-review",
+     "id": "desktop-rust",
+     "initial_component": null,
+     "materials": {
+      "instructions": {
+       "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+      },
+      "notices": {
+       "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+      },
+      "provenance": {
+       "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+      },
+      "source": {
+       "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+      }
+     },
+     "pending": [],
+     "status": "reviewed",
+     "version": "1.0.0"
+    },
+    {
+     "artifacts": {
+      "Contents/MacOS/fixture-desktop": {
+       "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+       "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+      }
+     },
+     "basis": "final-review",
+     "id": "frontend",
+     "initial_component": null,
+     "materials": {
+      "instructions": {
+       "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+      },
+      "notices": {
+       "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+      },
+      "provenance": {
+       "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+      },
+      "source": {
+       "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+      }
+     },
+     "pending": [],
+     "status": "reviewed",
+     "version": "1.0.0"
+    },
+    {
+     "artifacts": {
+      "Contents/Info.plist": {
+       "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+       "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+      },
+      "Contents/Resources/icon.icns": {
+       "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+       "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+      },
+      "Contents/Resources/resources/v2/build-inventory.json": {
+       "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+       "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+      },
+      "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+       "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+       "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+      },
+      "Contents/_CodeSignature/CodeResources": {
+       "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+       "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+      }
+     },
+     "basis": "final-review",
+     "id": "desktop-bundle",
+     "initial_component": null,
+     "materials": {
+      "instructions": {
+       "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+      },
+      "notices": {
+       "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+      },
+      "provenance": {
+       "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+      },
+      "source": {
+       "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+      }
+     },
+     "pending": [],
+     "status": "reviewed",
+     "version": "1.0.0"
+    }
+   ],
+   "coverage_validated": true,
+   "delivery": {
+    "files": {
+     "notes/desktop-route.md": {
+      "bytes": 300,
+      "sha256": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+     },
+     "notes/frontend-NOTICES.txt": {
+      "bytes": 300,
+      "sha256": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+     },
+     "notes/frontend-receipt.json": {
+      "bytes": 300,
+      "sha256": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+     },
+     "receipts/desktop/native-NOTICES.txt": {
+      "bytes": 300,
+      "sha256": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+     },
+     "receipts/desktop/receipt.json": {
+      "bytes": 300,
+      "sha256": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+     },
+     "sources/first-party-source.tar.gz": {
+      "bytes": 300,
+      "sha256": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+     },
+     "sources/yt-dlp-source.tar.gz": {
+      "bytes": 300,
+      "sha256": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f"
+     }
+    }
+   },
+   "distribution_candidate": true,
+   "extractor": {
+    "component": "yt_dlp",
+    "members_verified": 2,
+    "method": "omd-pyinstaller-6.22.0-source-bootloader-onefile-signature-only-v1",
+    "path": "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+    "prepared": {
+     "bytes": 110,
+     "sha256": "18734aadfc021eb3ebc7e054f31f45a7f2cb179615eb18e6445b12ce11607687"
+    },
+    "producer": {
+     "bytes": 100,
+     "sha256": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+    },
+    "report": {
+     "bytes": 500,
+     "sha256": "6618db9cb17e7d57d7eebb088480366302cba2bd9b799caa411ce8a407696edc"
+    },
+    "route": "controlled-source",
+    "source": {
+     "bootloader": {
+      "bytes": 71952,
+      "sha256": "aafbe2efa6776445bac7eb43d7c5bd9a241ab2700df2e60fc0bf4c4ce66157b3"
+     },
+     "evidence": {
+      "bytes": 700,
+      "schema": "omd-macos-extractor-source-evidence-v1",
+      "sha256": "ebe3be2194d0d5e8ca1285f206452bacbfda9dd8c3728756c90f94efb2fd1701"
+     },
+     "kit": {
+      "bytes": 300,
+      "locator": "delivery:sources/yt-dlp-source.tar.gz",
+      "sha256": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f"
+     },
+     "members": 9,
+     "natives": 2,
+     "plan_sha256": "3ed40d0d4ad38754c5a8515c262fe35dd4b1d48601e2e020a933c003abc966dd",
+     "profile": {
+      "file": "distribution/yt-dlp-source-curl/profile.json",
+      "id": "fixture-controlled-source-profile",
+      "sha256": "1900eab6c028483d7126599ee6f50de0d27907b5c65fa90524580b4b0f9852b0"
+     },
+     "receipt_sha256": "e09ddf727177e1f05672b23c8181afd784b1daf67da2472b20f41ab23498340f"
+    },
+    "target_arch": "arm64",
+    "version": "2026.08.19"
+   },
+   "initial_review": {
+    "bytes": 2982,
+    "path": "Contents/Resources/resources/v2/third-party/materials-v1.json",
+    "schema": "omd-materials-v1",
+    "sha256": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+   },
+   "input": {
+    "files": {
+     "Contents/Info.plist": {
+      "bytes": 100,
+      "sha256": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+     },
+     "Contents/MacOS/fixture-desktop": {
+      "bytes": 100,
+      "sha256": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+     },
+     "Contents/Resources/icon.icns": {
+      "bytes": 100,
+      "sha256": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+     },
+     "Contents/Resources/resources/v2/LICENSE": {
+      "bytes": 100,
+      "sha256": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+     },
+     "Contents/Resources/resources/v2/bin/omd": {
+      "bytes": 100,
+      "sha256": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+     },
+     "Contents/Resources/resources/v2/bin/omd-engine": {
+      "bytes": 100,
+      "sha256": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+     },
+     "Contents/Resources/resources/v2/build-inventory.json": {
+      "bytes": 100,
+      "sha256": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+     },
+     "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+      "bytes": 2982,
+      "sha256": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+     },
+     "Contents/Resources/resources/v2/third-party/native-NOTICES.txt": {
+      "bytes": 100,
+      "sha256": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+     },
+     "Contents/Resources/resources/v2/third-party/native-receipt.json": {
+      "bytes": 100,
+      "sha256": "4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee"
+     },
+     "Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": {
+      "bytes": 100,
+      "sha256": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+     },
+     "Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": {
+      "bytes": 100,
+      "sha256": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+     },
+     "Contents/Resources/resources/v2/tools/tools-v2.json": {
+      "bytes": 100,
+      "sha256": "531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e"
+     },
+     "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+      "bytes": 100,
+      "sha256": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+     },
+     "Contents/_CodeSignature/CodeResources": {
+      "bytes": 100,
+      "sha256": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+     }
+    },
+    "inventory_sha256": "e209259345a4b4a0d6e790fe93cef84ee71cdd12a9442c8bc9b0e9a8ad000865"
+   },
+   "layout": {
+    "bundle_id": "labs.example.fixture",
+    "code": {
+     "Contents/MacOS/fixture-desktop": "desktop-shell",
+     "Contents/Resources/resources/v2/bin/omd": "cli",
+     "Contents/Resources/resources/v2/bin/omd-engine": "engine",
+     "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": "yt-dlp"
+    },
+    "executable": "fixture-desktop",
+    "resources": "Contents/Resources/resources/v2"
+   },
+   "limits": [
+    "Factual binding only: no legal, compliance, notarization or release decision. release_accepted is always false.",
+    "Relations prove that signing changed only code signatures, digest fields, receipt artifact bindings and the seal; they never create material coverage.",
+    "Initial-review facts carry only through verified relations from the original artifact digests they were reviewed against.",
+    "Delivery materials are bound by digest; how and where they are offered to recipients is part of the reviewed component materials.",
+    "The extractor route is typed: the stock route carries no source evidence, and the controlled-source route is re-proven from the input producer bytes, its digest-bound evidence, kit, compiled bootloader and preparation report on every prepare and verify.",
+    "Source evidence is a digest root of trust, not a legal, source or materials acceptance; compilation from the kit sources, source and terms sufficiency, and runtime capability stay build and review evidence. Component statuses come only from the reviewed final input."
+   ],
+   "locks": {
+    "Cargo.lock": "ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b",
+    "browser-package-lock.json": "8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049",
+    "desktop-Cargo.lock": "60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3",
+    "desktop-package-lock.json": "7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc"
+   },
+   "payload": {
+    "files": {
+     "Contents/Info.plist": {
+      "bytes": 100,
+      "sha256": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+     },
+     "Contents/MacOS/fixture-desktop": {
+      "bytes": 120,
+      "sha256": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6"
+     },
+     "Contents/Resources/icon.icns": {
+      "bytes": 100,
+      "sha256": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+     },
+     "Contents/Resources/resources/v2/LICENSE": {
+      "bytes": 100,
+      "sha256": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+     },
+     "Contents/Resources/resources/v2/bin/omd": {
+      "bytes": 120,
+      "sha256": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838"
+     },
+     "Contents/Resources/resources/v2/bin/omd-engine": {
+      "bytes": 120,
+      "sha256": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1"
+     },
+     "Contents/Resources/resources/v2/build-inventory.json": {
+      "bytes": 120,
+      "sha256": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+     },
+     "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+      "bytes": 2982,
+      "sha256": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+     },
+     "Contents/Resources/resources/v2/third-party/native-NOTICES.txt": {
+      "bytes": 100,
+      "sha256": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+     },
+     "Contents/Resources/resources/v2/third-party/native-receipt.json": {
+      "bytes": 120,
+      "sha256": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+     },
+     "Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": {
+      "bytes": 100,
+      "sha256": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+     },
+     "Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": {
+      "bytes": 100,
+      "sha256": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+     },
+     "Contents/Resources/resources/v2/tools/tools-v2.json": {
+      "bytes": 120,
+      "sha256": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+     },
+     "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+      "bytes": 120,
+      "sha256": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1"
+     },
+     "Contents/_CodeSignature/CodeResources": {
+      "bytes": 120,
+      "sha256": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e"
+     }
+    },
+    "inventory_sha256": "5491ddded0f75225fd30ede6b81bbf5720f77c1a7d5b3139a7590e6ced95624d"
+   },
+   "pending": [],
+   "purpose": "distribution-candidate",
+   "receipts": {
+    "desktop": {
+     "artifacts": {
+      "fixture-desktop": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6"
+     },
+     "binaries": [
+      "fixture-desktop"
+     ],
+     "findings": 1,
+     "lock_sha256": "60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3",
+     "notices": {
+      "path": "receipts/desktop/native-NOTICES.txt",
+      "sha256": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+     },
+     "pending": [],
+     "receipt": {
+      "path": "receipts/desktop/receipt.json",
+      "sha256": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+     },
+     "release_accepted": false,
+     "spans": 2,
+     "spans_in_payload": 2,
+     "target": "aarch64-apple-darwin",
+     "version": "1.0.0"
+    },
+    "engine": {
+     "artifacts": {
+      "omd": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+      "omd-engine": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1"
+     },
+     "binaries": [
+      "omd",
+      "omd-engine"
+     ],
+     "findings": 2,
+     "lock_sha256": "ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b",
+     "notices": {
+      "path": "Contents/Resources/resources/v2/third-party/native-NOTICES.txt",
+      "sha256": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+     },
+     "pending": [],
+     "receipt": {
+      "path": "Contents/Resources/resources/v2/third-party/native-receipt.json",
+      "sha256": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+     },
+     "release_accepted": false,
+     "spans": 3,
+     "spans_in_payload": 3,
+     "target": "aarch64-apple-darwin",
+     "version": "1.0.0"
+    }
+   },
+   "relations": {
+    "Contents/Info.plist": {
+     "after": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+     "before": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+     "kind": "identical"
+    },
+    "Contents/MacOS/fixture-desktop": {
+     "after": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+     "before": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a",
+     "kind": "signature-only",
+     "layout": "omd-macho-signature-layout-v2",
+     "method": "paired-structure",
+     "signature_independent_sha256": "8d45e20d78bcc97d90cc01b90708fbfe2a40d94747efe71f60b4a6690b86f8cd"
+    },
+    "Contents/Resources/icon.icns": {
+     "after": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+     "before": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+     "kind": "identical"
+    },
+    "Contents/Resources/resources/v2/LICENSE": {
+     "after": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49",
+     "before": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49",
+     "kind": "identical"
+    },
+    "Contents/Resources/resources/v2/bin/omd": {
+     "after": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+     "before": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f",
+     "kind": "signature-only",
+     "layout": "omd-macho-signature-layout-v2",
+     "method": "paired-structure",
+     "signature_independent_sha256": "22fb38d72f012ac8b585fba62d97e24db36cbf6a3e403877fdd91496b47e8f24"
+    },
+    "Contents/Resources/resources/v2/bin/omd-engine": {
+     "after": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+     "before": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481",
+     "kind": "signature-only",
+     "layout": "omd-macho-signature-layout-v2",
+     "method": "paired-structure",
+     "signature_independent_sha256": "66609ccf144fa6e5506098ec4f5ea49259deca6c417847f69aace115ad598b38"
+    },
+    "Contents/Resources/resources/v2/build-inventory.json": {
+     "after": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+     "before": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305",
+     "kind": "build-inventory",
+     "method": "digests-and-signing-record"
+    },
+    "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+     "after": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+     "before": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+     "kind": "identical"
+    },
+    "Contents/Resources/resources/v2/third-party/native-NOTICES.txt": {
+     "after": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6",
+     "before": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6",
+     "kind": "identical"
+    },
+    "Contents/Resources/resources/v2/third-party/native-receipt.json": {
+     "after": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148",
+     "before": "4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee",
+     "kind": "engine-receipt",
+     "method": "artifact-only-rebinding"
+    },
+    "Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": {
+     "after": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c",
+     "before": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c",
+     "kind": "identical"
+    },
+    "Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": {
+     "after": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743",
+     "before": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743",
+     "kind": "identical"
+    },
+    "Contents/Resources/resources/v2/tools/tools-v2.json": {
+     "after": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10",
+     "before": "531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e",
+     "kind": "managed-manifest",
+     "method": "digest-fields-only"
+    },
+    "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+     "after": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+     "before": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a",
+     "identical_non_natives": 7,
+     "kind": "prepared-extractor",
+     "method": "omd-pyinstaller-6.22.0-source-bootloader-onefile-signature-only-v1",
+     "prepared": "18734aadfc021eb3ebc7e054f31f45a7f2cb179615eb18e6445b12ce11607687",
+     "route": "controlled-source",
+     "signature_independent_sha256": "69033b937e713aac7a26ff7bb5e1a9c195e7737b16a415a34e5706850bc35149",
+     "signature_only_natives": 2
+    },
+    "Contents/_CodeSignature/CodeResources": {
+     "after": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+     "before": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc",
+     "kind": "outer-seal",
+     "method": "code-resources-hash2",
+     "sealed_files": 12
+    }
+   },
+   "release_accepted": false,
+   "reviewed": true,
+   "schema": "omd-final-materials-v2",
+   "signing": {
+    "bundle_id": "labs.example.fixture",
+    "materials_binding": "two-phase",
+    "mode": "developer-id",
+    "plan_sha256": "64879f7d6b960a01909762d911a32d4582c20010c5641ee90278b644a9e3b525",
+    "purpose": "distribution-candidate",
+    "report_sha256": "845e91831319e89c4d656bdb80c278ac09a7230d61e5dfd2e1b1fbb436ac8917",
+    "status": "signed-awaiting-final-materials",
+    "team_id": "ABCDE12345"
+   },
+   "target": "darwin-arm64",
+   "version": "1.0.0"
+  },
+  "expect": {
+   "final_components": {
+    "desktop-rust": {
+     "artifact": "Contents/MacOS/fixture-desktop",
+     "version": "1.0.0"
+    },
+    "frontend": {
+     "artifact": "Contents/MacOS/fixture-desktop",
+     "version": "1.0.0"
+    }
+   },
+   "locks": {
+    "Cargo.lock": "ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b",
+    "browser-package-lock.json": "8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049",
+    "desktop-Cargo.lock": "60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3",
+    "desktop-package-lock.json": "7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc"
+   },
+   "required": {
+    "omd": {
+     "prefix": "bin/omd",
+     "version": "1.0.0"
+    },
+    "omd-engine": {
+     "prefix": "bin/omd-engine",
+     "version": "1.0.0"
+    },
+    "yt_dlp": {
+     "prefix": "tools/yt_dlp/",
+     "version": "2026.08.19"
+    }
+   },
+   "target": "darwin-arm64",
+   "version": "1.0.0"
+  },
+  "initial": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n",
+  "payload": {
+   "Contents/Info.plist": {
+    "bytes": 100,
+    "sha256": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+   },
+   "Contents/MacOS/fixture-desktop": {
+    "bytes": 120,
+    "sha256": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6"
+   },
+   "Contents/Resources/icon.icns": {
+    "bytes": 100,
+    "sha256": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+   },
+   "Contents/Resources/resources/v2/LICENSE": {
+    "bytes": 100,
+    "sha256": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+   },
+   "Contents/Resources/resources/v2/bin/omd": {
+    "bytes": 120,
+    "sha256": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838"
+   },
+   "Contents/Resources/resources/v2/bin/omd-engine": {
+    "bytes": 120,
+    "sha256": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1"
+   },
+   "Contents/Resources/resources/v2/build-inventory.json": {
+    "bytes": 120,
+    "sha256": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+   },
+   "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+    "bytes": 2982,
+    "sha256": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+   },
+   "Contents/Resources/resources/v2/third-party/native-NOTICES.txt": {
+    "bytes": 100,
+    "sha256": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+   },
+   "Contents/Resources/resources/v2/third-party/native-receipt.json": {
+    "bytes": 120,
+    "sha256": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+   },
+   "Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": {
+    "bytes": 100,
+    "sha256": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+   },
+   "Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": {
+    "bytes": 100,
+    "sha256": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+   },
+   "Contents/Resources/resources/v2/tools/tools-v2.json": {
+    "bytes": 120,
+    "sha256": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+   },
+   "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+    "bytes": 120,
+    "sha256": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1"
+   },
+   "Contents/_CodeSignature/CodeResources": {
+    "bytes": 120,
+    "sha256": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e"
+   }
+  }
+ },
+ "cases": [
+  {
+   "edits": [],
+   "name": "complete-controlled-source-binding",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "universal2"
+    },
+    {
+     "path": [
+      "extractor",
+      "report"
+     ],
+     "target": "doc",
+     "value": null
+    },
+    {
+     "path": [
+      "extractor",
+      "source"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "name": "complete-stock-route-binding",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "extractor",
+      "report"
+     ],
+     "target": "doc",
+     "value": null
+    },
+    {
+     "path": [
+      "extractor",
+      "source"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "name": "stock-route-thin-target",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "delete": true,
+     "path": [
+      "extractor"
+     ],
+     "target": "doc"
+    },
+    {
+     "path": [
+      "schema"
+     ],
+     "target": "doc",
+     "value": "omd-final-materials-v1"
+    },
+    {
+     "delete": true,
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc"
+    },
+    {
+     "path": [
+      "limits"
+     ],
+     "target": "doc",
+     "value": [
+      "Factual binding only: no legal, compliance, notarization or release decision. release_accepted is always false.",
+      "Relations prove that signing changed only code signatures, digest fields, receipt artifact bindings and the seal; they never create material coverage.",
+      "Initial-review facts carry only through verified relations from the original artifact digests they were reviewed against.",
+      "Delivery materials are bound by digest; how and where they are offered to recipients is part of the reviewed component materials."
+     ]
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "v1-schema-with-source-method",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "delete": true,
+     "path": [
+      "extractor"
+     ],
+     "target": "doc"
+    },
+    {
+     "path": [
+      "schema"
+     ],
+     "target": "doc",
+     "value": "omd-final-materials-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "limits"
+     ],
+     "target": "doc",
+     "value": [
+      "Factual binding only: no legal, compliance, notarization or release decision. release_accepted is always false.",
+      "Relations prove that signing changed only code signatures, digest fields, receipt artifact bindings and the seal; they never create material coverage.",
+      "Initial-review facts carry only through verified relations from the original artifact digests they were reviewed against.",
+      "Delivery materials are bound by digest; how and where they are offered to recipients is part of the reviewed component materials."
+     ]
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "v1-schema-with-route-label",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "schema"
+     ],
+     "target": "doc",
+     "value": "omd-final-materials-v1"
+    }
+   ],
+   "error": "Unknown/missing final materials fields",
+   "name": "v1-schema-with-v2-fields",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "schema"
+     ],
+     "target": "doc",
+     "value": "omd-final-materials-v3"
+    }
+   ],
+   "error": "Unknown/missing final materials fields",
+   "name": "unknown-schema-version",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "delete": true,
+     "path": [
+      "extractor"
+     ],
+     "target": "doc"
+    }
+   ],
+   "error": "Unknown/missing final materials fields",
+   "name": "missing-extractor-section",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor_waiver"
+     ],
+     "target": "doc",
+     "value": true
+    }
+   ],
+   "error": "Unknown/missing final materials fields",
+   "name": "unknown-top-field",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "relation-route-method-mismatch",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-any-bootloader-v1"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-any-bootloader-v1"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "unknown-extractor-method",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "trusted"
+    },
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "trusted"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "unknown-extractor-route",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "delete": true,
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "relation-without-route",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "relation-method-only-relabelled",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "section-relabelled-stock",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "section-method-route-mismatch",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "prepared"
+     ],
+     "target": "doc",
+     "value": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "extractor-prepared-is-final",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "signature_only_natives"
+     ],
+     "target": "doc",
+     "value": 0
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "extractor-without-native-proof",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "accepted"
+     ],
+     "target": "doc",
+     "value": true
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-unknown-field",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "delete": true,
+     "path": [
+      "extractor",
+      "members_verified"
+     ],
+     "target": "doc"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-missing-field",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "path"
+     ],
+     "target": "doc",
+     "value": "Contents/Resources/resources/v2/bin/omd"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-path-not-extractor",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "component"
+     ],
+     "target": "doc",
+     "value": "omd"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-wrong-component",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "component"
+     ],
+     "target": "doc",
+     "value": "yt-dlp-source"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-unknown-component",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "version"
+     ],
+     "target": "doc",
+     "value": "2026.09.01"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-version-mismatch",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "producer",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "a25310d05fcfa6df11fc94495ee2d3b3ab3fcdd7bbcdfe91f2d3e681839abd79"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-producer-not-input",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "producer",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 101
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-producer-size-mismatch",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "producer",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": true
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-producer-size-type",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "prepared",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "990b36c6a9410272bfcb48408bb64a987193e460a136b3c6ca77de1f663f6831"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-prepared-not-relation",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "members_verified"
+     ],
+     "target": "doc",
+     "value": 1
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-members-not-verified",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "x86_64"
+    },
+    {
+     "path": [
+      "extractor",
+      "report"
+     ],
+     "target": "doc",
+     "value": null
+    },
+    {
+     "path": [
+      "extractor",
+      "source"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-wrong-arch-for-target",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "arm64e"
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-unknown-arch",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "error": "Controlled-source route requires its source evidence and preparation report",
+   "name": "source-proof-omitted",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "report"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "error": "Controlled-source route requires its source evidence and preparation report",
+   "name": "source-report-omitted",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "universal2"
+    },
+    {
+     "path": [
+      "extractor",
+      "report"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "error": "Stock extractor route cannot carry controlled-source evidence",
+   "name": "stock-route-keeps-source-evidence",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "universal2"
+    },
+    {
+     "path": [
+      "extractor",
+      "source"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "error": "Stock extractor route cannot carry controlled-source evidence",
+   "name": "stock-route-keeps-preparation-report",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "universal2"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-target-not-arm64",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "target"
+     ],
+     "target": "doc",
+     "value": "darwin-x64"
+    },
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "x86_64"
+    },
+    {
+     "path": [
+      "target"
+     ],
+     "target": "expect",
+     "value": "darwin-x64"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-route-other-target",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "bootloader",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "ca3cc654cebdb7a005872a4ff4fad10bfe34926f6f6425946b0dc6285289a879"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-stock-bootloader",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "source_accepted"
+     ],
+     "target": "doc",
+     "value": true
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-unknown-field",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "delete": true,
+     "path": [
+      "extractor",
+      "source",
+      "receipt_sha256"
+     ],
+     "target": "doc"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-missing-field",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "evidence",
+      "schema"
+     ],
+     "target": "doc",
+     "value": "omd-macos-extractor-source-evidence-v0"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-evidence-schema",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "evidence",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 0
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-evidence-empty",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "evidence",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-evidence-digest-format",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "report",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "000000000000000000000000000000000000000000000000000000000000000"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-report-digest-format",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "report",
+      "path"
+     ],
+     "target": "doc",
+     "value": "work/extractor-report.json"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-report-unknown-field",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "profile",
+      "file"
+     ],
+     "target": "doc",
+     "value": "distribution/yt-dlp-source/profile.json"
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-other-profile-file",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "profile",
+      "id"
+     ],
+     "target": "doc",
+     "value": ""
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-profile-without-id",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "plan_sha256"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-plan-digest-format",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "natives"
+     ],
+     "target": "doc",
+     "value": 3
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-natives-disagree",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "members"
+     ],
+     "target": "doc",
+     "value": 10
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "source-members-disagree",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "profile",
+      "id"
+     ],
+     "target": "doc",
+     "value": "/Volumes/private-volume/profile"
+    }
+   ],
+   "error": "Machine-local final materials metadata",
+   "name": "source-host-path",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "50bf3ff7a2043d17ff8def6ed30b30159b190061fdd406bd4b86e64c552618f1"
+    }
+   ],
+   "error": "Controlled-source kit is not a bound delivery file",
+   "name": "kit-stale-digest",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 301
+    }
+   ],
+   "error": "Controlled-source kit is not a bound delivery file",
+   "name": "kit-size-mismatch",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "locator"
+     ],
+     "target": "doc",
+     "value": "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt"
+    }
+   ],
+   "error": "Controlled-source kit is not a bound delivery file",
+   "name": "kit-payload-locator",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "locator"
+     ],
+     "target": "doc",
+     "value": "delivery:sources/elsewhere.tar.gz"
+    }
+   ],
+   "error": "Controlled-source kit is not a bound delivery file",
+   "name": "kit-not-delivered",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "locator"
+     ],
+     "target": "doc",
+     "value": "delivery:/Volumes/private-volume/kit.tar.gz"
+    }
+   ],
+   "error": "Machine-local final materials metadata",
+   "name": "kit-host-locator",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "locator"
+     ],
+     "target": "doc",
+     "value": [
+      "delivery:sources/yt-dlp-source.tar.gz"
+     ]
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "kit-locator-type",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "sources/yt-dlp-source.tar.gz",
+      "sha256"
+     ],
+     "target": "delivery",
+     "value": "6f11ba68122d97c3d0b599076d3c78fe42d4a2cb898213418cb59c083cc6fe86"
+    }
+   ],
+   "error": "Delivery set differs from the bound delivery inventory",
+   "name": "kit-delivery-tampered",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835",
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Controlled-source kit is not a source material of the extractor component",
+   "name": "kit-material-moved-to-other-component",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Controlled-source kit is not a source material of the extractor component",
+   "name": "kit-material-only-provenance",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Controlled-source kit is not a source material of the extractor component",
+   "name": "kit-material-unreferenced",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "route"
+     ],
+     "target": "doc",
+     "value": "upstream-stock"
+    },
+    {
+     "path": [
+      "extractor",
+      "method"
+     ],
+     "target": "doc",
+     "value": "omd-pyinstaller-6.22.0-onefile-signature-only-v1"
+    },
+    {
+     "path": [
+      "extractor",
+      "target_arch"
+     ],
+     "target": "doc",
+     "value": "universal2"
+    },
+    {
+     "path": [
+      "extractor",
+      "report"
+     ],
+     "target": "doc",
+     "value": null
+    },
+    {
+     "path": [
+      "extractor",
+      "source"
+     ],
+     "target": "doc",
+     "value": null
+    },
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Unreferenced delivery file",
+   "name": "kit-unreferenced-on-stock-route",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3083
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "b8c867b168ed734e7e775c268afa1c833a6e77e9ee1eaf2cc433b9764e481a15"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3083
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/tools/yt_dlp/README"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 100,
+      "sha256": "be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "e5d9cf752ae72de0d7d66dc374991cb3fa985e266410d61582ac892a8e718856"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3083
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/tools/yt_dlp/README"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 100,
+      "sha256": "be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/tools/yt_dlp/README"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d",
+      "before": "be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d",
+      "kind": "identical"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 13
+    },
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/README": {
+         "final": "be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d",
+         "initial": "be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10",
+         "payload:Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1"
+        },
+        "source": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1",
+         "initial": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/tools/yt_dlp/README"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 100,
+      "sha256": "be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3083
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "f8ae74c2128c1907eaa4251a64737506095586f65dcf7dff60f8c40b91e456b1"
+    },
+    {
+     "path": [],
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/README\": \"be1f40b69339105ec30875713430a0c49bca5359acffd4872de223a21566c48d\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\",\n          \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    }
+   ],
+   "error": "Extractor route is not bound to its initial-review component",
+   "name": "extractor-not-an-initial-artifact",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [
+        "controlled-source kit terms review pending"
+       ],
+       "status": "pending",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Unresolved final component",
+   "name": "extractor-component-pending",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [
+        "source route sufficiency unclear"
+       ],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Unresolved final component",
+   "name": "extractor-component-ambiguous",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "initial_review"
+     ],
+     "target": "doc",
+     "value": null
+    }
+   ],
+   "error": "Missing initial omd-materials-v1 review",
+   "name": "missing-initial-review",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [],
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true ,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    }
+   ],
+   "error": "Initial review bytes differ from the bound initial review",
+   "name": "stale-initial-review-bytes",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Initial review facts do not carry to the final payload: yt_dlp",
+   "name": "initial-facts-not-carried",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "18734aadfc021eb3ebc7e054f31f45a7f2cb179615eb18e6445b12ce11607687"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Final component artifact is not bound: Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos",
+   "name": "initial-artifact-relabelled-prepared",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "final-review",
+       "id": "yt_dlp",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Final review cannot replace initial review facts: yt_dlp",
+   "name": "final-review-shadows-extractor",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Info.plist": {
+         "final": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7",
+         "initial": "dedb4fd37f9a5820ab0ba5953a150c409303797761885c212ae880cdd537e9b7"
+        },
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Missing required final components",
+   "name": "missing-extractor-component",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "purpose"
+     ],
+     "target": "doc",
+     "value": "private-validation"
+    },
+    {
+     "path": [
+      "signing",
+      "purpose"
+     ],
+     "target": "doc",
+     "value": "private-validation"
+    }
+   ],
+   "error": "Private-validation output is never a distribution candidate",
+   "name": "private-validation-purpose",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "signing",
+      "purpose"
+     ],
+     "target": "doc",
+     "value": "private-validation"
+    }
+   ],
+   "error": "Final binding requires a fresh two-phase Developer ID distribution-candidate signing run",
+   "name": "edited-purpose-over-private-signing",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "signing",
+      "materials_binding"
+     ],
+     "target": "doc",
+     "value": "single-phase"
+    }
+   ],
+   "error": "Final binding requires a fresh two-phase",
+   "name": "single-phase-signing-run",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "signing",
+      "mode"
+     ],
+     "target": "doc",
+     "value": "development-adhoc"
+    }
+   ],
+   "error": "Final binding requires a fresh two-phase",
+   "name": "adhoc-signing-run",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "release_accepted"
+     ],
+     "target": "doc",
+     "value": true
+    }
+   ],
+   "error": "Final materials never accept a release",
+   "name": "release-accepted",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "pending"
+     ],
+     "target": "doc",
+     "value": [
+      "extractor-route: yt_dlp: kit not bound"
+     ]
+    },
+    {
+     "path": [
+      "coverage_validated"
+     ],
+     "target": "doc",
+     "value": false
+    },
+    {
+     "path": [
+      "distribution_candidate"
+     ],
+     "target": "doc",
+     "value": false
+    }
+   ],
+   "error": "Pending final materials coverage",
+   "name": "pending-gap-kept",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "reviewed"
+     ],
+     "target": "doc",
+     "value": false
+    }
+   ],
+   "error": "Pending final materials coverage",
+   "name": "reviewed-flag-not-earned",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "delivery",
+      "files",
+      "final-materials-v2.json"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 100,
+      "sha256": "06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4"
+     }
+    },
+    {
+     "path": [
+      "final-materials-v2.json"
+     ],
+     "target": "delivery",
+     "value": {
+      "bytes": 100,
+      "sha256": "06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4"
+     }
+    }
+   ],
+   "error": "Final materials must stay outside the signed payload and delivery set",
+   "name": "self-reference-v2-in-delivery",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "90b3a423fff31662ee7830e2680fe03c43482dae3fe1d0e9992ac4aa4f971c80"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/final-materials-v2.json"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 100,
+      "sha256": "f8b49c68ebb7a59541d0ca82c59cf71485ab891022e44196f43c688a335f2662"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/final-materials-v2.json"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "f8b49c68ebb7a59541d0ca82c59cf71485ab891022e44196f43c688a335f2662",
+      "before": null,
+      "kind": "identical"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/final-materials-v2.json"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 100,
+      "sha256": "f8b49c68ebb7a59541d0ca82c59cf71485ab891022e44196f43c688a335f2662"
+     }
+    }
+   ],
+   "error": "Final materials must stay outside the signed payload and delivery set",
+   "name": "self-reference-v2-in-payload",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "05795dc3919de7da54614ff28eb37a78bd594a1cf8463a9802ff5094b22773ba"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/LICENSE",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "e32b9e2dda1cd103030f59676ad06e7121e54c5c00d50467ecd04b161986ca63"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/LICENSE",
+      "after"
+     ],
+     "target": "doc",
+     "value": "e32b9e2dda1cd103030f59676ad06e7121e54c5c00d50467ecd04b161986ca63"
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/LICENSE",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "e32b9e2dda1cd103030f59676ad06e7121e54c5c00d50467ecd04b161986ca63"
+    }
+   ],
+   "error": "Unexpected payload change: Contents/Resources/resources/v2/LICENSE",
+   "name": "unexpected-payload-change",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "delete": true,
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/omd-engine",
+      "method"
+     ],
+     "target": "doc"
+    },
+    {
+     "delete": true,
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/omd-engine",
+      "layout"
+     ],
+     "target": "doc"
+    },
+    {
+     "delete": true,
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/omd-engine",
+      "signature_independent_sha256"
+     ],
+     "target": "doc"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/omd-engine",
+      "kind"
+     ],
+     "target": "doc",
+     "value": "identical"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/bin/omd-engine",
+   "name": "code-claimed-identical",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "components"
+     ],
+     "target": "doc",
+     "value": [
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd-engine": {
+         "final": "4854b3b8627c89ce98338eb9e409c1174e9168592ecf0091606c2c8b9f9f08b1",
+         "initial": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd-engine",
+       "initial_component": "omd-engine",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/bin/omd": {
+         "final": "ead13063559b26d381a80022f0702f193be1e42459ce17fdd19a98b6a5524838",
+         "initial": "f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f"
+        }
+       },
+       "basis": "initial-review",
+       "id": "omd",
+       "initial_component": "omd",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/native-NOTICES.txt": "0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/third-party/native-receipt.json": "181180a680f9987d7f01498dc09880a5a269917f3ff0b30c0d388bf1dbf18148"
+        },
+        "source": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/resources/v2/tools/yt_dlp/yt-dlp_macos": {
+         "final": "05d5fd3e2605a23ac7b260bc57c256063151405f291877e534f05cd5f68233f1",
+         "initial": "2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a"
+        }
+       },
+       "basis": "initial-review",
+       "id": "yt_dlp",
+       "initial_component": "yt_dlp",
+       "materials": {
+        "instructions": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-LICENSE.txt": "cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/tools/tools-v2.json": "bc98edb45e88f95e91d113ca8614af0e15ded6cded63956a14035008aa2eba10"
+        },
+        "source": {
+         "delivery:sources/yt-dlp-source.tar.gz": "8508e6933f7d95c4a2dd699fa775addfa16bb0944d3841059cef52394a20925f",
+         "payload:Contents/Resources/resources/v2/third-party/yt-dlp-source-route.txt": "532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "2026.08.19"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-rust",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:receipts/desktop/native-NOTICES.txt": "8f85098e399c708b4fbae35065db2e57cd208050e27b598c443386528b376ff9"
+        },
+        "provenance": {
+         "delivery:receipts/desktop/receipt.json": "6f42b017b16380e7743397ad615a490c66427acfb3457c4f78f2d16d365ac185"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/MacOS/fixture-desktop": {
+         "final": "d2447accf6351a94a4938b090a99b83cac4594a6d9a273ad1c1cc2d7d3c428d6",
+         "initial": "134c3ec0d67c4e8de3342282d8858281a46ac74eb70041fdd5b7237f88b4766a"
+        }
+       },
+       "basis": "final-review",
+       "id": "frontend",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "delivery:notes/frontend-NOTICES.txt": "09e4e229aa0a04532d11bce0f5bc4a7f36664cc601f866e82fd7b65155c317b9"
+        },
+        "provenance": {
+         "delivery:notes/frontend-receipt.json": "6695030790fb5a03e82c95562b7116b852cd77cd686da6625e5b09275ca2e8e0"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      },
+      {
+       "artifacts": {
+        "Contents/Resources/icon.icns": {
+         "final": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841",
+         "initial": "1b8d86318a390792d8ece0cbd3287fc739037dde5e486fbc55b9795cf3e69841"
+        },
+        "Contents/Resources/resources/v2/build-inventory.json": {
+         "final": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf",
+         "initial": "6e38c5032f27ebb3da165230db9eb7278c73b553b98b22ac0dd011af5cf41305"
+        },
+        "Contents/Resources/resources/v2/third-party/materials-v1.json": {
+         "final": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298",
+         "initial": "2ceb9fd0f664ab664a19b0b92f77c6367becee1ab7a668d262a6f026dccef298"
+        },
+        "Contents/_CodeSignature/CodeResources": {
+         "final": "c089df7539422b8d9303fd313e48ec9face16c8c82cef34cb08bac1b3a63341e",
+         "initial": "fa258130a3bc7fe65b884b7bf4d1ab9cf8c424c5911654f6483e3baae320bddc"
+        }
+       },
+       "basis": "final-review",
+       "id": "desktop-bundle",
+       "initial_component": null,
+       "materials": {
+        "instructions": {
+         "delivery:notes/desktop-route.md": "62121d53e66b1a377e7b9153c731dc5746f999bd9d8654d6243f8fcea2ef9573"
+        },
+        "notices": {
+         "payload:Contents/Resources/resources/v2/LICENSE": "3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49"
+        },
+        "provenance": {
+         "payload:Contents/Resources/resources/v2/build-inventory.json": "fadc6bb137a9172b07c75eadedd510b7ffa235edf0c486ae60f0da96cbdfd3bf"
+        },
+        "source": {
+         "delivery:sources/first-party-source.tar.gz": "ba53c9cb081124634a8475f7c11168953c30e18af24014ef64c190f7d3504835"
+        }
+       },
+       "pending": [],
+       "status": "reviewed",
+       "version": "1.0.0"
+      }
+     ]
+    }
+   ],
+   "error": "Uncovered final payload files",
+   "name": "uncovered-payload-file",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "delivery",
+      "files",
+      "sources/unreferenced.tar.gz"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 100,
+      "sha256": "4fccb84b008ee9540478ee1beddfdf6d34782c86f4168716caaca763843a8df2"
+     }
+    },
+    {
+     "path": [
+      "sources/unreferenced.tar.gz"
+     ],
+     "target": "delivery",
+     "value": {
+      "bytes": 100,
+      "sha256": "4fccb84b008ee9540478ee1beddfdf6d34782c86f4168716caaca763843a8df2"
+     }
+    }
+   ],
+   "error": "Unreferenced delivery file",
+   "name": "unreferenced-delivery-file",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-engine"
+     ],
+     "target": "doc",
+     "value": "615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481"
+    }
+   ],
+   "error": "Engine receipt does not bind the final payload",
+   "name": "engine-receipt-stale-artifact",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "receipts",
+      "desktop",
+      "receipt",
+      "path"
+     ],
+     "target": "doc",
+     "value": "Contents/Resources/resources/v2/third-party/desktop-receipt.json"
+    }
+   ],
+   "error": "Desktop receipt does not bind the final executable",
+   "name": "desktop-receipt-not-delivered",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "producer",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 100.0
+    }
+   ],
+   "name": "extractor-numeric-producer-bytes-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "producer",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-numeric-producer-bytes-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "prepared",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 110.0
+    }
+   ],
+   "name": "extractor-numeric-prepared-bytes-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "prepared",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-numeric-prepared-bytes-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "report",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 500.0
+    }
+   ],
+   "name": "extractor-numeric-report-bytes-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "report",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "extractor-numeric-report-bytes-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "evidence",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 700.0
+    }
+   ],
+   "name": "extractor-numeric-source-evidence-bytes-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "evidence",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "extractor-numeric-source-evidence-bytes-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "bootloader",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 71952.0
+    }
+   ],
+   "name": "extractor-numeric-source-bootloader-bytes-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "bootloader",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "extractor-numeric-source-bootloader-bytes-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "members_verified"
+     ],
+     "target": "doc",
+     "value": 2.0
+    }
+   ],
+   "name": "extractor-numeric-members_verified-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "members_verified"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-numeric-members_verified-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "natives"
+     ],
+     "target": "doc",
+     "value": 2.0
+    }
+   ],
+   "name": "extractor-numeric-source-natives-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "natives"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "extractor-numeric-source-natives-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "members"
+     ],
+     "target": "doc",
+     "value": 9.0
+    }
+   ],
+   "name": "extractor-numeric-source-members-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "members"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Invalid controlled-source evidence binding",
+   "name": "extractor-numeric-source-members-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 300.0
+    }
+   ],
+   "name": "extractor-numeric-source-kit-bytes-integral-float",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "source",
+      "kit",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 9007199254740992
+    }
+   ],
+   "error": "Controlled-source kit is not a bound delivery file",
+   "name": "extractor-numeric-source-kit-bytes-unsafe-integer",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "prepared",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 9007199254740991
+    }
+   ],
+   "name": "extractor-prepared-bytes-maximum-safe-integer",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "prepared",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": true
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-prepared-bytes-boolean",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "path": [
+      "extractor",
+      "prepared",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 100.5
+    }
+   ],
+   "error": "Invalid extractor route binding",
+   "name": "extractor-prepared-bytes-fraction",
+   "valid": false
+  }
+ ],
+ "schema": "omd-final-materials-contract-fixtures-v2"
+}

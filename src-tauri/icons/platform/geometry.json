@@ -1,0 +1,135 @@
+{
+  "viewBox": [
+    0,
+    0,
+    1024,
+    1024
+  ],
+  "commonCard": {
+    "vertices": [
+      [
+        -170,
+        0
+      ],
+      [
+        170,
+        0
+      ],
+      [
+        130,
+        520
+      ],
+      [
+        -130,
+        520
+      ]
+    ],
+    "radius": 27,
+    "symbolAnchor": [
+      0,
+      225
+    ]
+  },
+  "cards": {
+    "book": {
+      "vertices": [
+        [
+          55.60082865001819,
+          182.7082350574401
+        ],
+        [
+          388.1710128995121,
+          112.01826017940198
+        ],
+        [
+          457.1591880953947,
+          628.9714801936913
+        ],
+        [
+          202.84081190460526,
+          683.0285198063087
+        ]
+      ],
+      "translation": [
+        330,
+        136
+      ],
+      "rotation": -12,
+      "localTopEdgeSlope": 0,
+      "cornerRadius": 27,
+      "symbolAnchor": [
+        268.666051208761,
+        367.4464577835273
+      ]
+    },
+    "image": {
+      "vertices": [
+        [
+          342,
+          96
+        ],
+        [
+          682,
+          96
+        ],
+        [
+          642,
+          616
+        ],
+        [
+          382,
+          616
+        ]
+      ],
+      "translation": [
+        512,
+        96
+      ],
+      "rotation": 0,
+      "localTopEdgeSlope": 0,
+      "cornerRadius": 27,
+      "symbolAnchor": [
+        512,
+        321
+      ]
+    },
+    "video": {
+      "vertices": [
+        [
+          635.8289871004879,
+          112.01826017940198
+        ],
+        [
+          968.3991713499818,
+          182.7082350574401
+        ],
+        [
+          821.1591880953947,
+          683.0285198063087
+        ],
+        [
+          566.8408119046053,
+          628.9714801936913
+        ]
+      ],
+      "translation": [
+        694,
+        136
+      ],
+      "rotation": 12,
+      "localTopEdgeSlope": 0,
+      "cornerRadius": 27,
+      "symbolAnchor": [
+        755.333948791239,
+        367.4464577835273
+      ]
+    }
+  },
+  "receiver": {
+    "front": "M64 444 C126 473 216 479 278 500 L498 598 Q512 611 526 598 L746 500 C808 479 898 473 960 444 L930 851 Q924 921 845 930 H179 Q100 921 94 851 Z",
+    "back": "M54 430 C54 385 138 372 236 372 H788 C886 372 970 385 970 430 L938 846 Q931 917 850 928 H174 Q93 917 86 846 Z"
+  },
+  "margins": "Foreground occupies about 90% of canvas width and 83% of height; platform masks retain their external margin.",
+  "symbolLayerContainsText": false,
+  "embeddedRaster": false
+}

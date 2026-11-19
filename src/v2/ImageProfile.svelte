@@ -1,0 +1,34 @@
+<script module lang="ts">
+ import type {Collection as SavedCollection} from './client';
+ import type {ResultLayout as SavedLayout} from './LayoutPicker.svelte';
+ export type ImageProfileState={items:SavedCollection[];cursor:string|null;selected:string[];layout:SavedLayout;active:number;expanded:boolean;loaded:boolean};
+</script>
+<script lang="ts">
+ import {onDestroy,untrack,type Snippet} from 'svelte';
+ import Artwork from './Artwork.svelte';
+ import ResultBrowser from './ResultBrowser.svelte';
+ import LayoutPicker,{type ResultLayout} from './LayoutPicker.svelte';
+ import Button from './ui/Button.svelte';
+ import ImageDownloadDialog from './ImageDownloadDialog.svelte';
+ import {imageKey,toggleImageSelection,imageCount} from './imageSelection';
+ import {sectionPage} from './sectionCache';
+ import type {Collection,EngineClient,ProviderManifest,Destination} from './client';
+ let {client,collection,manifest,account,heading,actions,oncollection,ontagsearch,onimagedownload,destinations,initialState}:{initialState?:ImageProfileState;client:EngineClient;collection:Collection;manifest?:ProviderManifest;account:string|null;heading?:Snippet;actions?:Snippet;oncollection:(c:Collection)=>void;ontagsearch?:(provider:string,tag:string)=>void;onimagedownload?:(items:Collection[],destination:string)=>Promise<void>;destinations:Destination[]}=$props();
+ let items=$state<Collection[]>([]),cursor=$state<string|null>(null),loading=$state(false),error=$state(''),layout=$state<ResultLayout>('grid'),selected=$state(new Set<string>()),download=$state(false),expanded=$state(false),active=$state(0),controls=$state<Snippet>();let anchor:string|null=null,generation=0;
+ const chosen=$derived(items.filter(i=>selected.has(imageKey(i))));
+ async function load(more=false){const version=generation;loading=true;error='';try{const page=await sectionPage<Collection>(client,collection.reference.provider,{operation:'browse',reference:collection.reference,credential_profile:account,cursor:more?cursor:null,page_size:30},manifest?.version);if(version!==generation)return;const merged=new Map((more?items:[]).map(i=>[imageKey(i),i]));page.items.forEach(i=>merged.set(imageKey(i),i));items=[...merged.values()];cursor=page.next_cursor;}catch(e){if(version===generation)error=e instanceof Error?e.message:String(e);}finally{if(version===generation)loading=false;}}
+ $effect(()=>{void collection.reference;void account;untrack(()=>{generation++;const saved=initialState;items=saved?.items??[];cursor=saved?.cursor??null;selected=new Set(saved?.selected??[]);layout=saved?.layout??'grid';active=saved?.active??0;expanded=saved?.expanded??false;anchor=null;if(!saved?.loaded)void load();});});
+ export function snapshot():ImageProfileState{return {items:$state.snapshot(items),cursor,selected:[...selected],layout,active,expanded,loaded:!loading&&!error};}onDestroy(()=>generation++);
+</script>
+{#if collection.summary?.banner_url}<div class="profile-banner"><Artwork {client} provider={collection.reference.provider} url={collection.summary.banner_url} label={`${collection.title} banner`}/></div>{/if}
+<section class="profile-heading">
+ {#if collection.summary?.avatar_url}<div class="avatar"><Artwork {client} provider={collection.reference.provider} url={collection.summary.avatar_url} avatar label={collection.title}/></div>{/if}
+ <div class="profile-copy">{@render heading?.()}{#if collection.description}<p class:collapsed={!expanded}>{expanded ? collection.description : collection.description.replace(/\s+/g," ").trim()}</p>{#if collection.description.length>200}<Button variant="ghost" class="profile-more" aria-expanded={expanded} onclick={()=>expanded=!expanded}>{expanded?'Show less':'About this '+collection.summary?.profile}</Button>{/if}{/if}<div class="profile-actions">{@render actions?.()}</div></div>
+</section>
+<div class="profile-toolbar"><span>{chosen.length?`${chosen.length} ${chosen.length===1?'post':'posts'} · ${imageCount(chosen)} ${imageCount(chosen)===1?'image':'images'} selected`:'Images'}</span><div class="profile-buttons">{@render controls?.()}<Button variant="ghost" onclick={()=>selected=new Set(items.map(imageKey))}>Select loaded</Button>{#if chosen.length}<Button variant="ghost" onclick={()=>selected=new Set()}>Clear</Button>{/if}<Button variant="primary" disabled={!chosen.length||!onimagedownload} onclick={()=>download=true}>Download selected</Button><LayoutPicker bind:value={layout}/></div></div>
+{#if error}<div role="alert" class="v2-alert">{error}<Button onclick={()=>load(!!items.length)}>Retry</Button></div>{/if}
+{#snippet selection(item:Collection)}<label class="profile-select"><input type="checkbox" aria-label={`Select ${item.title}`} checked={selected.has(imageKey(item))} onclick={event=>{const key=imageKey(item);selected=toggleImageSelection(items,selected,key,anchor,event.shiftKey);anchor=key;}}/>{selected.has(imageKey(item))?'Selected':`Select ${item.summary?.image?.count===1?'image':'post'}`}</label>{/snippet}
+<ResultBrowser {client} {items} {layout} {loading} bind:active {selection} oncontrols={value=>controls=value} hasMore={!!cursor} onmore={()=>load(true)} {oncollection} {ontagsearch} accounts={{[collection.reference.provider]:account}} sources={{[collection.reference.provider]:manifest?.name??''}} manifests={manifest?{[manifest.id]:manifest}:{}}/>
+{#if !loading&&!error&&!items.length}<p>No public images are available for this profile.</p>{/if}
+{#if download&&onimagedownload}<ImageDownloadDialog items={chosen} {destinations} onclose={()=>download=false} onstart={async(items,destination)=>{await onimagedownload!(items,destination);selected=new Set();}}/>{/if}
+<style>.profile-banner{height:150px;margin-bottom:24px;border-radius:8px;overflow:hidden}.profile-banner :global(.artwork){height:100%;width:100%}.profile-heading{display:flex;gap:24px;align-items:flex-start;margin-bottom:28px}.avatar{width:96px;height:96px;flex-shrink:0}.avatar :global(.artwork){width:100%;height:100%;border-radius:50%;overflow:hidden}.profile-copy{min-width:0;flex:1}.profile-copy p{white-space:pre-line;line-height:1.6;color:var(--muted);overflow-wrap:anywhere;max-width:850px;margin:12px 0}.collapsed{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.profile-copy p.collapsed{white-space:normal;margin-bottom:4px}.profile-copy :global(.profile-more){padding:0;min-height:28px;font-size:13px}.profile-actions{margin-top:12px}.profile-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:4;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:16px}.profile-toolbar>span{font-size:13px;color:var(--muted)}.profile-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.profile-select{display:flex;align-items:center;gap:8px;font-size:12px;padding:8px 0}@media(max-width:800px){.profile-toolbar{flex-wrap:wrap}.avatar{width:64px;height:64px}}</style>

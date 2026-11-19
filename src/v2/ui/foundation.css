@@ -1,0 +1,767 @@
+/* Shared primitives. Layout components must not redefine action sizing. */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  margin: 0;
+}
+body {
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--type-body);
+  line-height: var(--theme-foundation-line-height-1, 1.5);
+}
+[hidden] {
+  display: none !important;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+  opacity: var(--theme-foundation-opacity-2, 0.45);
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: var(--theme-foundation-outline-3, var(--focus-width, 2px)) solid var(--focus-ring);
+  outline-offset: var(--theme-foundation-outline-offset-4, 2px);
+}
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: var(--type-heading);
+  line-height: var(--theme-foundation-line-height-5, 1.3);
+  letter-spacing: var(--theme-foundation-letter-spacing-6, -0.01em);
+  font-weight: var(--theme-foundation-font-weight-7, var(--heading-weight));
+}
+h2 {
+  font-size: var(--type-section);
+  line-height: var(--theme-foundation-line-height-8, 1.4);
+  font-weight: var(--theme-foundation-font-weight-7, 600);
+}
+h3 {
+  font-size: var(--type-body);
+  line-height: var(--theme-foundation-line-height-8, 1.4);
+  font-weight: var(--theme-foundation-font-weight-7, 600);
+}
+p {
+  line-height: var(--theme-foundation-line-height-9, 1.55);
+  color: var(--muted);
+}
+small {
+  font-size: var(--type-caption);
+  color: var(--muted);
+  line-height: var(--theme-foundation-line-height-1, 1.5);
+}
+a {
+  color: var(--accent-text);
+}
+svg {
+  flex-shrink: 0;
+}
+.ui-button {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: var(--control-height);
+  min-height: var(--control-height);
+  flex-shrink: 0;
+  padding: 0 var(--space-3);
+  border: var(--theme-foundation-border-10, 1px) solid var(--line-strong);
+  border-radius: var(--control-radius);
+  background: var(--button-bg);
+  color: var(--text);
+  font-size: var(--type-control);
+  line-height: var(--theme-foundation-line-height-11, 20px);
+  font-weight: var(--theme-foundation-font-weight-12, 500);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.ui-button:hover:not(:disabled) {
+  background: var(--surface-soft);
+  border-color: var(--line-strong);
+}
+.ui-button:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+.ui-button.primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+  font-weight: var(--theme-foundation-font-weight-7, 600);
+}
+.ui-button.primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+.ui-button.ghost {
+  background: transparent;
+  border-color: transparent;
+}
+.ui-button.ghost:hover:not(:disabled) {
+  background: var(--surface-soft);
+  border-color: transparent;
+}
+.ui-button.danger {
+  color: var(--red);
+}
+.ui-button.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  min-height: var(--icon-size);
+  padding: 0;
+}
+.ui-button > svg {
+  width: var(--theme-foundation-width-13, 16px);
+  height: var(--theme-foundation-height-14, 16px);
+}
+:where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 var(--space-3);
+  border: var(--theme-foundation-border-10, 1px) solid var(--control-border, var(--line-strong));
+  border-radius: var(--control-radius);
+  background: var(--surface-raised);
+  font-size: var(--type-control);
+  line-height: var(--theme-foundation-line-height-11, 20px);
+}
+textarea {
+  height: auto;
+  min-height: var(--theme-foundation-min-height-15, 96px);
+  padding: var(--space-2) var(--space-3);
+  resize: vertical;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: var(--theme-foundation-opacity-16, 1);
+}
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--theme-foundation-width-13, 16px);
+  height: var(--theme-foundation-height-14, 16px);
+  min-width: var(--theme-foundation-min-width-17, 16px);
+  margin: 0;
+  border: var(--theme-foundation-border-10, 1px) solid var(--control-border, var(--line-strong));
+  border-radius: var(--theme-foundation-border-radius-18, 4px);
+  background: var(--surface-raised);
+  display: inline-grid;
+  place-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked,
+input[type="checkbox"]:indeterminate {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+input[type="checkbox"]:checked::after {
+  
+  content: "";
+  width: var(--theme-foundation-width-19, 8px);
+  height: var(--theme-foundation-height-20, 4px);
+  border: solid var(--accent-contrast);
+  border-width: 0 0 var(--theme-foundation-border-width-21, 2px) var(--theme-foundation-border-width-21, 2px);
+  
+  transform: rotate(-45deg) translateY(-1px);
+}
+input[type="checkbox"]:indeterminate::after {
+  
+  content: "";
+  width: var(--theme-foundation-width-19, 8px);
+  height: var(--theme-foundation-height-22, 2px);
+  background: var(--accent-contrast);
+}
+input:disabled,
+textarea:disabled {
+  opacity: var(--theme-foundation-opacity-23, 0.55);
+}
+label,
+.ui-field {
+  display: grid;
+  gap: var(--theme-foundation-gap-24, 6px);
+  font-size: var(--type-caption);
+  color: var(--muted);
+  min-width: 0;
+  margin: 0;
+}
+label:has(> input[type="checkbox"]),
+.v2-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text);
+  font-size: var(--type-control);
+}
+.ui-form-grid {
+  display: grid;
+  
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  align-items: start;
+}
+.ui-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+.ui-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.v2-panel {
+  padding: var(--space-4);
+  border: var(--theme-foundation-border-10, 1px) solid var(--line);
+  border-radius: var(--panel-radius);
+  background: var(--surface);
+  min-width: 0;
+}
+/* Grouped form: a section heading above a box of aligned label/control rows. */
+.form-section {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  margin: 0 0 var(--space-6);
+}
+.form-section > h2,
+.form-section > header > h2 {
+  font-size: var(--type-section);
+  font-weight: 600;
+  margin: 0;
+  padding-inline: var(--space-1);
+}
+.form-section > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: var(--control-height);
+}
+.form-section > p {
+  padding-inline: var(--space-1);
+  font-size: var(--type-caption);
+}
+.form-box {
+  border: var(--theme-foundation-border-10, 1px) solid var(--line);
+  border-radius: var(--panel-radius);
+  background: var(--surface);
+  min-width: 0;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  align-items: center;
+  gap: var(--space-2) var(--space-6);
+  min-height: calc(var(--control-height) + 2 * var(--space-2));
+  padding: var(--space-2) var(--space-4);
+  min-width: 0;
+}
+.form-row + .form-row,
+.form-box > * + .form-row,
+.form-row + .form-note,
+.form-box > .form-actions {
+  border-top: var(--theme-foundation-border-10, 1px) solid var(--line);
+}
+.form-row.wide {
+  grid-template-columns: minmax(0, 1fr);
+}
+.form-row-label {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  color: var(--text);
+  font-size: var(--type-body);
+}
+.form-row-label > small,
+.form-row-label > p {
+  color: var(--muted);
+  font-size: var(--type-caption);
+  line-height: 1.4;
+}
+.form-row-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.form-row-control > input:not([type="checkbox"]),
+.form-row-control > select {
+  width: min(240px, 100%);
+}
+.form-note {
+  padding: var(--space-3) var(--space-4);
+  color: var(--muted);
+  font-size: var(--type-caption);
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+}
+.form-actions > p {
+  margin-right: auto;
+  font-size: var(--type-caption);
+}
+@container (max-width: 560px) {
+  .form-row {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .form-row-control {
+    justify-content: flex-start;
+  }
+}
+.ui-empty,
+.v2-empty {
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+.ui-empty p,
+.v2-empty p {
+  max-width: 50ch;
+}
+.ui-divider {
+  height: var(--theme-foundation-height-25, 1px);
+  background: var(--line);
+  margin: var(--space-4) 0;
+}
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  height: var(--theme-foundation-height-20, 4px);
+  border: 0;
+  border-radius: var(--theme-foundation-border-radius-26, 2px);
+  background: var(--line);
+  overflow: hidden;
+}
+progress::-webkit-progress-bar {
+  background: var(--line);
+  border-radius: var(--theme-foundation-border-radius-26, 2px);
+}
+progress::-webkit-progress-value {
+  background: var(--accent);
+  border-radius: var(--theme-foundation-border-radius-26, 2px);
+}
+progress::-moz-progress-bar {
+  background: var(--accent);
+  border-radius: var(--theme-foundation-border-radius-26, 2px);
+}
+progress:indeterminate {
+  background: var(--accent);
+  
+  animation: ui-progress 1.5s ease-in-out infinite alternate;
+}
+@keyframes ui-progress {
+  from {
+    opacity: var(--theme-foundation-opacity-27, 0.4);
+  }
+  to {
+    opacity: var(--theme-foundation-opacity-16, 1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  progress:indeterminate {
+    
+    animation: none;
+  }
+}
+@media (max-width: 760px) {
+  .ui-form-grid {
+    
+    grid-template-columns: 1fr;
+  }
+}
+[style*="--label-hue:"] {
+  
+  --label-text: hsl(var(--label-hue) 46% 71%);
+  
+  --label-background: hsl(var(--label-hue) 32% 24% / 0.5);
+  
+  --label-border: hsl(var(--label-hue) 30% 40% / 0.3);
+}
+:root[data-theme="light"] [style*="--label-hue:"] {
+  
+  --label-text: hsl(var(--label-hue) 48% 28%);
+  
+  --label-background: hsl(var(--label-hue) 38% 91%);
+  
+  --label-border: hsl(var(--label-hue) 28% 65% / 0.4);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) [style*="--label-hue:"] {
+    
+    --label-text: hsl(var(--label-hue) 48% 28%);
+    
+    --label-background: hsl(var(--label-hue) 38% 91%);
+    
+    --label-border: hsl(var(--label-hue) 28% 65% / 0.4);
+  }
+}
+dialog {
+  color: var(--text);
+  font-size: var(--type-body);
+  line-height: var(--theme-foundation-line-height-1, 1.5);
+  background: var(--surface);
+  border: var(--theme-foundation-border-10, 1px) solid var(--line-strong);
+  border-radius: var(--panel-radius);
+  padding: var(--theme-foundation-padding-28, 20px) var(--space-6) var(--space-6);
+  width: min(var(--theme-foundation-width-29, 680px), calc(100vw - var(--theme-foundation-width-30, 32px)));
+  /* Native window controls remain above the web modal backdrop. */
+  inset-block: 60px 12px;
+  max-height: calc(100vh - max(84px, var(--theme-foundation-max-height-31, 48px)));
+  box-shadow: var(--shadow);
+}
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: var(--space-5);
+}
+dialog::backdrop {
+  background: var(--theme-foundation-background-32, #00000059);
+}
+.v2-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+.v2-dialog-header h2 {
+  font-size: var(--type-heading);
+  line-height: var(--theme-foundation-line-height-5, 1.3);
+}
+.v2-dialog-content {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  /* Keep both overlay and classic scrollbars in the dialog's end margin. */
+  padding: 0 20px 0 0;
+  margin-right: var(--theme-foundation-margin-right-34, -20px);
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+}
+.v2-dialog-content > form {
+  display: grid;
+  gap: var(--space-4);
+}
+.v2-dialog-content ul {
+  padding-left: var(--theme-foundation-padding-left-35, 20px);
+  margin: 0;
+  font-size: var(--theme-foundation-font-size-36, 13px);
+  color: var(--muted);
+}
+.v2-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-2);
+  padding-top: 0;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.v2-dialog-content:focus-visible {
+  outline-offset: var(--theme-foundation-outline-offset-37, -2px);
+}
+.v2-dialog-content fieldset {
+  border: var(--theme-foundation-border-10, 1px) solid var(--line);
+  border-radius: var(--theme-foundation-border-radius-38, 8px);
+  padding: var(--theme-foundation-padding-39, 16px);
+  margin: 0;
+  display: grid;
+  gap: var(--theme-foundation-gap-40, 12px);
+}
+.v2-dialog-content legend {
+  font-size: var(--theme-foundation-font-size-36, 13px);
+  padding: 0 var(--theme-foundation-padding-41, 6px);
+}
+/* Intrinsic controls (tabs, menu options, result cards) share the same baseline,
+   then their component owns the interaction-specific layout. */
+:where(button:not(.ui-button)) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--theme-foundation-gap-42, 8px);
+  min-height: var(--control-height);
+  padding: 0 var(--theme-foundation-padding-43, 12px);
+  border: var(--theme-foundation-border-10, 1px) solid var(--line-strong);
+  border-radius: var(--control-radius);
+  background: var(--button-bg);
+  font-size: var(--type-control);
+  line-height: var(--theme-foundation-line-height-11, 20px);
+}
+
+.sr-only {
+  position: absolute;
+  width: var(--theme-foundation-width-44, 1px);
+  height: var(--theme-foundation-height-25, 1px);
+  padding: 0;
+  margin: var(--theme-foundation-margin-45, -1px);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.dialog-status:empty {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+:root {
+  
+  --motion-duration: 180ms;
+}
+@keyframes ui-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: var(--theme-foundation-opacity-16, 1);
+  }
+}
+.ui-enter,
+dialog[open] {
+  
+  animation: ui-enter var(--motion-duration) ease-out;
+}
+.ui-button,
+.source-badge {
+  
+  transition:
+    background-color var(--motion-duration),
+    color var(--motion-duration),
+    border-color var(--motion-duration);
+}
+.ui-button.back-button {
+  padding: 0 var(--theme-foundation-padding-43, 12px);
+  color: var(--muted);
+}
+.v2-dialog-header {
+  align-items: flex-start;
+}
+.v2-dialog-header h2 {
+  padding-top: 0;
+}
+.v2-dialog-header .ui-button.icon {
+  margin-top: var(--theme-foundation-margin-top-46, -4px);
+  margin-right: var(--theme-foundation-margin-right-47, -4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    
+    --motion-duration: 0ms;
+  }
+}
+/* A dialog's heading receives announcement focus, not action focus. */
+.v2-dialog-header h2:focus,
+h1[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Inputs keep their focus ring inside scrollable surfaces. */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-offset: var(--theme-foundation-outline-offset-37, -2px);
+}
+.v2-dialog-content {
+  flex: 1 1 auto;
+}
+.v2-dialog-content > * {
+  flex-shrink: 0;
+}
+
+/* Platform control treatments. These follow each platform's conventions for
+   web controls; they are not native controls and are not native-validated
+   on Windows or Linux by tests on macOS. */
+:root[data-appearance="macos"] {
+  --focus-width: 3px;
+}
+:root[data-appearance="macos"] .ui-button:not(.ghost) {
+  box-shadow: 0 0.5px 1px #0000001f;
+}
+:root[data-appearance="macos"] .ui-button.primary {
+  box-shadow: 0 0.5px 1px #00000033, inset 0 0.5px 0 #ffffff29;
+}
+:root[data-appearance="macos"] input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  border-radius: 4px;
+}
+:root[data-appearance="macos"] input[type="checkbox"]::after {
+  width: 7px;
+  height: 3.5px;
+}
+:root[data-appearance="windows"] .ui-button:not(.ghost):not(.primary) {
+  border-color: var(--line);
+  border-bottom-color: var(--line-strong);
+}
+:root[data-appearance="windows"] .ui-button.primary {
+  border-bottom-color: var(--accent-strong);
+}
+:root[data-appearance="windows"] :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  border-color: var(--line);
+  border-bottom-color: var(--muted);
+}
+:root[data-appearance="windows"] :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus-visible {
+  outline: 0;
+  border-bottom: 2px solid var(--accent);
+}
+:root[data-appearance="windows"] input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+}
+:root[data-appearance="windows"] input[type="checkbox"]::after {
+  width: 10px;
+  height: 5px;
+}
+:root[data-appearance="linux"] .ui-button,
+:root[data-appearance="linux"] .ui-button:hover:not(:disabled),
+:root[data-appearance="linux"] :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  border-color: transparent;
+}
+/* Adwaita's filled fields keep their fill and gain a visible lower edge. */
+:root[data-appearance="linux"] :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  box-shadow: inset 0 -1px 0 var(--control-border);
+}
+:root[data-appearance="linux"] input[type="checkbox"] {
+  border-width: 2px;
+}
+
+/* Increased contrast: stronger separators and secondary text. */
+@media (prefers-contrast: more) {
+  body {
+    --line: var(--line-strong);
+    --muted: color-mix(in srgb, var(--text) 86%, var(--bg));
+  }
+  .ui-button:not(.ghost),
+  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    border-color: var(--text);
+  }
+}
+
+/* Forced colors (Windows High Contrast and similar): system colors only. */
+@media (forced-colors: active) {
+  input[type="checkbox"] {
+    appearance: auto;
+    -webkit-appearance: auto;
+  }
+  input[type="checkbox"]::after {
+    content: none;
+  }
+  .ui-button,
+  :where(button:not(.ui-button)) {
+    border-color: ButtonText;
+  }
+  .ui-button.ghost {
+    border-color: transparent;
+  }
+  /* The sidebar selection's forced colors live with its other states in style.css. */
+  .form-box,
+    .v2-panel,
+  dialog {
+    border-color: CanvasText;
+  }
+  :focus-visible {
+    outline-color: Highlight;
+  }
+  progress {
+    forced-color-adjust: none;
+    background: Canvas;
+    border: 1px solid CanvasText;
+  }
+  progress::-webkit-progress-value {
+    background: Highlight;
+  }
+}
+
+/* A dialog body that scrolls fades out above the footer, with a divider, while
+   more content is below. Without a footer the fade alone marks the edge. */
+dialog.scroll-more .v2-dialog-content {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--space-6)), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - var(--space-6)), transparent);
+}
+.v2-dialog-footer {
+  position: relative;
+}
+dialog.scroll-more .v2-dialog-footer::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: calc(var(--space-5) / -2);
+  border-top: 1px solid var(--line-strong);
+}
+@media (forced-colors: active) {
+  dialog.scroll-more .v2-dialog-footer::before {
+    border-top-color: CanvasText;
+  }
+}
+
+/* Links to OMD's own web pages (they open in the browser). */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--accent-text);
+  font-size: var(--type-control);
+  text-underline-offset: 3px;
+}
+.project-link:hover {
+  text-decoration-thickness: 2px;
+}
+.project-link > svg {
+  flex-shrink: 0;
+}

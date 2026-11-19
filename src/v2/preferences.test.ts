@@ -1,0 +1,4 @@
+import {it,expect} from 'vitest';
+import {languageList,preferenceKey,reconcilePreferences} from './preferences';
+it('applies another client’s committed settings when the local form is unchanged',()=>{const saved={background:false,bandwidth_bytes_per_second:0,languages:['en','ja']};const incoming={...saved,background:true};expect(reconcilePreferences(preferenceKey(saved),saved,incoming)).toMatchObject({apply:true,conflict:false});expect(languageList('en, ja')).toEqual(saved.languages);});
+it('preserves an unsaved draft and detects a conflicting peer update, including multiple languages',()=>{const saved={background:false,bandwidth_bytes_per_second:0,languages:['en']},draft={...saved,languages:['fr','ja']},peer={...saved,bandwidth_bytes_per_second:65536};expect(reconcilePreferences(preferenceKey(saved),draft,peer)).toMatchObject({apply:false,conflict:true});expect(reconcilePreferences(preferenceKey(saved),draft,draft)).toMatchObject({apply:true,conflict:false});});

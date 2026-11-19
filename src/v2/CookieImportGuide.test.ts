@@ -1,0 +1,62 @@
+import {afterEach, expect, it, vi} from "vitest";
+import "@testing-library/jest-dom/vitest";
+import {cleanup, fireEvent, render, screen, waitFor} from "@testing-library/svelte";
+import {invoke} from "@tauri-apps/api/core";
+import CookieImportGuide from "./CookieImportGuide.svelte";
+vi.mock("@tauri-apps/api/core",()=>({invoke:vi.fn()}));
+afterEach(()=>{cleanup();vi.resetAllMocks();vi.restoreAllMocks();});
+it("does not read browser cookies until the user sees the access explanation and starts export",async()=>{
+  const onfile=vi.fn();vi.mocked(invoke).mockResolvedValue({name:"omd-cookies-test.txt",text:"# Netscape HTTP Cookie File\n"});
+  render(CookieImportGuide,{name:"Example Video",sourceId:"org.example.private",onfile});
+  expect(invoke).not.toHaveBeenCalled();
+  await fireEvent.click(screen.getByRole("button",{name:"Create one…"}));
+  expect(screen.getByText(/OMD will read cookies from this browser profile/)).toBeVisible();
+  expect(invoke).not.toHaveBeenCalled();
+  await fireEvent.click(screen.getByRole("button",{name:"Create cookie file"}));
+  await waitFor(()=>expect(onfile).toHaveBeenCalledOnce());
+  expect(invoke).toHaveBeenCalledWith("v2_export_source_cookies",{sourceId:"org.example.private",browser:"chrome",browserProfile:null});
+  expect(onfile.mock.calls[0][0].name).toBe("omd-cookies-test.txt");
+});
+it("keeps export failure in place with a usable retry action",async()=>{
+  vi.mocked(invoke).mockRejectedValue("Could not read cookies from this browser profile.");
+  const onfile=vi.fn();render(CookieImportGuide,{name:"Example Video",sourceId:"org.example.private",onfile});
+  await fireEvent.click(screen.getByRole("button",{name:"Create one…"}));
+  await fireEvent.click(screen.getByRole("button",{name:"Create cookie file"}));
+  expect(await screen.findByRole("alert")).toHaveTextContent("Could not read cookies");
+  expect(screen.getByRole("button",{name:"Create cookie file"})).not.toBeDisabled();expect(onfile).not.toHaveBeenCalled();
+});
+it("ignores export results after the form is closed",async()=>{
+  let finish!:(v:unknown)=>void;vi.mocked(invoke).mockImplementation(()=>new Promise(resolve=>finish=resolve) as any);
+  const onfile=vi.fn();const view=render(CookieImportGuide,{name:"Example Video",sourceId:"org.example.private",onfile});
+  await fireEvent.click(screen.getByRole("button",{name:"Create one…"}));await fireEvent.click(screen.getByRole("button",{name:"Create cookie file"}));view.unmount();
+  finish({name:"fixture.txt",text:"fixture"});await new Promise(r=>setTimeout(r,0));expect(onfile).not.toHaveBeenCalled();
+});
+it("uses native single-file selection for Safari without passing browser profile paths",async()=>{
+  vi.spyOn(navigator,"platform","get").mockReturnValue("MacIntel");
+  const onfile=vi.fn();vi.mocked(invoke).mockResolvedValueOnce(null).mockResolvedValueOnce({name:"safari.txt",text:"# Netscape HTTP Cookie File\n"});
+  render(CookieImportGuide,{name:"Example Video",sourceId:"org.example.private",onfile});
+  await fireEvent.click(screen.getByRole("button",{name:"Create one…"}));
+  await fireEvent.click(screen.getByText("Using more than one browser profile?"));
+  await fireEvent.input(screen.getByLabelText("Profile name or folder"),{target:{value:"Chrome Profile 2"}});
+  await fireEvent.click(screen.getByRole("button",{name:"Browser: Chrome"}));
+  await fireEvent.click(screen.getByRole("button",{name:"Safari"}));
+  expect(screen.getByText(/OMD reads only the file you select/)).toBeVisible();
+  expect(screen.queryByText(/Full Disk Access/)).toBeNull();
+  expect(screen.queryByLabelText("Profile name or folder")).toBeNull();
+  expect(screen.queryByLabelText("Cookie database path")).toBeNull();
+  expect(invoke).not.toHaveBeenCalled();
+  await fireEvent.click(screen.getByRole("button",{name:"Choose Safari file…"}));
+  await waitFor(()=>expect(screen.getByRole("button",{name:"Choose Safari file…"})).not.toBeDisabled());
+  expect(onfile).not.toHaveBeenCalled();expect(screen.queryByRole("alert")).toBeNull();
+  expect(invoke).toHaveBeenLastCalledWith("v2_export_source_cookies",{sourceId:"org.example.private",browser:"safari",browserProfile:null});
+  await fireEvent.click(screen.getByRole("button",{name:"Choose Safari file…"}));
+  await waitFor(()=>expect(onfile).toHaveBeenCalledOnce());
+  expect(onfile.mock.calls[0][0].name).toBe("safari.txt");
+});
+it("does not offer Safari on other operating systems",async()=>{
+  vi.spyOn(navigator,"platform","get").mockReturnValue("Win32");
+  render(CookieImportGuide,{name:"Example Video",sourceId:"org.example.private",onfile:vi.fn()});
+  await fireEvent.click(screen.getByRole("button",{name:"Create one…"}));
+  await fireEvent.click(screen.getByRole("button",{name:"Browser: Chrome"}));
+  expect(screen.queryByRole("button",{name:"Safari"})).toBeNull();
+});
