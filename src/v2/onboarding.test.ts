@@ -2438,3 +2438,245 @@ it("keeps the spaces around separators in a podcast header and its follow dialog
     "OMD checks this playlist for new additions. This does not change your subscriptions on Harbor Radio.",
   );
 });
+
+it("keeps an earlier item's Downloaded marker after another item's download finishes on its own page", async () => {
+  localStorage.clear();
+  fixture.preferences = { ...fixture.preferences, onboarding_complete: true };
+  fixture.sources = [{ manifest: { id: "fixture", name: "Example Video", version: "1.0.0", media_tools: true, capabilities: ["search", "collection", "releases"], grants: [] } }];
+  const ref = (id: string) => ({ provider: "fixture", id });
+  const channel = { reference: ref("channel:owner"), kind: "channel", title: "A channel", canonical_url: "https://example.org/channel", artwork_url: null, description: null };
+  const videos = [1, 2].map((i) => ({ reference: ref("video:" + i), kind: "item", title: "Channel video " + i, canonical_url: "https://example.org/video/" + i, artwork_url: null, description: null, summary: { duration_seconds: 120 } }));
+  const downloaded = new Set(["video:1"]);
+  const statusRequests: string[][] = [];
+  let holdStatus = false;
+  fixture.operation.mockImplementation(async (_provider, input) => {
+    if (input.operation === "search") return { items: [channel], next_cursor: null };
+    if (input.operation === "collection") return input.reference.id.startsWith("channel:") ? channel : videos.find((v) => v.reference.id === input.reference.id);
+    if (input.operation === "releases") {
+      const list = input.reference.id.startsWith("channel:") ? videos : videos.filter((v) => v.reference.id === input.reference.id);
+      const collection = { provider: input.reference.provider, id: input.reference.id };
+      return { items: list.map((v, i) => ({ reference: v.reference, collection, title: v.title, canonical_url: v.canonical_url, availability: "available", position: i, preview: v })), next_cursor: null };
+    }
+    return { items: [], next_cursor: null };
+  });
+  fixture.request.mockImplementation(async (route, options) => {
+    if (route !== "/v2/acquisitions/status") return undefined;
+    const references = options.body.references as { provider: string; id: string }[];
+    statusRequests.push(references.map((r) => r.id));
+    // Later lookups never answer: what the list shows then is the state the app kept.
+    if (holdStatus) return new Promise(() => {});
+    return references.map((reference) => ({
+      reference,
+      acquired_versions: downloaded.has(reference.id) ? 1 : 0,
+      last_acquired_at: downloaded.has(reference.id) ? "2026-11-18T00:00:00Z" : null,
+      file_state: downloaded.has(reference.id) ? "present" : null,
+    }));
+  });
+  render(App);
+  await fireEvent.click(await screen.findByRole("button", { name: "Explore" }));
+  await fireEvent.input(screen.getByRole("searchbox"), { target: { value: "channel" } });
+  await fireEvent.click(screen.getAllByRole("button", { name: "Search" }).at(-1)!);
+  await fireEvent.click(await screen.findByRole("button", { name: channel.title }));
+  await screen.findByRole("checkbox", { name: "Select Channel video 2" });
+  await waitFor(() => expect(screen.getAllByRole("button", { name: "Downloaded" })).toHaveLength(1));
+  await fireEvent.click(screen.getByRole("button", { name: "Channel video 2" }));
+  await screen.findByRole("heading", { name: "Channel video 2" });
+  await screen.findByText("Not downloaded");
+  // The second download finishes while its own page is open; only the engine
+  // event's status refresh can mark it.
+  downloaded.add("video:2");
+  statusRequests.length = 0;
+  fixture.event({ kind: "jobs.changed" });
+  await screen.findByRole("button", { name: "Open files" });
+  expect(statusRequests).toContainEqual(["video:2"]);
+  holdStatus = true;
+  await fireEvent.click(screen.getByRole("button", { name: "Back to A channel" }));
+  await screen.findByRole("checkbox", { name: "Select Channel video 1" });
+  await waitFor(() => expect(screen.getAllByRole("button", { name: "Downloaded" })).toHaveLength(2));
+  // Returning also asks for the list's current state.
+  await waitFor(() => expect(statusRequests).toContainEqual(["video:1", "video:2"]));
+});
+
+it("opens a source's catalog in Explore from its Sources page", async () => {
+  localStorage.clear();
+  fixture.preferences = { ...fixture.preferences, onboarding_complete: true };
+  fixture.sources = [
+    { manifest: { id: "first", name: "First Source", version: "1", capabilities: ["browse", "search"], grants: [] } },
+    { manifest: { id: "second", name: "Second Source", version: "1", description: "A second example catalog", capabilities: ["browse", "search"], grants: [] } },
+    { manifest: { id: "lookup", name: "Lookup Source", version: "1", capabilities: ["search"], grants: [] } },
+  ];
+  fixture.operation.mockImplementation(async (provider, input) =>
+    input.operation === "browse"
+      ? { items: [{ reference: { provider, id: "item" }, kind: "manga", title: `Catalog item from ${provider}`, canonical_url: "https://example.org/item", artwork_url: null, description: null }], next_cursor: null }
+      : { items: [], next_cursor: null },
+  );
+  // The person's own multi-source search choice.
+  localStorage.setItem("omd.search-sources", '["first","lookup"]');
+  render(App);
+  await fireEvent.click(await screen.findByRole("button", { name: "Sources" }));
+  await fireEvent.click(await screen.findByRole("button", { name: /Lookup Source/ }));
+  expect(screen.getByRole("button", { name: "Search in Explore" })).toBeTruthy();
+  expect(screen.queryByRole("button", { name: "Browse in Explore" })).toBeNull();
+  await fireEvent.click(screen.getByRole("button", { name: "All sources" }));
+  await fireEvent.click(await screen.findByRole("button", { name: /Second Source/ }));
+  expect(screen.getByText("Sources manages installed plugins. Their catalogs and search are in Explore.")).toBeTruthy();
+  await fireEvent.click(screen.getByRole("button", { name: "Browse in Explore" }));
+  expect(await screen.findByRole("button", { name: /Catalog item from second/ })).toBeTruthy();
+  expect(screen.getByRole("button", { name: "Explore" }).getAttribute("aria-current")).toBe("page");
+  expect(within(screen.getByRole("navigation", { name: "Source catalogs" })).getByRole("button", { name: "Second Source" }).getAttribute("aria-current")).toBe("page");
+  expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe("");
+  // Browsing is navigation: the saved choice is not replaced by the one source.
+  expect(localStorage.getItem("omd.search-sources")).toBe('["first","lookup"]');
+  await fireEvent.click(screen.getByRole("button", { name: "Sources" }));
+  await fireEvent.click(await screen.findByRole("button", { name: /Lookup Source/ }));
+  await fireEvent.click(screen.getByRole("button", { name: "Search in Explore" }));
+  await screen.findByRole("searchbox");
+  expect(localStorage.getItem("omd.search-sources")).toBe('["first","lookup"]');
+});
+
+it("clears a returned search so Explore shows the catalog again", async () => {
+  localStorage.clear();
+  fixture.preferences = { ...fixture.preferences, onboarding_complete: true };
+  fixture.sources = [{ manifest: { id: "fixture", name: "Example Source", version: "1", capabilities: ["browse", "search"], grants: [] } }];
+  const item = (title: string) => ({ reference: { provider: "fixture", id: title }, kind: "manga", title, canonical_url: "https://example.org/item", artwork_url: null, description: null });
+  fixture.operation.mockImplementation(async (_provider, input) =>
+    input.operation === "browse" ? { items: [item("Catalog entry")], next_cursor: null }
+      : input.operation === "search" ? { items: [item("Search match")], next_cursor: null }
+      : { items: [], next_cursor: null },
+  );
+  render(App);
+  await fireEvent.click(await screen.findByRole("button", { name: "Explore" }));
+  await screen.findByRole("button", { name: /Catalog entry/ });
+  expect(screen.queryByRole("button", { name: "Clear search" })).toBeNull();
+  const field = screen.getByRole("searchbox") as HTMLInputElement;
+  await fireEvent.input(field, { target: { value: "match" } });
+  await fireEvent.click(screen.getAllByRole("button", { name: "Search" }).at(-1)!);
+  await screen.findByRole("button", { name: /Search match/ });
+  await fireEvent.click(screen.getByRole("button", { name: "Back to search" }));
+  // The query stays for refining; one obvious control brings the catalog back.
+  expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe("match");
+  expect(screen.queryByRole("button", { name: /Catalog entry/ })).toBeNull();
+  await fireEvent.click(screen.getByRole("button", { name: "Clear search" }));
+  expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe("");
+  expect(await screen.findByRole("button", { name: /Catalog entry/ })).toBeTruthy();
+  expect(document.activeElement).toBe(screen.getByRole("searchbox"));
+  await fireEvent.input(screen.getByRole("searchbox"), { target: { value: "again" } });
+  await fireEvent.keyDown(screen.getByRole("searchbox"), { key: "Escape" });
+  expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe("");
+  expect(await screen.findByRole("button", { name: /Catalog entry/ })).toBeTruthy();
+});
+
+it("hides output choices for an item that needs an account and defaults video to a video format", async () => {
+  localStorage.clear();
+  // 0.2.1 kept podcast choices in the video record.
+  localStorage.setItem("omd.media-options", JSON.stringify({ recipe: "mp3", maxHeight: 720, subtitles: "", automaticSubtitles: false }));
+  fixture.preferences = { ...fixture.preferences, onboarding_complete: true };
+  fixture.sources = [{ manifest: { id: "fixture", name: "Example Video", version: "1.0.0", media_tools: true, capabilities: ["search", "collection", "releases"], grants: [] } }];
+  const video = (id: string, title: string) => ({ reference: { provider: "fixture", id }, kind: "item", title, canonical_url: `https://example.org/${id}`, artwork_url: null, description: null, summary: { duration_seconds: 90 } });
+  const open = video("open", "Open video"), locked = video("locked", "Account video");
+  const reason = "Connect an Example Video account to use the site's download panel.";
+  fixture.operation.mockImplementation(async (_provider, input) => {
+    if (input.operation === "search") return { items: [open, locked], next_cursor: null };
+    if (input.operation === "collection") return input.reference.id === "open" ? open : locked;
+    if (input.operation === "releases") {
+      const item = input.reference.id === "open" ? open : locked;
+      return { items: [{ reference: item.reference, collection: item.reference, title: item.title, canonical_url: item.canonical_url, position: 0, preview: item, ...(item === open ? { availability: "available" } : { availability: "authentication_required", unavailable_reason: reason }) }], next_cursor: null };
+    }
+    return { items: [], next_cursor: null };
+  });
+  render(App);
+  await fireEvent.click(await screen.findByRole("button", { name: "Explore" }));
+  await fireEvent.input(screen.getByRole("searchbox"), { target: { value: "video" } });
+  await fireEvent.click(screen.getAllByRole("button", { name: "Search" }).at(-1)!);
+  await fireEvent.click(await screen.findByRole("button", { name: open.title }));
+  await screen.findByRole("heading", { name: open.title });
+  expect(await screen.findByRole("button", { name: "Save as: MP4 video" })).toBeTruthy();
+  expect(screen.getByRole("button", { name: "Maximum resolution: 720p" })).toBeTruthy();
+  await fireEvent.click(screen.getByRole("button", { name: "Back to results" }));
+  await fireEvent.click(await screen.findByRole("button", { name: locked.title }));
+  await screen.findByRole("heading", { name: locked.title });
+  await screen.findByText(reason);
+  expect(screen.queryByRole("button", { name: /^Save as:/ })).toBeNull();
+  expect(screen.queryByRole("button", { name: /^Destination:/ })).toBeNull();
+});
+
+function changedCheck(listed: { id: string; availability?: string }[]) {
+  localStorage.clear();
+  fixture.preferences.onboarding_complete = true;
+  fixture.sources = [{ manifest: { id: "fixture", name: "Example Source", version: "1", capabilities: ["collection", "releases", "resolve"], grants: [] } }];
+  // A list the person picked from; the items also belong to another (canonical) collection.
+  const reference = { provider: "fixture", id: "reading-list" };
+  const chapters = [{ provider: "fixture", id: "chapter-2" }, { provider: "fixture", id: "chapter-5" }];
+  const policy = { languages: ["en"], groups: [], max_height: 1080, subtitle_languages: [], automatic_subtitles: false };
+  const snapshot = { id: "snapshot-1", kind: "snapshot", state: "ready", processed: 3, total: 3, issue: null, expires_at: "2099-01-01T00:00:00Z", request: { reference, credential_profile: null } };
+  const batch = { id: "batch-1", kind: "batch", state: "failed", processed: 0, total: 2, expires_at: "2099-01-01T00:00:00Z",
+    issue: { code: "selection_changed", message: "A selected release changed since enumeration. Create a new snapshot and review the new selection.", retryable: false, actions: [] },
+    request: { snapshot_id: snapshot.id, releases: chapters, destination_id: "existing-destination", recipe: "cbz", policy } };
+  const fresh = { ...snapshot, id: "snapshot-2", created_at: new Date().toISOString(), request: { reference, credential_profile: null, policy } };
+  const tasks: any[] = [snapshot, batch];
+  localStorage.setItem("omd.download-checks", JSON.stringify({ [batch.id]: { reference, title: "Reading list", destination_id: "existing-destination", recipe: "cbz", policy, selectedReleases: chapters, automatic: false, autoDownload: true } }));
+  const release = ({ id, availability = "available" }: { id: string; availability?: string }) =>
+    ({ reference: { provider: "fixture", id }, collection: reference, title: id, canonical_url: `https://example.org/${id}`, position: 0, language: "en", availability });
+  fixture.request.mockImplementation(async (route, options) => {
+    if (route.startsWith("/v2/selections?")) return { items: tasks, next_cursor: null };
+    if (route.startsWith("/v2/selections/")) return tasks.find((t) => route.endsWith(t.id));
+    if (route === "/v2/snapshots" && options?.method === "POST") { tasks.push(fresh); return fresh; }
+    if (route.startsWith(`/v2/snapshots/${fresh.id}/releases`)) return { items: listed.map(release), next_cursor: null };
+    if (route === "/v2/batches" && options?.method === "POST") {
+      const next = { id: "batch-2", kind: "batch", state: "working", processed: 0, total: options.body.releases.length, issue: null, expires_at: null, request: options.body };
+      tasks.push(next);
+      return next;
+    }
+    if (options?.method === "POST" && route !== "/v2/acquisitions/status" && route !== "/v2/jobs/matching") throw new Error(`Unexpected mutation: ${route}`);
+  });
+  return { reference, chapters, policy, batch, fresh };
+}
+async function refreshChangedCheck() {
+  render(App);
+  await fireEvent.click(await screen.findByRole("button", { name: "Downloads" }));
+  const row = (await screen.findByText("A selected item changed on the source since it was listed. Refresh and try again.")).closest(".check-row") as HTMLElement;
+  expect(screen.queryByText(/enumeration/)).toBeNull();
+  // The failure toast leads to the same action.
+  expect(screen.getByText(/Download check needs attention: Reading list\. A selected item changed/)).toBeTruthy();
+  await fireEvent.click(within(row).getByRole("button", { name: "Refresh" }));
+}
+const posts = (route: string) => fixture.request.mock.calls.filter(([r, o]) => r === route && o?.method === "POST").map(([, o]) => o.body);
+
+it("refreshes a check whose items changed by listing the same collection again and batching only those items", async () => {
+  const { reference, chapters, policy, batch, fresh } = changedCheck([{ id: "chapter-1" }, { id: "chapter-2" }, { id: "chapter-5" }]);
+  await refreshChangedCheck();
+  await waitFor(() => expect(posts("/v2/batches")).toHaveLength(1));
+  // The selection's own collection is listed afresh, never resolved per item.
+  expect(posts("/v2/snapshots")).toEqual([{ reference, credential_profile: null, policy }]);
+  expect(posts("/v2/batches")[0]).toEqual({ snapshot_id: fresh.id, releases: chapters, destination_id: "existing-destination", recipe: "cbz", policy });
+  expect(posts("/v2/preparations")).toEqual([]);
+  expect(JSON.parse(localStorage.getItem("omd.dismissed-checks")!)).toContain(batch.id);
+  expect(screen.queryByText(/no longer in/)).toBeNull();
+});
+
+it("tells the person which refreshed items left the collection and batches the rest", async () => {
+  const { chapters, fresh } = changedCheck([{ id: "chapter-1" }, { id: "chapter-5" }]);
+  await refreshChangedCheck();
+  await waitFor(() => expect(posts("/v2/batches")).toHaveLength(1));
+  expect(posts("/v2/batches")[0]).toMatchObject({ snapshot_id: fresh.id, releases: [chapters[1]] });
+  const leftOut = "1 selected item is no longer in Reading list. It was left out; the other item is being checked.";
+  // The check's own toast and row say what was left out.
+  expect(await screen.findByText(`Preparing downloads: Reading list. ${leftOut}`)).toBeTruthy();
+  expect(JSON.parse(localStorage.getItem("omd.download-checks")!)["batch-2"]).toMatchObject({ leftOut, selectedReleases: [chapters[1]] });
+  expect(posts("/v2/preparations")).toEqual([]);
+});
+
+it("reports a refreshed selection whose items all left the collection instead of batching", async () => {
+  changedCheck([{ id: "chapter-1" }, { id: "chapter-5", availability: "authentication_required" }]);
+  await refreshChangedCheck();
+  const gone = "1 selected item is no longer in Reading list, and 1 can’t be downloaded right now. Nothing from this selection can be downloaded now. Open Reading list to choose again.";
+  expect(await screen.findByText(`Download check needs attention: Reading list. ${gone}`)).toBeTruthy();
+  // The listed check stays on Downloads with the explanation, for choosing again.
+  const row = screen.getByText(gone).closest(".check-row") as HTMLElement;
+  expect(within(row).getByRole("button", { name: "Choose chapters" })).toBeTruthy();
+  expect(posts("/v2/batches")).toEqual([]);
+  expect(posts("/v2/preparations")).toEqual([]);
+  const saved = JSON.parse(localStorage.getItem("omd.download-checks")!)["snapshot-2"];
+  expect(saved).toMatchObject({ automatic: false, reconcile: false });
+  expect(saved.selectedReleases).toBeUndefined();
+});

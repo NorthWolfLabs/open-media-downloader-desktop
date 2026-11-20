@@ -13,7 +13,7 @@
   import ResultBrowser from "./ResultBrowser.svelte";
   import SelectPicker from "./SelectPicker.svelte";
   import { onDestroy, untrack } from "svelte";
-  import { Search, SlidersHorizontal, AlertCircle } from "lucide-svelte";
+  import { Search, SlidersHorizontal, AlertCircle, X } from "lucide-svelte";
   import type {
     EngineClient,
     Collection,
@@ -61,6 +61,35 @@
     enabled?: boolean;
   } = $props();
   let tagsOpen=$state(false);
+  /**
+   * Shows one source's catalog: Explore home, with that source chosen and no query.
+   * This is navigation, so the person's saved source choice is left as it was.
+   */
+  export function browseSource(provider: string) {
+    if (!sources.some((s) => s.manifest.id === provider)) return;
+    if (model.selected.length !== 1 || model.selected[0] !== provider) chooseSources([provider], false);
+    model.query = "";
+    model.filtersOpen = false;
+    model.editing = true;
+  }
+  /** Empties the field; with no query, Explore shows the selected source's catalog again. */
+  function clearQuery() {
+    model.query = "";
+    document.querySelector<HTMLInputElement>(".search-form input")?.focus();
+  }
+  /** `persist` saves the choice for the next launch; only the person's own picks do. */
+  function chooseSources(value: string[], persist = true) {
+    resetRetries();
+    model.selected = value;
+    generation++;
+    inFlight = [];
+    loading = false;
+    model.results = [];
+    model.cursors = {};
+    model.searched = false;
+    model.issues = {};
+    if (persist) localStorage.setItem("omd.search-sources", JSON.stringify(value));
+  }
   export function searchTags(provider:string,tags:string[]){model.selected=[provider];model.query=tags.join(' ');model.options[provider]={...model.options[provider],feed:null};void search();}
   let imageSelection = $state(new Set<string>()), imageAnchor: string | null = null;
   let downloadImages = $state(false);
@@ -408,8 +437,21 @@
             type="search"
             bind:value={model.query}
             placeholder="Search or paste a link"
+            onkeydown={(event) => {
+              if (event.key === "Escape" && model.query) {
+                event.preventDefault();
+                clearQuery();
+              }
+            }}
           /></label
-        >
+        >{#if model.query}<Button
+            variant="ghost"
+            icon
+            class="clear-search"
+            aria-label="Clear search"
+            title="Clear search"
+            onclick={clearQuery}><X size={16} /></Button
+          >{/if}
       </div>
       <Button
         type="submit"
@@ -427,21 +469,7 @@
           compact
           options={searchableSources.map(s=>({id:s.manifest.id,label:s.manifest.name}))}
           empty="Choose sources"
-          bind:value={
-            () => model.selected,
-            (value) => {
-              resetRetries();
-              model.selected = value;
-              generation++;
-              inFlight = [];
-              loading = false;
-              model.results = [];
-              model.cursors = {};
-              model.searched = false;
-              model.issues = {};
-              localStorage.setItem("omd.search-sources", JSON.stringify(value));
-            }
-          }
+          bind:value={() => model.selected, chooseSources}
         />{/if}
         {#if hasFilters}<Button
           type="submit"
@@ -659,6 +687,19 @@
   }
   .discovery-search label {
     margin: 0;
+  }
+  /* One clear control: the labeled button replaces WebKit's small native one. */
+  .discovery-search input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+  /* Smaller than the field so showing it never changes the field's height. */
+  .discovery-search :global(.ui-button.icon.clear-search) {
+    width: calc(var(--control-height) - 8px);
+    height: calc(var(--control-height) - 8px);
+    min-height: 0;
+    margin-inline-end: calc(var(--theme-discovery-padding-5, 12px) * -0.5);
   }
   .discovery-search input {
     border: 0;

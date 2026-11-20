@@ -2,6 +2,7 @@
   import Dialog from "./Dialog.svelte";
   import Button from "./ui/Button.svelte";
   import {
+    checkIssue,
     formatRecipe,
     reviewStatus,
     type SelectionTask,
@@ -20,6 +21,7 @@
     onreview,
     onoptions,
     ondismiss,
+    onrefresh,
   }: {
     task: SelectionTask;
     context?: DownloadContext;
@@ -31,7 +33,11 @@
     onreview: () => Promise<void>;
     onoptions: () => void;
     ondismiss: () => void;
+    /** Rebuilds the list from the source, for a check whose items changed there. */
+    onrefresh?: () => Promise<void>;
   } = $props();
+  const issue = $derived(checkIssue(task.issue));
+  const refreshable = $derived(task.state === "failed" && !!issue?.refresh && !!onrefresh);
   const languages = $derived(
     (context?.policy.languages ??
       task.request.policy?.languages ??
@@ -94,7 +100,7 @@
         aria-label="Download check progress"
       ></progress>{/if}
   </div>
-  {#if task.issue}<p role="alert">{task.issue.message}</p>{/if}
+  {#if issue}<p role="alert">{issue.message}</p>{/if}
   {#if expired}<p>
       This review has expired. Check again to use current file availability.
     </p>
@@ -106,6 +112,10 @@
   {:else if task.state === "canceled"}<p>
       The check stopped. No downloads were started. Continue checking from where
       it stopped, or dismiss this review.
+    </p>
+  {:else if refreshable}<p>
+      No downloads were started. Refresh lists the same items from the source
+      again with the same options.
     </p>
   {:else if task.state === "failed"}<p>
       No downloads were started. Try continuing the check after addressing the
@@ -137,6 +147,11 @@
         disabled={busy}
         onclick={() => onaction("cancel")}>Cancel check</Button
       ><Button variant="primary" onclick={onclose}>Continue browsing</Button>
+    {:else if refreshable}<Button
+        variant="primary"
+        disabled={busy}
+        onclick={() => onrefresh?.()}>Refresh</Button
+      >
     {:else if task.state === "failed" || task.state === "canceled"}<Button
         variant="primary"
         disabled={busy}

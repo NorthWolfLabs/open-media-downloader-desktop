@@ -1,6 +1,7 @@
 import { itemMetadata } from './itemCache';
 import { sectionPage } from './sectionCache';
 import { isAudioCollection } from './mediaPresentation';
+import { loadOutputPreferences } from './outputPreferences';
 import type { Collection, EngineClient, ProviderManifest } from './client';
 let timer:ReturnType<typeof setTimeout>|undefined,active=0;
 export function cancelIntentPrefetch(){clearTimeout(timer);}
@@ -17,7 +18,7 @@ export function intentPrefetch(client:EngineClient,item:Collection,source:Provid
       if(!item.summary||!item.description)jobs.push(itemMetadata(client,item,'collection',account));
       if(source.capabilities.includes('details'))jobs.push(itemMetadata(client,item,'details',account));
       if(source.media_tools && source.capabilities.includes('releases') && item.kind!=='item' && !item.summary?.image && !item.summary?.profile){
-        let saved:{maxHeight?:number;subtitles?:string;automaticSubtitles?:boolean}={};try{saved=JSON.parse(localStorage.getItem('omd.media-options')??'{}');}catch{}
+        const saved=loadOutputPreferences(isAudioCollection(item)?'audio':'video');
         jobs.push(sectionPage(client,source.id,{operation:'releases',reference:item.reference,page_size:100,cursor:null,release_order:isAudioCollection(item)?'desc':null,credential_profile:account,policy:{languages:[],groups:[],max_height:saved.maxHeight??1080,subtitle_languages:[...new Set((saved.subtitles??'').split(',').map(s=>s.trim()).filter(Boolean))],automatic_subtitles:saved.automaticSubtitles??false}},source.version));
       }
       await Promise.allSettled(jobs);

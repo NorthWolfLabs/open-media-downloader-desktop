@@ -6,6 +6,7 @@ import {realpathSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {binaryPath} from './materials-contract.mjs';
 
 export const desktopRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 export const publicPolicyPath=path.join(desktopRoot,'packaging','public-plugins.json');
@@ -82,7 +83,8 @@ export async function checkPublicResources(directory,policy){
   files.set(file.path,file);
  }
  const suffix=inventory.platform==='win32'?'.exe':'';
- for(const name of ['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'])if(!files.has(`bin/${name}${suffix}`))throw new Error(`Missing required runtime: ${name}`);
+ // macOS installs the sign-in window as bin/OMD Sign-In.app; its executable is the required file.
+ for(const name of ['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'])if(!files.has(binaryPath(name,`${inventory.platform}-${inventory.arch}`)))throw new Error(`Missing required runtime: ${name}`);
  const present=[];
  async function visit(relative){
   const info=await lstat(path.join(directory,relative));

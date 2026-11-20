@@ -33,3 +33,5 @@ All eight consumed outputs reproduce the approved candidate kit byte-for-byte wi
 The ICNS is the native compiler's rendered Liquid Glass Default artwork. Current Tauri bundle configurations consume only the ICNS. Dedicated Dark/Clear/Tinted system variants additionally require the compiled Assets.car and CFBundleIconName=OMD, which are prepared in the approved portable asset kit but are not yet wired into app packaging. Do not treat the ICNS alone as full dynamic appearance integration. The editable Icon Composer source is retained here so that integration can be completed in a fresh app build, followed by resource checks, materials binding and signing.
 
 The deployment minimum remains macOS 13.5. No installed or signed app is modified by exporting these source assets.
+
+`icon.icns` is also the icon of the engine's macOS sign-in window bundle (`OMD Sign-In.app`): package the engine runtime with `--signin-icon` set to this file and its SHA-256. Runtime staging refuses a sign-in bundle carrying any other icon, so re-package the engine runtime after an icon change.

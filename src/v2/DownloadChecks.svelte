@@ -3,16 +3,18 @@
   import RecordRow from "./ui/RecordRow.svelte";
   import { X } from "lucide-svelte";
   import Button from "./ui/Button.svelte";
-  import { formatRecipe, type DownloadContext, type SelectionTask } from "./downloadReview";
+  import { checkIssue, formatRecipe, type DownloadContext, type SelectionTask } from "./downloadReview";
   import type { Destination } from "./client";
   import { languageName } from "./languages";
-  let { tasks, contexts, destinations, onchoose, onaction, ondismiss, isMedia = () => false }: {
+  let { tasks, contexts, destinations, onchoose, onaction, ondismiss, onrefresh, isMedia = () => false }: {
     tasks: SelectionTask[];
     contexts: Record<string, DownloadContext>;
     destinations: Destination[];
     onchoose: (task: SelectionTask) => Promise<void>;
     onaction: (task: SelectionTask, action: "cancel" | "retry") => Promise<void>;
     ondismiss: (task: SelectionTask) => void;
+    /** Rebuilds the list from the source, for a check whose items changed there. */
+    onrefresh?: (task: SelectionTask) => Promise<void>;
     isMedia?: (provider: string) => boolean;
   } = $props();
   let pending = $state<string[]>([]);
@@ -31,15 +33,18 @@
     {@const media = isMedia(context?.reference.provider ?? task.request.reference?.provider ?? "")}
     {@const working = task.state === "working"}
     {@const adding = task.state === "ready" && !!context?.selectedReleases && !!context.autoDownload}
-    {@const retryable = task.state === "failed" && task.issue?.retryable !== false}
+    {@const issue = checkIssue(task.issue)}
+    {@const refreshable = task.state === "failed" && !!issue?.refresh && !!onrefresh}
+    {@const retryable = task.state === "failed" && !refreshable && task.issue?.retryable !== false}
     <RecordRow class="check-row">
       <div class="check-copy">
         <h3>{title}</h3>
         <p>{task.state === "failed"
-          ? task.issue?.message ?? "The check could not finish."
+          ? issue?.message ?? "The check could not finish."
           : working ? context?.selectedReleases ? "Preparing downloads" : "Checking available items"
           : adding ? "Adding downloads"
           : "Ready to choose downloads"}</p>
+        {#if context?.leftOut && task.state !== "failed"}<p>{context.leftOut}</p>{/if}
         <small>{#if context?.recipe !== "original_images"}{languages.length ? languages.map(languageName).join(", ") : "All languages"}{" · "}{/if}{formatRecipe(context?.recipe ?? task.request.recipe ?? "cbz")} · {destinations.find(d => d.id === (context?.destination_id ?? task.request.destination_id))?.label ?? "Choose a destination"}</small>
         {#if working || adding}
           <div class="check-progress" role="status">
@@ -51,7 +56,7 @@
       <div class="check-actions" id={`check-actions-${task.id}`}>
         {#if working}<Button variant="ghost" disabled={pending.includes(task.id)} onclick={() => perform(task, () => onaction(task, "cancel"))}>Cancel</Button>
         {:else if !adding}
-          <Button disabled={pending.includes(task.id)} onclick={() => perform(task, () => retryable ? onaction(task, "retry") : onchoose(task))}>{retryable ? "Retry" : task.state === "failed" ? "Open title" : context?.recipe === "original_images" ? "Review downloads" : media ? "Choose items" : "Choose chapters"}</Button>
+          <Button disabled={pending.includes(task.id)} onclick={() => perform(task, () => refreshable ? onrefresh!(task) : retryable ? onaction(task, "retry") : onchoose(task))}>{refreshable ? "Refresh" : retryable ? "Retry" : task.state === "failed" ? "Open title" : context?.recipe === "original_images" ? "Review downloads" : media ? "Choose items" : "Choose chapters"}</Button>
           <Button variant="ghost" icon disabled={pending.includes(task.id)} title="Dismiss review" aria-label={`Dismiss review for ${title}`} onclick={() => ondismiss(task)}><X size={16} /></Button>
         {/if}
       </div>

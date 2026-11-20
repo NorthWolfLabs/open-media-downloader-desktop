@@ -20,11 +20,11 @@ test('the public overlay applies the stable identity and current version over th
  const config=await publicConfig(),v=await versions();
  assert.equal(config.productName,'OMD');
  assert.equal(config.identifier,'labs.northwolf.omd');
- assert.equal(config.version,'0.2.1');
+ assert.equal(config.version,'0.2.3');
  assert.equal(config.bundle.publisher,'North Wolf Labs LLC');
  assert.equal(config.bundle.copyright,'© 2026 North Wolf Labs LLC');
  assert.equal(v.npm,config.version);assert.equal(v.cargo,config.version);
- assert.deepEqual(cargoPackage(await readFile(join(tauri,'Cargo.toml'),'utf8')),{name:'open-media-downloader-desktop',version:'0.2.1'});
+ assert.deepEqual(cargoPackage(await readFile(join(tauri,'Cargo.toml'),'utf8')),{name:'open-media-downloader-desktop',version:'0.2.3'});
  checkPublicConfig(config,v);
 });
 
@@ -100,7 +100,7 @@ test('merge semantics and public configuration mistakes are refused',async()=>{
 });
 
 const releaseInventory=()=>({platform:'darwin',arch:'arm64',build_host:{platform:'darwin',arch:'arm64'},worker_profile:'release',plugins:{mode:'public',publishable:true,packages:[]},staging_mode:'release',release_accepted:false,materials:{schema:'omd-materials-v1',coverage_validated:true,release_accepted:false,binding:'two-phase',deferred:['desktop-rust','frontend']},files:[]});
-const releaseMaterials=()=>({schema:'omd-materials-v1',target:'darwin-arm64',version:'0.2.1'});
+const releaseMaterials=()=>({schema:'omd-materials-v1',target:'darwin-arm64',version:'0.2.3'});
 
 test('Windows and Linux use the public identity and the same strict release staging gates',async()=>{
  for(const [platform,triple,target] of [['win32','x86_64-pc-windows-msvc','win32-x64'],['linux','x86_64-unknown-linux-gnu','linux-x64']]){
@@ -133,7 +133,7 @@ test('the Windows installer hooks read the keys Tauri writes for the public prod
 });
 
 test('public builds accept only release-staged public resources with two-phase materials',()=>{
- const options={triple:'aarch64-apple-darwin',version:'0.2.1'};
+ const options={triple:'aarch64-apple-darwin',version:'0.2.3'};
  assert.equal(checkPublicStaging(releaseInventory(),releaseMaterials(),options),'darwin-arm64');
  const refused=[
   [inventory=>{inventory.staging_mode='development';delete inventory.materials;},/release-staged resources, not development staging/],
@@ -148,7 +148,7 @@ test('public builds accept only release-staged public resources with two-phase m
   [inventory=>{inventory.materials.coverage_validated=false;},/two-phase/],
  ];
  for(const [mutate,message] of refused){const inventory=releaseInventory();mutate(inventory);assert.throws(()=>checkPublicStaging(inventory,releaseMaterials(),options),message);}
- assert.throws(()=>checkPublicStaging(releaseInventory(),{...releaseMaterials(),version:'0.1.0'},options),/version 0\.2\.1/);
+ assert.throws(()=>checkPublicStaging(releaseInventory(),{...releaseMaterials(),version:'0.1.0'},options),/version 0\.2\.3/);
  assert.throws(()=>checkPublicStaging(releaseInventory(),{...releaseMaterials(),target:'darwin-x64'},options),/darwin-arm64 version/);
  assert.throws(()=>checkPublicStaging(releaseInventory(),null,options),/staged materials/);
  assert.throws(()=>checkPublicStaging(releaseInventory(),releaseMaterials(),{...options,triple:'x86_64-pc-windows-msvc'}),/staged for darwin-arm64, not win32-x64/);
@@ -156,7 +156,7 @@ test('public builds accept only release-staged public resources with two-phase m
 
 test('built bundle metadata must carry the public identity',async()=>{
  const config=await publicConfig();
- const info={CFBundlePackageType:'APPL',CFBundleIdentifier:'labs.northwolf.omd',CFBundleName:'OMD',CFBundleDisplayName:'OMD',CFBundleShortVersionString:'0.2.1',CFBundleVersion:'0.2.1',CFBundleExecutable:'open-media-downloader-desktop',CFBundleIconFile:'icon.icns',LSMinimumSystemVersion:'13.5',NSHumanReadableCopyright:'© 2026 North Wolf Labs LLC'};
+ const info={CFBundlePackageType:'APPL',CFBundleIdentifier:'labs.northwolf.omd',CFBundleName:'OMD',CFBundleDisplayName:'OMD',CFBundleShortVersionString:'0.2.3',CFBundleVersion:'0.2.3',CFBundleExecutable:'open-media-downloader-desktop',CFBundleIconFile:'icon.icns',LSMinimumSystemVersion:'13.5',NSHumanReadableCopyright:'© 2026 North Wolf Labs LLC'};
  assert.deepEqual(checkBundleInfo(info,config,'open-media-downloader-desktop'),info);
  assert.throws(()=>checkBundleInfo({...info,CFBundleIdentifier:DEVELOPMENT},config,'open-media-downloader-desktop'),/CFBundleIdentifier is "labs\.northwolf\.omd-v2-development"/);
  assert.throws(()=>checkBundleInfo({...info,LSMinimumSystemVersion:'11.0'},config,'open-media-downloader-desktop'),/LSMinimumSystemVersion/);
@@ -169,11 +169,15 @@ test('built bundle metadata must carry the public identity',async()=>{
 async function cliFixture(){
  const root=await mkdtemp(join(tmpdir(),'omd-public-build-'));
  const copy=async relative=>{await mkdir(dirname(join(root,'desktop',relative)),{recursive:true});await copyFile(join(desktop,relative),join(root,'desktop',relative));};
- for(const relative of ['scripts/build-public.mjs','scripts/plugin-policy.mjs','packaging/public-plugins.json','package.json','src-tauri/Cargo.toml','src-tauri/tauri.conf.json','src-tauri/tauri.public.conf.json'])await copy(relative);
+ for(const relative of ['scripts/build-public.mjs','scripts/plugin-policy.mjs','scripts/materials-contract.mjs','packaging/public-plugins.json','package.json','src-tauri/Cargo.toml','src-tauri/tauri.conf.json','src-tauri/tauri.public.conf.json'])await copy(relative);
  await cp(await realpath(join(desktop,'node_modules/smol-toml')),join(root,'desktop/node_modules/smol-toml'),{recursive:true});
  const exe=process.platform==='win32'?'.exe':'',bin=join(root,'bin'),browser=join(root,'browser');
  await mkdir(bin);await mkdir(browser);
  for(const name of ['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'])await writeFile(join(bin,name+exe),name==='omd-plugin-worker-v2'?'OMD_WORKER_PROFILE=release':name);
+ // macOS staging takes the engine's sign-in window app bundle (with this project's icon).
+ const signIn=join(bin,'OMD Sign-In.app/Contents');await mkdir(join(signIn,'MacOS'),{recursive:true});await mkdir(join(signIn,'Resources'));
+ await writeFile(join(signIn,'Info.plist'),'<plist version="1.0"><dict/></plist>\n');await writeFile(join(signIn,'MacOS/omd-signin'),'omd-signin',{mode:0o755});
+ await copyFile(join(desktop,'src-tauri/icons/icon.icns'),join(signIn,'Resources/AppIcon.icns'));
  const digest=text=>createHash('sha256').update(text).digest('hex');
  await writeFile(join(root,'tool'),'fixture tool');const tool={path:'tool',version:'fixture',sha256:digest('fixture tool')};
  await writeFile(join(root,'tools.json'),JSON.stringify(Object.fromEntries(['node','yt_dlp','ffmpeg','ffprobe'].map(name=>[name,tool]))));

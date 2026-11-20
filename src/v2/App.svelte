@@ -53,8 +53,11 @@
   import { imageGroups, imageRelease } from './imageSelection';
   import DownloadOptionsDialog from "./DownloadOptionsDialog.svelte";
   import {
+    checkIssue,
     contextsFromStorage,
     finishedWithoutDownloads,
+    reconcileNotice,
+    reconcileSelection,
     reusableCheck,
     dismissedFromStorage,
     type DownloadContext,
@@ -118,6 +121,11 @@
   import { trackDialogTriggers } from "./dialogFocus";
   import { isAudioCollection, canSubscribe, subscriptionLabel } from "./mediaPresentation";
   import OutputOptions from "./OutputOptions.svelte";
+  import {
+    loadOutputPreferences,
+    outputKind,
+    saveOutputPreferences,
+  } from "./outputPreferences";
   import Artwork from "./Artwork.svelte";
   import StoragePanel from "./StoragePanel.svelte";
   import { invoke } from "@tauri-apps/api/core";
@@ -276,7 +284,10 @@
       ]);
       Object.assign(values, statuses);
       if (request === acquiredRequest) activeReleases = activeJobs;
-      if (request === acquiredRequest) acquired = values;
+      // Merge: the request covers only the current screen's releases. Replacing the
+      // map dropped statuses of a parent list's rows (an item's page refreshes only
+      // its own release), so their "Downloaded" markers vanished on return.
+      if (request === acquiredRequest) acquired = { ...acquired, ...values };
     } catch (e) {
       if (request === acquiredRequest) acquiredError = text(e);
     } finally {
@@ -632,25 +643,12 @@
     sources.find((source) => source.manifest.id === details?.reference.provider)
       ?.manifest.name ?? "",
   );
-  function configureSource(id: string) {
+  /** Output choices come from the last download of the same kind (video, audio or images). */
+  function configureSource(id: string, audio = false) {
     sourceId = id;
-    const media = isMedia(id);
-    const key = media ? "omd.media-options" : "omd.image-options";
-    let saved: any = {};
-    try {
-      saved = JSON.parse(localStorage.getItem(key) ?? "{}");
-    } catch {
-      /* Use defaults for malformed local preferences. */
-    }
-    const recipes: Recipe[] = media
-      ? ["mp4", "mkv", "webm", "m4a", "mp3", "opus"]
-      : ["cbz", "image_folder"];
-    recipe = recipes.includes(saved.recipe) ? saved.recipe : recipes[0];
-    maxHeight = [0, 360, 480, 720, 1080, 1440, 2160].includes(saved.maxHeight)
-      ? saved.maxHeight
-      : 1080;
-    subtitles = typeof saved.subtitles === "string" ? saved.subtitles : "";
-    automaticSubtitles = saved.automaticSubtitles === true;
+    ({ recipe, maxHeight, subtitles, automaticSubtitles } = loadOutputPreferences(
+      outputKind(isMedia(id), audio),
+    ));
   }
   let selectionTasks: SelectionTask[] = $state([]);
   let selectionsCursor: string | null = $state(null);
@@ -847,7 +845,7 @@
   }
   const checkMessage = $derived(
     readyNotice
-      ? `${noticeChecking ? (downloadContexts[readyNotice.id]?.selectedReleases ? "Preparing downloads" : "Checking missing items") : readyNotice.state === "failed" ? "Download check needs attention" : readyNotice.state === "submitted" ? "Downloads added" : downloadContexts[readyNotice.id]?.empty ? "No downloadable items match your selection" : missingCount(readyNotice) === 0 ? "No missing items found" : missingCount(readyNotice) !== null ? `${missingCount(readyNotice)} missing ${missingCount(readyNotice) === 1 ? "item" : "items"} found` : "Download check ready"}${downloadContexts[readyNotice.id]?.title ? `: ${downloadContexts[readyNotice.id].title}` : ""}${readyNotice.issue ? `. ${readyNotice.issue.message}` : ""}`
+      ? `${noticeChecking ? (downloadContexts[readyNotice.id]?.selectedReleases ? "Preparing downloads" : "Checking missing items") : readyNotice.state === "failed" ? "Download check needs attention" : readyNotice.state === "submitted" ? "Downloads added" : downloadContexts[readyNotice.id]?.empty ? "No downloadable items match your selection" : missingCount(readyNotice) === 0 ? "No missing items found" : missingCount(readyNotice) !== null ? `${missingCount(readyNotice)} missing ${missingCount(readyNotice) === 1 ? "item" : "items"} found` : "Download check ready"}${downloadContexts[readyNotice.id]?.title ? `: ${downloadContexts[readyNotice.id].title}` : ""}${readyNotice.issue ? `. ${checkIssue(readyNotice.issue)!.message}` : downloadContexts[readyNotice.id]?.leftOut ? `. ${downloadContexts[readyNotice.id].leftOut}` : ""}`
       : "",
   );
   $effect(() => {
@@ -1072,6 +1070,15 @@
   let collectionGeneration = 0,
     releaseGeneration = 0;
   let loadingReleases = $state(false);
+  // A single item whose only releases can't be downloaded (for example, it needs an
+  // account) has no output to choose; format controls would contradict the reason shown.
+  const itemUnavailable = $derived.by(
+    () =>
+      details?.kind === "item" &&
+      !loadingReleases &&
+      releases.length > 0 &&
+      releases.every((release) => release.availability !== "available"),
+  );
   let loadedLanguage = $state("");
   const chapterOrder = new Intl.Collator(appLocale(), {
     numeric: true,
@@ -1634,6 +1641,9 @@
         void openCollection(parent.collection, false);
       } else {
         void loadItemSubscriptions(details.reference).catch(() => {});
+        // Downloads may have finished while a child item was open.
+        if (client && releases.length)
+          void loadAcquired(client, releases.map((release) => release.reference));
         void restoreScroll();
       }
       return;
@@ -1657,6 +1667,15 @@
     jobs = rootJobs.items;
     jobCursor = rootJobs.next_cursor;
     appliedJobQuery = jobQuery = rootJobQuery;
+  }
+  /** From a source's settings to its catalog in Explore (or its search). */
+  async function browseSource(provider: string) {
+    if (details) {
+      itemTrail = [];
+      closeCollection();
+    }
+    await navigate("Search");
+    discoveryPage?.browseSource(provider);
   }
   async function navigate(name: string) {
     notice = "";
@@ -1718,8 +1737,8 @@
       "details",
       account,
     );
-    configureSource(provider);
-    if(isAudioCollection(collection)){releaseLayout="compact";releaseTable=false;releaseOrder="desc";if(!["mp3","m4a","opus"].includes(recipe))recipe="mp3";}
+    configureSource(provider, isAudioCollection(collection));
+    if(isAudioCollection(collection)){releaseLayout="compact";releaseTable=false;releaseOrder="desc";}
 
     preserveReleaseLanguage = !!savedContext;
     group = ((savedContext?.policy.groups as string[] | undefined) ?? [])[0] ?? "";
@@ -1925,10 +1944,12 @@
   async function prepareReferences(references: SourceRef[]) {
     if (!client) return;
     if (!destinationId) throw new Error("Add a destination in Settings first.");
-    localStorage.setItem(
-      mediaSource ? "omd.media-options" : "omd.image-options",
-      JSON.stringify({ recipe, maxHeight, subtitles, automaticSubtitles }),
-    );
+    saveOutputPreferences(outputKind(mediaSource, audioSource), {
+      recipe,
+      maxHeight,
+      subtitles,
+      automaticSubtitles,
+    });
     preparation = await client.request<Preparation>("/v2/preparations", {
       method: "POST",
       body: {
@@ -2137,6 +2158,76 @@
       await refresh("selections");
     });
   }
+  /**
+   * Rebuilds a check that failed because its items changed on the source after
+   * listing. The same collection is listed again; a check of named releases then
+   * batches only those, matched against the new list, and says which are gone.
+   * Preparing them directly would let a release resolve under another collection
+   * of the source. The failed check is retired.
+   */
+  async function refreshCheck(task: SelectionTask) {
+    await run("Refreshing from the source", async () => {
+      if (!client) return;
+      const active = client;
+      const snapshot = task.request.snapshot_id
+        ? await active.request<SelectionTask>(`/v2/selections/${task.request.snapshot_id}`)
+        : task;
+      const reference = snapshot.request.reference;
+      if (!reference)
+        throw new Error("The source is unavailable. Install or reconnect it, then try again.");
+      const saved = downloadContexts[task.id] ?? downloadContexts[snapshot.id];
+      const named =
+        task.request.releases ?? snapshot.request.release_refs ?? saved?.selectedReleases;
+      const context: DownloadContext = {
+        title: saved?.title ?? "Collection",
+        reference,
+        destination_id: task.request.destination_id ?? saved?.destination_id ?? destinationId,
+        recipe: task.request.recipe ?? saved?.recipe ?? recipe,
+        policy: task.request.policy ?? saved?.policy ?? {},
+        credential_profile: snapshot.request.credential_profile ?? null,
+        automatic: true,
+        autoDownload: saved?.autoDownload ?? false,
+        empty: false,
+      };
+      if (named?.length) {
+        context.selectedReleases = named;
+        context.reconcile = true;
+      }
+      const next = await active.request<SelectionTask>("/v2/snapshots", {
+        method: "POST",
+        body: {
+          reference,
+          credential_profile: context.credential_profile,
+          ...(snapshot.request.release_refs
+            ? { release_refs: snapshot.request.release_refs }
+            : {}),
+          // A failed list is listed again as it was. A batch's ready list is reused by
+          // the engine for 15 minutes unless the request differs, so it carries the
+          // batch's own policy (enumeration doesn't filter by it).
+          ...(task.kind === "batch" ? { policy: context.policy } : {}),
+        },
+      });
+      // The engine reuses a recent identical list; that one still has the old items.
+      if (next.id === snapshot.id)
+        throw new Error(
+          "OMD listed this source only a few minutes ago. Try Refresh again in 15 minutes.",
+        );
+      dismissCheck(task, false);
+      downloadContexts[next.id] = context;
+      dismissedChecks = dismissedChecks.filter((id) => id !== next.id);
+      selectionTasks = [...selectionTasks.filter((item) => item.id !== next.id), next];
+      notifyReady(next, true);
+      if (next.state === "ready" && !advancingChecks.has(next.id)) {
+        advancingChecks.add(next.id);
+        try {
+          await startCheckedBatch(next, context);
+        } finally {
+          advancingChecks.delete(next.id);
+        }
+      }
+      await refresh("selections");
+    });
+  }
   async function beginDownloadCheck(
     draft: DownloadDraft | null = downloadDraft
       ? $state.snapshot(downloadDraft)
@@ -2167,14 +2258,19 @@
           automatic_subtitles: draft.automaticSubtitles,
         },
       };
-      localStorage.setItem(
-        media ? "omd.media-options" : "omd.image-options",
-        JSON.stringify({
+      saveOutputPreferences(
+        outputKind(
+          media,
+          !!details &&
+            sourceKey(details.reference) === key &&
+            isAudioCollection(details),
+        ),
+        {
           recipe: context.recipe,
           maxHeight: draft.maxHeight,
           subtitles: draft.subtitles,
           automaticSubtitles: draft.automaticSubtitles,
-        }),
+        },
       );
       const task =
         draft.snapshot ??
@@ -2230,6 +2326,10 @@
     context: DownloadContext,
   ) {
     if (!client) return;
+    if (context.reconcile && context.selectedReleases) {
+      context = await reconcileRefreshed(task, context);
+      if (!context.selectedReleases) return;
+    }
     // Count from the saved release list using the same criteria as the engine,
     // so an empty selection is explained before attempting a batch.
     let matching = context.selectedReleases?.length ?? 0,
@@ -2298,6 +2398,33 @@
       automatic: false,
     };
     await refresh("selections");
+  }
+  /**
+   * Keeps the refreshed selection's releases that the new listing still has and
+   * can batch, and tells the person about the rest. With none left, the check is
+   * reported and left for choosing again.
+   */
+  async function reconcileRefreshed(task: SelectionTask, context: DownloadContext): Promise<DownloadContext> {
+    const listed: Release[] = [];
+    let cursor: string | null = null;
+    do {
+      const page: Page<Release> = await client!.request(
+        `/v2/snapshots/${task.id}/releases?limit=200${cursor ? `&cursor=${cursor}` : ""}`,
+      );
+      listed.push(...page.items);
+      cursor = page.next_cursor;
+    } while (cursor);
+    const result = reconcileSelection(context.selectedReleases ?? [], listed, context.policy);
+    const message = reconcileNotice(context.title, result);
+    if (!result.kept.length) {
+      const left = { ...context, selectedReleases: undefined, reconcile: false, automatic: false, autoDownload: false, leftOut: message! };
+      downloadContexts[task.id] = left;
+      notifyReady({ ...task, state: "failed", issue: { code: "selection_gone", message: message!, retryable: false, actions: [] } });
+      return left;
+    }
+    const next = { ...context, selectedReleases: result.kept, reconcile: false, leftOut: message ?? undefined };
+    downloadContexts[task.id] = next;
+    return next;
   }
   async function selectionAction(action: "cancel" | "retry") {
     await run(
@@ -3110,7 +3237,7 @@
                 {#snippet children()}
                   {#if audioSource && details?.kind === "item"}{@const release=releases[0]}
                   <section class="episode-download" aria-label="Download episode">
-                    <div class="output-preferences"><SelectPicker label="Destination" bind:value={destinationId} options={destinations.map(d=>({id:d.id,label:d.label}))}/><OutputOptions audio media bind:recipe bind:maxHeight bind:subtitles bind:automaticSubtitles/></div>
+                    {#if !itemUnavailable}<div class="output-preferences"><SelectPicker label="Destination" bind:value={destinationId} options={destinations.map(d=>({id:d.id,label:d.label}))}/><OutputOptions audio media bind:recipe bind:maxHeight bind:subtitles bind:automaticSubtitles/></div>{/if}
                     <PendingStatus active={loadingReleases} label="Loading episode…"/>
                       <div class="episode-download-action"><span>{[details.summary?.published_label ? date(details.summary.published_label) : "", details.summary?.duration_seconds != null ? durationLabel(details.summary.duration_seconds) : ""].filter(Boolean).join(" · ")}</span>
                       {#if activeReleases.has(sourceKey(details.reference))}<Button onclick={()=>navigate("Downloads")}>View in Downloads</Button>
@@ -3177,7 +3304,7 @@
                       />{/if}{/if}
                   </div>
                   {#if audioSource}<div class="episode-list-heading"><h2>Episodes</h2><SelectPicker label="Order" bind:value={releaseOrder} options={[{id:"desc",label:"Newest first"},{id:"asc",label:"Oldest first"}]} onchange={()=>void loadReleases(false)}/></div>{/if}
-                  <svelte:element this={audioSource ? "details" : "div"} class="download-settings" class:audio-download-settings={audioSource}>
+                  {#if !itemUnavailable || (mediaSource && hasAccounts(details!.reference.provider))}<svelte:element this={audioSource ? "details" : "div"} class="download-settings" class:audio-download-settings={audioSource}>
                     {#if audioSource}<summary>Download options</summary>{/if}
                   <div class="acquisition-toolbar" class:audio-options={audioSource}>
                     <div class="output-preferences">
@@ -3195,7 +3322,7 @@
                         }}
                       />{/if}
 
-                      <SelectPicker
+                      {#if !itemUnavailable}<SelectPicker
                         label="Destination"
                         bind:value={destinationId}
                         options={destinations.map((destination) => ({
@@ -3209,10 +3336,10 @@
                         bind:maxHeight
                         bind:subtitles
                         bind:automaticSubtitles
-                      />
+                      />{/if}
                     </div>
                   </div>
-                  </svelte:element>
+                  </svelte:element>{/if}
                   <div
                     id="release-selection"
                     tabindex="-1"
@@ -3635,11 +3762,11 @@
               {#if !activeGroup}
                 {#if preparingDownloads.length}<section class="download-check-section" aria-label="Preparing downloads">
                   <h2>Preparing downloads</h2>
-                  <DownloadChecks tasks={preparingDownloads} contexts={downloadContexts} {destinations} {isMedia} onchoose={chooseCheckOptions} onaction={checkRowAction} ondismiss={dismissCheck} />
+                  <DownloadChecks tasks={preparingDownloads} contexts={downloadContexts} {destinations} {isMedia} onchoose={chooseCheckOptions} onaction={checkRowAction} ondismiss={dismissCheck} onrefresh={refreshCheck} />
                 </section>{/if}
                 {#if attentionChecks.length}<section class="download-check-section" aria-label="Needs attention">
                   <h2>Needs attention</h2>
-                  <DownloadChecks tasks={attentionChecks} contexts={downloadContexts} {destinations} {isMedia} onchoose={chooseCheckOptions} onaction={checkRowAction} ondismiss={dismissCheck} />
+                  <DownloadChecks tasks={attentionChecks} contexts={downloadContexts} {destinations} {isMedia} onchoose={chooseCheckOptions} onaction={checkRowAction} ondismiss={dismissCheck} onrefresh={refreshCheck} />
                 </section>{/if}
                 <InfiniteMore cursor={selectionsCursor} load={() => moreResource("selections")} label="download checks" />
               {/if}
@@ -3737,6 +3864,7 @@
               }}
               {sources}
               busy={!!busy}
+              onbrowse={(source) => void browseSource(source.id)}
               onaccounts={(source) => (accountsSource = source)}
               onremove={(id) => sourceRemovals?.inspect(id)}
               empty={pluginFilePrerequisite}
@@ -4209,7 +4337,7 @@
       actionLabel={noticeChecking
         ? "View progress"
         : readyNotice.state === "failed"
-          ? "View issue"
+          ? checkIssue(readyNotice.issue)?.refresh ? "Refresh" : "View issue"
           : readyNotice.state === "submitted"
             ? "View downloads"
             : downloadContexts[readyNotice.id]?.empty
@@ -4222,7 +4350,9 @@
         readyNotices = readyNotices.slice(1);
         if (task.state === "submitted") {
           void navigate("Downloads");
-        } else void openCheck(task);
+        } else if (task.state === "failed" && checkIssue(task.issue)?.refresh)
+          void refreshCheck(task);
+        else void openCheck(task);
       }}
       onclose={() => (readyNotices = readyNotices.slice(1))}
     />{/if}
@@ -4371,6 +4501,7 @@
       onreview={reviewBatch}
       onoptions={() => chooseCheckOptions(selectionTask!)}
       ondismiss={() => dismissCheck(selectionTask!)}
+      onrefresh={() => refreshCheck(selectionTask!)}
     />{/if}
   {#if imageDetailDownload}<ImageDownloadDialog items={imageDetailDownload} {destinations} onclose={() => imageDetailDownload = null} onstart={prepareImages}/>{/if}
   {#if downloadDraft}<DownloadOptionsDialog

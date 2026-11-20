@@ -14,10 +14,16 @@ review. [About plugins](plugins.md) explains plugins and the review in plain lan
 
 Explore combines installed sources. Browse available content or search using the
 capabilities/filters a source provides. With one source, controls that have no useful
-choice may be hidden. Opening a podcast show reveals its episodes; a single show
+choice may be hidden. Sources only manages installed plugins; a source's page there
+has Browse in Explore to open its catalog. Clear the search field to return from a
+search to the catalog. Opening a podcast show reveals its episodes; a single show
 in Browse can contain hundreds of releases.
 
-Choose items, destination and output format, then inspect the download review.
+Choose items, destination and output format, then inspect the download review. The
+format starts from your last choice for the same kind of item: video, audio or
+images. An item that can't be downloaded, for example one that needs an account,
+shows the reason instead of format choices. If an item changes on the source after
+it was listed, Refresh on the download check lists it again with the same options.
 Downloads shows active work and recovery actions; Collection/history keeps completed
 items reachable. OMD saves files you can use in other applications. It has no reader
 or player. Unavailable artwork uses a media-specific placeholder.

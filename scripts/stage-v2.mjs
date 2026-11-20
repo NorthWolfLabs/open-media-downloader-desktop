@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {loadPublicPolicy,resolvePlugins,checkPublicResources} from './plugin-policy.mjs';
-import {validate as validateMaterials,validateNativeReceipt} from './materials-contract.mjs';
+import {validate as validateMaterials,validateNativeReceipt,binaryPath,signInBinary,signInBundle} from './materials-contract.mjs';
 const usage='Use --engine-bin DIR --tools MANIFEST --browser-tools MANIFEST [--plugin-mode public|private] [--providers MANIFEST]';
 const options=new Set(['engine-bin','tools','browser-tools','providers','plugin-mode','supplements','output','target','staging-mode','materials','materials-locks','version','materials-binding']);
 const args=process.argv.slice(2),input={};for(let i=0;i<args.length;i+=2){if(!args[i]?.startsWith('--')||!args[i+1])throw new Error(usage);const key=args[i].slice(2);if(!options.has(key)||key in input)throw new Error(usage);input[key]=['target','plugin-mode','staging-mode','version','materials-binding'].includes(key)?args[i+1]:path.resolve(args[i+1]);}
@@ -40,7 +40,29 @@ const manifest=JSON.parse(await readFile(input.tools,'utf8')),report={platform:t
 async function copy(source,destination,expected,supplied){const bytes=supplied??await readFile(source),sha256=createHash('sha256').update(bytes).digest('hex');if(expected&&expected!==sha256)throw new Error(`Integrity mismatch: ${path.basename(source)}`);if(report.files.some(file=>file.path===destination))throw new Error(`Duplicate package input: ${destination}`);const dest=path.join(out,destination);await mkdir(path.dirname(dest),{recursive:true});await writeFile(dest,bytes,{flag:'wx'});if((await stat(source)).mode&0o111)await chmod(dest,0o755);report.files.push({path:destination,sha256,size:bytes.length});}
 await copy(path.join(desktop,'LICENSE'),'LICENSE');
 report.worker_profile='release';
-for(const binary of ['omd-engine' ,'omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd']){const name=binary+(targetPlatform==='win32'?'.exe':'');await copy(path.join(input['engine-bin'],name),`bin/${name}`);}
+// macOS runs the engine's native sign-in window as its own application bundle beside the
+// engine (bin/OMD Sign-In.app), assembled by the engine runtime packager with this project's
+// reviewed icon. Stage exactly its members, unchanged; the engine signer seals it later.
+const signInMembers=['Contents/Info.plist','Contents/MacOS/omd-signin','Contents/Resources/AppIcon.icns'];
+async function copySignInBundle(){
+ const root=path.join(input['engine-bin'],signInBundle),found=[];
+ const info=await lstat(root).catch(error=>{if(error.code==='ENOENT')return null;throw error;});
+ if(!info||info.isSymbolicLink()||!info.isDirectory())throw new Error(`macOS staging needs the engine's ${signInBundle} in --engine-bin; package the runtime with the engine's package-runtime.py and this project's src-tauri/icons/icon.icns`);
+ async function walk(directory,prefix=''){
+  for(const name of await readdir(directory)){
+   const source=path.join(directory,name),relative=prefix+name,entry=await lstat(source);
+   if(entry.isSymbolicLink())throw new Error(`${signInBundle} cannot contain symlinks`);
+   if(entry.isDirectory())await walk(source,relative+'/');else if(entry.isFile())found.push(relative);else throw new Error(`Unexpected special file in ${signInBundle}: ${relative}`);
+  }
+ }
+ await walk(root);
+ if(found.sort().join('\n')!==[...signInMembers].sort().join('\n'))throw new Error(`${signInBundle} must contain exactly ${signInMembers.join(', ')}`);
+ if(!((await stat(path.join(root,'Contents/MacOS/omd-signin'))).mode&0o100))throw new Error(`The ${signInBundle} executable is not executable`);
+ // The icon is this project's branding: the bundle must carry exactly the reviewed app icon.
+ if(!(await readFile(path.join(root,'Contents/Resources/AppIcon.icns'))).equals(await readFile(path.join(desktop,'src-tauri','icons','icon.icns'))))throw new Error(`The ${signInBundle} icon differs from src-tauri/icons/icon.icns`);
+ for(const relative of signInMembers)await copy(path.join(root,relative),`bin/${signInBundle}/${relative}`);
+}
+for(const binary of ['omd-engine' ,'omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd']){if(binary===signInBinary&&targetPlatform==='darwin'){await copySignInBundle();continue;}const name=binary+(targetPlatform==='win32'?'.exe':'');await copy(path.join(input['engine-bin'],name),`bin/${name}`);}
 const tools={};for(const name of ['yt_dlp','ffmpeg','ffprobe','node']){const tool=manifest[name];if(!tool||typeof tool.path!=='string'||!tool.path||typeof tool.version!=='string'||!tool.version||typeof tool.sha256!=='string'||!/^[a-f0-9]{64}$/.test(tool.sha256))throw new Error(`Invalid packaged tool ${name}: path, version and SHA-256 are required`);const source=await realpath(path.resolve(path.dirname(input.tools),tool.path));const destination=`tools/${name}/${path.basename(source)}`;await copy(source,destination,tool.sha256);tools[name]={...tool,path:`${name}/${path.basename(source)}`};}
 await generated('tools/tools-v2.json',tools);
 const browser=JSON.parse(await readFile(input['browser-tools'],'utf8'));
@@ -96,7 +118,7 @@ if(stagingMode==='release'){
  if(locks['browser-package-lock.json']!==createHash('sha256').update(await readFile(path.join(out,'browser/content/adapter/package-lock.json'))).digest('hex'))throw new Error('Stale browser lock');
  const triple={'darwin-arm64':'aarch64-apple-darwin','darwin-x64':'x86_64-apple-darwin','linux-x64':'x86_64-unknown-linux-gnu','win32-x64':'x86_64-pc-windows-msvc'}[target];
  validateNativeReceipt(JSON.parse(await readFile(path.join(out,'third-party/native-receipt.json'),'utf8')),Object.fromEntries(report.files.map(x=>[x.path,x.sha256])),['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'],locks['Cargo.lock'],triple,await readFile(path.join(out,'third-party/native-NOTICES.txt')),input.version);
- const required=Object.fromEntries(['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'].map(id=>[id,{version:input.version,prefix:'bin/'+id+(targetPlatform==='win32'?'.exe':'')}]));
+ const required=Object.fromEntries(['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'].map(id=>[id,{version:input.version,prefix:binaryPath(id,target)}]));
  for(const id of ['yt_dlp','ffmpeg','ffprobe','node'])required[id]={version:manifest[id].version,prefix:'tools/'+id+'/'};
  required.browser={version:browser.version,prefix:'browser/content/'};
  const deferred=['desktop-rust','frontend'];

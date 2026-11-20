@@ -5261,6 +5261,3670 @@
    "error": "Invalid extractor route binding",
    "name": "extractor-prepared-bytes-fraction",
    "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": null,
+      "final": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "c71178c77703ea6c87eb1b7dd7dcc3773dd0effa1b766dd1b076446384c3b365"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "nested-seal",
+      "before": null,
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 1
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 16
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "name": "nested-sign-in-bundle",
+   "valid": true
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "3b3b41cd01859890ad8ec9c9b1b5d58b142ba3088d6dc453143c9853f54a8e1c"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 15
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "A nested bundle is not freshly sealed",
+   "name": "nested-bundle-unsealed",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": null,
+      "final": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "93320c896106a1423393c58fff29fe95f7961e106aaab9ab9d460b18c5371445"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "c71178c77703ea6c87eb1b7dd7dcc3773dd0effa1b766dd1b076446384c3b365"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "nested-seal",
+      "before": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 1
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 16
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "A nested bundle is not freshly sealed",
+   "name": "nested-seal-already-in-input",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": null,
+      "final": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "c71178c77703ea6c87eb1b7dd7dcc3773dd0effa1b766dd1b076446384c3b365"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "nested-seal",
+      "before": null,
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 2
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 16
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources",
+   "name": "nested-seal-sealed-count",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": null,
+      "final": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "c71178c77703ea6c87eb1b7dd7dcc3773dd0effa1b766dd1b076446384c3b365"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "outer-seal",
+      "before": null,
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 1
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 16
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "Unexpected relation for Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources",
+   "name": "nested-seal-wrong-kind",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": null,
+      "final": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/extra.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 10,
+      "sha256": "ba5be857fa04751bdb45b19597ec0fd0de3f58855290e1ea433bb2d5e161e0d6"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "032ff925b30ad254c25080ac73cf35ee75c9155ec1fc0466f362496832bfea9c"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/extra.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": null,
+      "after": "ba5be857fa04751bdb45b19597ec0fd0de3f58855290e1ea433bb2d5e161e0d6"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "nested-seal",
+      "before": null,
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 1
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 17
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/extra.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 10,
+      "sha256": "ba5be857fa04751bdb45b19597ec0fd0de3f58855290e1ea433bb2d5e161e0d6"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "Unexpected new payload file",
+   "name": "nested-bundle-new-member",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "0cca76d2270891e439a9e3f231a5bcbd598f3b5bd51c8fd50666d04f4d54819c"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": null,
+      "final": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "0cca76d2270891e439a9e3f231a5bcbd598f3b5bd51c8fd50666d04f4d54819c"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "4caaec8c757cf6c03475e6ea91bd087be227c71f14471deaeeed9e543ff9da9a"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "0cca76d2270891e439a9e3f231a5bcbd598f3b5bd51c8fd50666d04f4d54819c"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "nested-seal",
+      "before": null,
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 1
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 16
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "0cca76d2270891e439a9e3f231a5bcbd598f3b5bd51c8fd50666d04f4d54819c"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "Unexpected payload change: Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist",
+   "name": "nested-info-plist-changed",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": null,
+      "final": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "c71178c77703ea6c87eb1b7dd7dcc3773dd0effa1b766dd1b076446384c3b365"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "nested-seal",
+      "before": null,
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 1
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 16
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "Engine receipt does not bind the final payload",
+   "name": "engine-receipt-presigned-sign-in-helper",
+   "valid": false
+  },
+  {
+   "edits": [
+    {
+     "target": "initial",
+     "value": "{\n  \"components\": [\n    {\n      \"artifacts\": {\n        \"bin/OMD Sign-In.app/Contents/Info.plist\": \"200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a\",\n        \"bin/OMD Sign-In.app/Contents/MacOS/omd-signin\": \"dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5\",\n        \"bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns\": \"61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2\",\n        \"bin/omd-engine\": \"615472614c22855f1f50e1ee616b5a898df0c9e951a6b8a2103672dfc1cf6481\"\n      },\n      \"id\": \"omd-engine\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"bin/omd\": \"f2e2575acffe7d33a905bfe08bfefcaec51ddefa84b9678427306adb65d79b5f\"\n      },\n      \"id\": \"omd\",\n      \"materials\": {\n        \"instructions\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        },\n        \"notices\": {\n          \"third-party/native-NOTICES.txt\": \"0a47a282e7e6450f924f510c0e05514749e112bb086bf30317b195bef2929fa6\"\n        },\n        \"provenance\": {\n          \"third-party/native-receipt.json\": \"4f949ab7ae435bb5f5c742a77796ca7b21406fc9d5cda3eebb4288992abe56ee\"\n        },\n        \"source\": {\n          \"LICENSE\": \"3d49ad4e12aaf83789f59fcc012e489e952dca46d93496926f694d52042f1f49\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"1.0.0\"\n    },\n    {\n      \"artifacts\": {\n        \"tools/yt_dlp/yt-dlp_macos\": \"2af80c4d058d8aa5cdda61bdb2d2ce83d81eb15a57427f4c937646090c500a2a\"\n      },\n      \"id\": \"yt_dlp\",\n      \"materials\": {\n        \"instructions\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        },\n        \"notices\": {\n          \"third-party/yt-dlp-LICENSE.txt\": \"cb2276451012f9c7b47809a4f7609c29932ab88f9936f44c7a3de6e7c50cd18c\"\n        },\n        \"provenance\": {\n          \"tools/tools-v2.json\": \"531e7b3f8bf659cfb8903b711385b24cb58f60caf3a1b690b05e8a49b9e44c9e\"\n        },\n        \"source\": {\n          \"third-party/yt-dlp-source-route.txt\": \"532870230fb42fd580de12880ad644aa830f138b1f7504f7a1ce3036bf3c1743\"\n        }\n      },\n      \"pending\": [],\n      \"status\": \"reviewed\",\n      \"version\": \"2026.08.19\"\n    }\n  ],\n  \"locks\": {\n    \"Cargo.lock\": \"ccb9d8c14181f698d27bef1ffb23edc19f60cfd0fa3b1ff38b94bd7fd783490b\",\n    \"browser-package-lock.json\": \"8cbbcc515b9295e4adf0332a12e766cfdf450699a7ab1425878deb2c8c579049\",\n    \"desktop-Cargo.lock\": \"60f9d13950900298a1461f4b3b7c6df758c630e5645f8e583fc34283dfd66bb3\",\n    \"desktop-package-lock.json\": \"7ac6533792023ec3421bafa84c04dcd855e9ee77e7614c9959b2b99503661ffc\"\n  },\n  \"pending\": [],\n  \"reviewed\": true,\n  \"schema\": \"omd-materials-v1\",\n  \"target\": \"darwin-arm64\",\n  \"version\": \"1.0.0\"\n}\n"
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "final": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "final": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "components",
+      0,
+      "artifacts",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "initial": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "final": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "final"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "components",
+      5,
+      "artifacts",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "initial"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "initial_review",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "initial_review",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4096,
+      "sha256": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "input",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "input",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "da519098f10738e250a45c1af8171fbf80b4b6d79355e8fb8428eb1fbd122747"
+    },
+    {
+     "path": [
+      "layout",
+      "code",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": "sign-in-window"
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "doc",
+     "value": 3357
+    },
+    {
+     "path": [
+      "payload",
+      "files",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "payload",
+      "inventory_sha256"
+     ],
+     "target": "doc",
+     "value": "c71178c77703ea6c87eb1b7dd7dcc3773dd0effa1b766dd1b076446384c3b365"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "artifacts",
+      "omd-signin"
+     ],
+     "target": "doc",
+     "value": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+    },
+    {
+     "path": [
+      "receipts",
+      "engine",
+      "binaries"
+     ],
+     "target": "doc",
+     "value": [
+      "omd",
+      "omd-engine",
+      "omd-signin"
+     ]
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a",
+      "after": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "doc",
+     "value": {
+      "after": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259",
+      "before": "dbfd32c59e2e5b754caaecd0c7e11cd919f560d063a565756c806123b4c9e1f5",
+      "kind": "signature-only",
+      "layout": "omd-macho-signature-layout-v2",
+      "method": "paired-structure",
+      "signature_independent_sha256": "1588df67aa83e85a972b79b09ed746281f313114db6e5e4ed416c382b81981c1"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "identical",
+      "before": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2",
+      "after": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "doc",
+     "value": {
+      "kind": "nested-seal",
+      "before": null,
+      "after": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b",
+      "method": "code-resources-hash2",
+      "sealed_files": 1
+     }
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "after"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "before"
+     ],
+     "target": "doc",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    },
+    {
+     "path": [
+      "relations",
+      "Contents/_CodeSignature/CodeResources",
+      "sealed_files"
+     ],
+     "target": "doc",
+     "value": 16
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Info.plist"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 900,
+      "sha256": "200e90d259f0a4dad6200c91e5671f5524dd2eb97760107df9a7b2a945b0eb0a"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/MacOS/omd-signin"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 4400,
+      "sha256": "218b595b13ae33f2cae1cce6167f23ec4e83917389f7b21f1a433f9d13064259"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/Resources/AppIcon.icns"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2048,
+      "sha256": "61f82c0384b4693ce3dc8ffde468975c13d2342f8566c0aca686b4d112daf1f2"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/bin/OMD Sign-In.app/Contents/_CodeSignature/CodeResources"
+     ],
+     "target": "payload",
+     "value": {
+      "bytes": 2100,
+      "sha256": "8514e83d19feb5832407a10d3ad13efbe38a55125f931fdec9dc9f0fcf87f29b"
+     }
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "bytes"
+     ],
+     "target": "payload",
+     "value": 3357
+    },
+    {
+     "path": [
+      "Contents/Resources/resources/v2/third-party/materials-v1.json",
+      "sha256"
+     ],
+     "target": "payload",
+     "value": "dd5a4ddfa5a1d28091df999449c9aee1c65a64f0cbd8da814c280681764560af"
+    }
+   ],
+   "error": "Uncovered final payload files",
+   "name": "nested-seal-uncovered",
+   "valid": false
   }
  ],
  "schema": "omd-final-materials-contract-fixtures-v2"

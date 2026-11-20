@@ -1,6 +1,6 @@
 # Prepare a release
 
-Releases use numeric application versions (0.2.0, then 0.2.1) and GitHub's
+Releases use numeric application versions (0.2.0, 0.2.1, then 0.2.3) and GitHub's
 prerelease flag. Each new version must increase. Do not replace already
 published versioned installers with different bytes. The app, engine components,
 Cargo/npm package versions and native package metadata must agree; SDK and plugin

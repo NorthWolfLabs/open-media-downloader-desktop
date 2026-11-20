@@ -7,7 +7,7 @@
 // controlled-source); anything else is held to the unchanged v1 rules, which pin the stock
 // extractor method.
 import {createHash} from 'node:crypto';
-import {validate as validateInitial,kinds} from './materials-contract.mjs';
+import {validate as validateInitial,kinds,binaryName} from './materials-contract.mjs';
 export const finalSchema='omd-final-materials-v1',finalName='final-materials-v1.json';
 export const finalSchemaV2='omd-final-materials-v2',finalNameV2='final-materials-v2.json';
 const SEAL='Contents/_CodeSignature/CodeResources',INFO='Contents/Info.plist',V1='third-party/materials-v1.json';
@@ -19,8 +19,8 @@ const top=['schema','purpose','target','version','locks','layout','signing','ini
 const signingFields=['mode','team_id','purpose','materials_binding','status','plan_sha256','report_sha256','bundle_id'];
 const receiptFields=['receipt','notices','binaries','artifacts','lock_sha256','target','version','findings','spans','spans_in_payload','pending','release_accepted'];
 const componentFields=['id','version','basis','initial_component','status','pending','artifacts','materials'];
-const methods={'signature-only':'paired-structure','prepared-extractor':'omd-pyinstaller-6.22.0-onefile-signature-only-v1','managed-manifest':'digest-fields-only','build-inventory':'digests-and-signing-record','engine-receipt':'artifact-only-rebinding','outer-seal':'code-resources-hash2'};
-const relationFields={identical:['kind','before','after'],'signature-only':['kind','before','after','method','layout','signature_independent_sha256'],'prepared-extractor':['kind','before','after','method','prepared','signature_only_natives','identical_non_natives','signature_independent_sha256'],'managed-manifest':['kind','before','after','method'],'build-inventory':['kind','before','after','method'],'engine-receipt':['kind','before','after','method'],'outer-seal':['kind','before','after','method','sealed_files']};
+const methods={'signature-only':'paired-structure','prepared-extractor':'omd-pyinstaller-6.22.0-onefile-signature-only-v1','managed-manifest':'digest-fields-only','build-inventory':'digests-and-signing-record','engine-receipt':'artifact-only-rebinding','outer-seal':'code-resources-hash2','nested-seal':'code-resources-hash2'};
+const relationFields={identical:['kind','before','after'],'signature-only':['kind','before','after','method','layout','signature_independent_sha256'],'prepared-extractor':['kind','before','after','method','prepared','signature_only_natives','identical_non_natives','signature_independent_sha256'],'managed-manifest':['kind','before','after','method'],'build-inventory':['kind','before','after','method'],'engine-receipt':['kind','before','after','method'],'outer-seal':['kind','before','after','method','sealed_files'],'nested-seal':['kind','before','after','method','sealed_files']};
 // omd-final-materials-v2: every v1 field plus the typed extractor route; the prepared-extractor
 // relation gains a route label that must pair with its method.
 const topV2=[...top.slice(0,top.indexOf('receipts')),'extractor',...top.slice(top.indexOf('receipts'))];
@@ -31,6 +31,10 @@ const sourceFields=['evidence','kit','bootloader','profile','plan_sha256','recei
 const sourceEvidenceSchema='omd-macos-extractor-source-evidence-v1',sourceProfileFile='distribution/yt-dlp-source-curl/profile.json';
 const stockBootloader='ca3cc654cebdb7a005872a4ff4fad10bfe34926f6f6425946b0dc6285289a879';
 const extractorArches=['universal2','arm64','x86_64'],targetArch={'darwin-arm64':'arm64','darwin-x64':'x86_64'};
+// A nested application bundle under the resources (the macOS sign-in window): its main executable
+// is a code object, and signing adds exactly its Contents/_CodeSignature seal.
+const nestedCode=/^(.+\.app)\/Contents\/MacOS\/[A-Za-z0-9._-]{1,128}$/,nestedSeal='/Contents/_CodeSignature/CodeResources';
+const nestedBundles=(code,res)=>Object.fromEntries(Object.keys(code).filter(p=>p.startsWith(res+'/')).map(p=>[p.match(nestedCode)?.[1],p]).filter(([root])=>root));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const object=x=>!!x&&typeof x==='object'&&!Array.isArray(x);
 const canon=x=>Array.isArray(x)?'['+x.map(canon).join(',')+']':object(x)?'{'+Object.keys(x).sort().map(k=>JSON.stringify(k)+':'+canon(x[k])).join(',')+'}':JSON.stringify(x);
@@ -80,12 +84,14 @@ export function validateFinal(doc,initialBytes,payload,delivery,expect){
  need(same(doc.payload.files,payload),'Final payload differs from the bound payload inventory');
  need(same(doc.delivery.files,delivery),'Delivery set differs from the bound delivery inventory');
  const before=doc.input.files,after=doc.payload.files,shipped=doc.delivery.files,has=(o,k)=>Object.hasOwn(o,k);
+ const bundles=nestedBundles(code,res),seals=Object.fromEntries(Object.keys(bundles).map(root=>[root+nestedSeal,root]));
  need(Object.keys(before).every(p=>has(after,p)),'Unexpected removal of an input file');
- need(Object.keys(after).every(p=>has(before,p)||p===SEAL),'Unexpected new payload file');
+ need(Object.keys(after).every(p=>has(before,p)||p===SEAL||has(seals,p)),'Unexpected new payload file');
  need(has(after,INFO)&&has(after,SEAL)&&Object.keys(code).every(p=>has(after,p))&&Object.keys(after).every(p=>p.startsWith('Contents/')),'Invalid final payload layout');
+ need(Object.keys(seals).every(p=>has(after,p)&&!has(before,p)),'A nested bundle is not freshly sealed');
  const relations=doc.relations;
  need(object(relations)&&Object.keys(relations).length===Object.keys(after).length&&Object.keys(after).every(p=>has(relations,p)),'Relations must cover exactly the final payload');
- const fixed={[res+'/tools/tools-v2.json']:'managed-manifest',[res+'/browser/browser-tools-v2.json']:'managed-manifest',[res+'/build-inventory.json']:'build-inventory',[res+'/third-party/native-receipt.json']:'engine-receipt',[SEAL]:'outer-seal'};
+ const fixed={[res+'/tools/tools-v2.json']:'managed-manifest',[res+'/browser/browser-tools-v2.json']:'managed-manifest',[res+'/build-inventory.json']:'build-inventory',[res+'/third-party/native-receipt.json']:'engine-receipt',[SEAL]:'outer-seal',...Object.fromEntries(Object.keys(seals).map(p=>[p,'nested-seal']))};
  const fields=v2?relationFieldsV2:relationFields;
  for(const [p,r] of Object.entries(relations)){
   const kind=has(code,p)?(code[p]==='yt-dlp'?'prepared-extractor':'signature-only'):(fixed[p]??'identical');
@@ -94,7 +100,7 @@ export function validateFinal(doc,initialBytes,payload,delivery,expect){
   if(kind==='identical'){need(r.before===r.after,'Unexpected payload change: '+p);continue;}
   // v2: a known method with exactly its own route label; v1 pins the stock method instead.
   const method=v2&&kind==='prepared-extractor'?typeof r.method==='string'&&Object.hasOwn(extractorRoutes,r.method)&&extractorRoutes[r.method]===r.route:r.method===methods[kind];
-  need(method&&(r.before!==null||kind==='outer-seal'),'Unexpected relation for '+p);
+  need(method&&(r.before!==null||kind==='outer-seal'||kind==='nested-seal'),'Unexpected relation for '+p);
   if(has(code,p)){
    need(r.before!==r.after,'Code object was not re-signed: '+p);
    need(hex(r.signature_independent_sha256),'Unexpected relation for '+p);
@@ -102,6 +108,10 @@ export function validateFinal(doc,initialBytes,payload,delivery,expect){
    else need(hex(r.prepared)&&r.prepared!==r.before&&r.prepared!==r.after&&Number.isSafeInteger(r.signature_only_natives)&&r.signature_only_natives>0&&Number.isSafeInteger(r.identical_non_natives)&&r.identical_non_natives>=0,'Unexpected relation for '+p);
   }
   if(kind==='outer-seal')need(Number.isSafeInteger(r.sealed_files)&&r.sealed_files===Object.keys(after).length-3,'Unexpected relation for '+p);
+  if(kind==='nested-seal'){
+   const root=seals[p],inside=Object.keys(after).filter(q=>q.startsWith(root+'/')&&q!==root+'/'+INFO&&q!==bundles[root]&&q!==p);
+   need(r.before===null&&Number.isSafeInteger(r.sealed_files)&&r.sealed_files===inside.length,'Unexpected relation for '+p);
+  }
  }
  let x=null,extractor=null,kit=null;
  if(v2){
@@ -143,10 +153,14 @@ export function validateFinal(doc,initialBytes,payload,delivery,expect){
  validateInitial(initial,staged,expect.required,doc.target,doc.version,doc.locks);
  const receipts=doc.receipts;
  need(keys(receipts,['engine','desktop'])&&receipts.engine!==null&&receipts.desktop!==null,'Missing final native receipt binding');
- const triple=triples[doc.target],binaries=Object.keys(code).filter(p=>p.startsWith(res+'/bin/')).map(p=>p.slice(res.length+5)).sort();
+ // Each engine binary is found where the binding's own layout records it, never rebuilt from the
+ // current layout: older bindings carry the macOS sign-in helper as a plain bin/omd-signin.
+ const located={};
+ for(const p of Object.keys(code).filter(p=>p.startsWith(res+'/bin/'))){const n=binaryName(p.slice(res.length+1));need(!!n&&!has(located,n),'Invalid final payload layout');located[n]=p;}
+ const triple=triples[doc.target],binaries=Object.keys(located).sort();
  const bound=(r,names,artifacts,lock)=>keys(r,receiptFields)&&same(r.binaries,names)&&same(r.artifacts,artifacts)&&typeof lock==='string'&&r.lock_sha256===lock&&r.target===triple&&r.version===doc.version&&Number.isSafeInteger(r.findings)&&r.findings>0&&Number.isSafeInteger(r.spans)&&r.spans>0&&r.spans_in_payload===r.spans&&Array.isArray(r.pending)&&r.pending.length===0&&r.release_accepted===false;
  const engine=receipts.engine,receiptPath=res+'/third-party/native-receipt.json',noticesPath=res+'/third-party/native-NOTICES.txt';
- need(binaries.length>0&&has(after,receiptPath)&&has(after,noticesPath)&&bound(engine,binaries,Object.fromEntries(binaries.map(n=>[n,after[res+'/bin/'+n].sha256])),doc.locks['Cargo.lock'])&&same(engine.receipt,{path:receiptPath,sha256:after[receiptPath].sha256})&&same(engine.notices,{path:noticesPath,sha256:after[noticesPath].sha256}),'Engine receipt does not bind the final payload');
+ need(binaries.length>0&&has(after,receiptPath)&&has(after,noticesPath)&&bound(engine,binaries,Object.fromEntries(binaries.map(n=>[n,after[located[n]].sha256])),doc.locks['Cargo.lock'])&&same(engine.receipt,{path:receiptPath,sha256:after[receiptPath].sha256})&&same(engine.notices,{path:noticesPath,sha256:after[noticesPath].sha256}),'Engine receipt does not bind the final payload');
  const desktop=receipts.desktop,detached=object(desktop)?[desktop.receipt??null,desktop.notices??null]:[];
  need(bound(desktop,[layout.executable],{[layout.executable]:after[shell].sha256},doc.locks['desktop-Cargo.lock'])&&detached.every(x=>keys(x,['path','sha256'])&&typeof x.path==='string'&&has(shipped,x.path)&&shipped[x.path].sha256===x.sha256),'Desktop receipt does not bind the final executable');
  const components=doc.components;

@@ -1,6 +1,13 @@
 // Release materials contract v1; kept in correspondence with shared fixtures.
 import {createHash} from 'node:crypto';
 export const kinds=['notices','source','instructions','provenance'];
+// macOS installs the native sign-in window as an application bundle beside the engine, so the
+// launched process has its own bundle identity. Every other engine binary, and every binary on
+// Linux and Windows, is a plain bin/ file. Mirrors the engine's materials_contract.binary_path.
+export const signInBinary='omd-signin',signInBundle='OMD Sign-In.app',signInExecutable=`bin/${signInBundle}/Contents/MacOS/${signInBinary}`;
+const macos=target=>typeof target==='string'&&(target.startsWith('darwin-')||target.endsWith('-apple-darwin'));
+export const binaryPath=(name,target)=>name===signInBinary&&macos(target)?signInExecutable:'bin/'+name+(typeof target==='string'&&(target.startsWith('win32-')||target.includes('windows'))?'.exe':'');
+export const binaryName=p=>p===signInExecutable?signInBinary:typeof p==='string'&&p.startsWith('bin/')&&p.length>4&&!p.slice(4).includes('/')?p.slice(4):null;
 export function validate(m,files,required,target,version,locks){
  const need=(ok,why)=>{if(!ok)throw new Error(why);};
  const portable=p=>need(typeof p==='string'&&p&&!p.startsWith('/')&&!/[\\:\x00-\x1f]/.test(p)&&p.split('/').every(x=>x&&x!=='.'&&x!=='..'&&!/[ .]$/.test(x)),'Invalid portable path');
@@ -137,6 +144,6 @@ export function validateNativeReceipt(r,files,names,lock,target,notices,version)
   }
  }
  need([...tagged.keys()].every(x=>ids.has(x))&&runtimeFindings===1);
- const artifacts=Object.fromEntries((r.artifacts??[]).map(x=>[x.name,x.sha256])),suffix=target.includes('windows')?'.exe':'';
- if(Object.keys(artifacts).length!==(r.artifacts??[]).length||Object.keys(artifacts).length!==names.length||names.some(n=>files['bin/'+n+suffix]!==artifacts[n]))throw new Error('Native receipt artifact mismatch');
+ const artifacts=Object.fromEntries((r.artifacts??[]).map(x=>[x.name,x.sha256]));
+ if(Object.keys(artifacts).length!==(r.artifacts??[]).length||Object.keys(artifacts).length!==names.length||names.some(n=>files[binaryPath(n,target)]!==artifacts[n]))throw new Error('Native receipt artifact mismatch');
 }

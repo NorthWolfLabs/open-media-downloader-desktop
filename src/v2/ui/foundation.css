@@ -570,10 +570,24 @@ dialog::backdrop {
     opacity: var(--theme-foundation-opacity-16, 1);
   }
 }
-.ui-enter,
-dialog[open] {
+.ui-enter {
   
   animation: ui-enter var(--motion-duration) ease-out;
+}
+/* A modal enters by movement only. Its first keyframe is fully opaque, so a late,
+   throttled or paused animation frame can't show the backdrop around a blank,
+   transparent dialog. Pickers inside use the top layer, so the transform doesn't
+   move them. */
+@keyframes ui-dialog-enter {
+  from {
+    transform: translateY(6px);
+  }
+  to {
+    transform: none;
+  }
+}
+dialog[open] {
+  animation: ui-dialog-enter var(--motion-duration) ease-out;
 }
 .ui-button,
 .source-badge {

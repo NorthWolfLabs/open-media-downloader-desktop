@@ -1,14 +1,17 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,writeFile,readFile,mkdir,readdir,rm,cp} from 'node:fs/promises';
+import {mkdtemp,writeFile,readFile,mkdir,readdir,rm,cp,chmod,stat,symlink} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
+import {binaryPath} from './materials-contract.mjs';
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 const desktop=join(dirname(fileURLToPath(import.meta.url)),'..');
 const exe=process.platform==='win32'?'.exe':'';
+const hostTarget=`${process.platform}-${process.arch}`;
+const signIn='OMD Sign-In.app',signInMembers=['Contents/Info.plist','Contents/MacOS/omd-signin','Contents/Resources/AppIcon.icns'];
 // Synthetic package with the same header/manifest framing as a real .omdp.
 const omdp=(id,version='0.1.0')=>{const manifest=Buffer.from(JSON.stringify({id,name:id,version})),length=Buffer.alloc(4);length.writeUInt32LE(manifest.length);return Buffer.concat([Buffer.from('OMDP2\0','latin1'),length,manifest,Buffer.from('synthetic payload')]);};
 
@@ -16,6 +19,11 @@ async function fixture(){
  const root=await mkdtemp(join(tmpdir(),'omd-staging-'));
  const bin=join(root,'bin'),browser=join(root,'browser');await mkdir(bin);await mkdir(browser);
  for(const name of ['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'])await writeFile(join(bin,name+exe),name==='omd-plugin-worker-v2'?'OMD_WORKER_PROFILE=release':name);
+ // The engine runtime's macOS sign-in window bundle, carrying this project's reviewed icon.
+ const bundle=join(bin,signIn);await mkdir(join(bundle,'Contents/MacOS'),{recursive:true});await mkdir(join(bundle,'Contents/Resources'));
+ await writeFile(join(bundle,'Contents/Info.plist'),'<?xml version="1.0" encoding="UTF-8"?><plist version="1.0"><dict/></plist>\n');
+ await writeFile(join(bundle,'Contents/MacOS/omd-signin'),'omd-signin');await chmod(join(bundle,'Contents/MacOS/omd-signin'),0o755);
+ await cp(join(desktop,'src-tauri/icons/icon.icns'),join(bundle,'Contents/Resources/AppIcon.icns'));
  await writeFile(join(root,'tool'),'fixture tool');const tool={path:'tool',version:'fixture',sha256:digest('fixture tool')};
  await writeFile(join(root,'tools.json'),JSON.stringify(Object.fromEntries(['node','yt_dlp','ffmpeg','ffprobe'].map(name=>[name,tool]))));
  await writeFile(join(browser,'adapter'),'adapter');await writeFile(join(browser,'browser'),'browser');
@@ -26,6 +34,10 @@ async function fixture(){
  const check=(script=join(desktop,'scripts/plugin-policy.mjs'))=>spawnSync(process.execPath,[script,'--check-public',output],{encoding:'utf8'});
  return {root,bin,browser,output,plugins,run,check,inventory:async()=>JSON.parse(await readFile(join(output,'build-inventory.json'),'utf8')),cleanup:()=>rm(root,{recursive:true,force:true})};
 }
+// Staging for a macOS target needs a POSIX host: macOS names carry no .exe and the sign-in
+// bundle's executable must keep its mode bit, which Windows file systems cannot record.
+// Release staging for macOS runs on macOS; Windows hosts skip these target checks.
+const macTarget={skip:process.platform==='win32'&&'macOS-target staging needs a POSIX host (unsuffixed names, executable mode bit)'};
 const leftovers=async root=>(await readdir(root)).filter(name=>name.startsWith('.omd-v2-stage-'));
 
 test('the tracked public policy ships no plugins and reserves the synthetic private identity',async()=>{
@@ -44,7 +56,7 @@ test('public staging succeeds with no plugins and passes the pre-upload check',a
   assert.equal(await readFile(join(f.output,'LICENSE'),'utf8'),await readFile(join(desktop,'LICENSE'),'utf8'));
   assert.ok(!inventory.files.some(file=>file.path.startsWith('providers/')));
   assert.ok(!(await readdir(f.output)).includes('providers'),'the engine catalog treats a missing providers directory as empty');
-  for(const binary of ['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'])assert.ok(inventory.files.some(file=>file.path===`bin/${binary}${exe}`));
+  for(const binary of ['omd-engine','omd-plugin-worker-v2','omd-helper-guardian','omd-notify','omd-signin','omd'])assert.ok(inventory.files.some(file=>file.path===binaryPath(binary,hostTarget)));
   const checked=f.check();assert.equal(checked.status,0,checked.stderr);assert.match(checked.stdout,/0 allowlisted plugins/);
   // Anything added after staging fails the pre-upload check.
   await mkdir(join(f.output,'providers'));await writeFile(join(f.output,'providers/extra.omdp'),omdp('org.example.extra'));
@@ -100,7 +112,7 @@ test('a reviewed allowlist entry admits only its exact public package',async()=>
  try{
   // Copy the current scripts into an isolated desktop layout with a test policy.
   const copy=join(f.root,'desktop');await mkdir(join(copy,'packaging'),{recursive:true});
-  await cp(join(desktop,'LICENSE'),join(copy,'LICENSE'));
+  await cp(join(desktop,'LICENSE'),join(copy,'LICENSE'));await cp(join(desktop,'src-tauri/icons/icon.icns'),join(copy,'src-tauri/icons/icon.icns'));
   await cp(join(desktop,'scripts/materials-contract.mjs'),join(copy,'scripts/materials-contract.mjs'));
   await cp(join(desktop,'scripts/stage-v2.mjs'),join(copy,'scripts/stage-v2.mjs'));await cp(join(desktop,'scripts/plugin-policy.mjs'),join(copy,'scripts/plugin-policy.mjs'));
   const bytes=omdp('org.example.starter','1.0.0'),policy=JSON.parse(await readFile(join(desktop,'packaging/public-plugins.json'),'utf8'));
@@ -215,7 +227,7 @@ test('release staging rejects missing coverage before changing output',async()=>
  const f=await fixture();try{assert.equal(f.run().status,0);const before=await readFile(join(f.output,'build-inventory.json'));const result=f.run(['--staging-mode','release']);assert.notEqual(result.status,0);assert.match(result.stderr,/requires materials/);assert.deepEqual(await readFile(join(f.output,'build-inventory.json')),before);}finally{await f.cleanup();}
 });
 
-test('two-phase release staging defers only the desktop executable components; single-phase still fails',async()=>{
+test('two-phase release staging defers only the desktop executable components; single-phase still fails',macTarget,async()=>{
  const f=await fixture();
  try{
   const native=JSON.parse(await readFile(join(desktop,'packaging/materials-contract-fixtures-v1.json'),'utf8')).native;
@@ -242,7 +254,7 @@ test('two-phase release staging defers only the desktop executable components; s
   const materials={notices:pick('third-party/native-NOTICES.txt'),source:pick('LICENSE'),instructions:pick('LICENSE'),provenance:pick('third-party/native-receipt.json','tools/tools-v2.json','browser/browser-tools-v2.json')};
   const component=(id,version,artifacts)=>({id,version,status:'reviewed',pending:[],artifacts,materials});
   const manifest={schema:'omd-materials-v1',reviewed:true,pending:[],target:'darwin-arm64',version:native.version,locks:Object.fromEntries(await Promise.all(['Cargo.lock','browser-package-lock.json','desktop-Cargo.lock','desktop-package-lock.json'].map(async n=>[n,digest(await readFile(join(locks,n)))]))),
-   components:[...names.map(n=>component(n,native.version,pick('bin/'+n+exe))),...['yt_dlp','ffmpeg','ffprobe','node'].map(n=>component(n,'fixture',Object.fromEntries(Object.entries(staged).filter(([p])=>p.startsWith(`tools/${n}/`))))),
+   components:[...names.map(n=>component(n,native.version,n==='omd-signin'?Object.fromEntries(Object.entries(staged).filter(([p])=>p.startsWith(`bin/${signIn}/`))):pick('bin/'+n+exe))),...['yt_dlp','ffmpeg','ffprobe','node'].map(n=>component(n,'fixture',Object.fromEntries(Object.entries(staged).filter(([p])=>p.startsWith(`tools/${n}/`))))),
     component('browser','fixture-browser',Object.fromEntries(Object.entries(staged).filter(([p])=>p.startsWith('browser/content/'))))]};
   await writeFile(join(f.root,'materials.json'),JSON.stringify(manifest));
   const before=await readFile(join(f.output,'build-inventory.json'));
@@ -256,4 +268,44 @@ test('two-phase release staging defers only the desktop executable components; s
   assert.equal(inventory.staging_mode,'release');assert.equal(inventory.release_accepted,false);
   assert.equal(digest(await readFile(join(f.output,'third-party/materials-v1.json'))),digest(JSON.stringify(manifest)));
  }finally{await f.cleanup();}
+});
+
+test('macOS staging copies the engine sign-in app bundle exactly and keeps no bare helper',macTarget,async()=>{
+ const f=await fixture();
+ try{
+  const result=f.run(['--target','darwin-arm64']);assert.equal(result.status,0,result.stderr);
+  const paths=(await f.inventory()).files.map(file=>file.path);
+  assert.deepEqual(paths.filter(p=>p.startsWith(`bin/${signIn}/`)).sort(),signInMembers.map(m=>`bin/${signIn}/${m}`).sort());
+  assert.ok(!paths.includes('bin/omd-signin'));
+  assert.ok((await stat(join(f.output,`bin/${signIn}/Contents/MacOS/omd-signin`))).mode&0o100);
+  assert.deepEqual(await readFile(join(f.output,`bin/${signIn}/Contents/Resources/AppIcon.icns`)),await readFile(join(desktop,'src-tauri/icons/icon.icns')));
+  const checked=f.check();assert.equal(checked.status,0,checked.stderr);
+  // Other targets keep the plain helper and never stage the bundle.
+  const linux=f.run(['--target','linux-x64']);assert.equal(linux.status,0,linux.stderr);
+  const linuxPaths=(await f.inventory()).files.map(file=>file.path);
+  assert.ok(linuxPaths.includes('bin/omd-signin'));assert.ok(!linuxPaths.some(p=>p.startsWith(`bin/${signIn}`)));
+ }finally{await f.cleanup();}
+});
+
+test('macOS staging refuses an incomplete, extended, linked or rebranded sign-in bundle',macTarget,async()=>{
+ const cases=[
+  ['missing bundle',async f=>rm(join(f.bin,signIn),{recursive:true}),/needs the engine's OMD Sign-In.app/],
+  ['missing icon',async f=>rm(join(f.bin,signIn,'Contents/Resources/AppIcon.icns')),/must contain exactly/],
+  ['extra member',async f=>writeFile(join(f.bin,signIn,'Contents/Resources/extra.txt'),'extra'),/must contain exactly/],
+  ['presigned seal',async f=>{await mkdir(join(f.bin,signIn,'Contents/_CodeSignature'));await writeFile(join(f.bin,signIn,'Contents/_CodeSignature/CodeResources'),'seal');},/must contain exactly/],
+  ['linked member',async f=>{await rm(join(f.bin,signIn,'Contents/Info.plist'));await symlink(join(f.root,'tool'),join(f.bin,signIn,'Contents/Info.plist'));},/cannot contain symlinks/],
+  ['other icon',async f=>writeFile(join(f.bin,signIn,'Contents/Resources/AppIcon.icns'),'icns other artwork'),/icon differs from src-tauri\/icons\/icon.icns/],
+  ['not executable',async f=>chmod(join(f.bin,signIn,'Contents/MacOS/omd-signin'),0o644),/executable is not executable/],
+ ];
+ for(const [name,change,why] of cases){
+  const f=await fixture();
+  try{
+   assert.equal(f.run(['--target','darwin-arm64']).status,0,name);
+   const before=await readFile(join(f.output,'build-inventory.json'));
+   await change(f);
+   const result=f.run(['--target','darwin-arm64']);assert.notEqual(result.status,0,name);assert.match(result.stderr,why,name);
+   assert.deepEqual(await readFile(join(f.output,'build-inventory.json')),before,name);
+   assert.deepEqual(await leftovers(f.root),[],name);
+  }finally{await f.cleanup();}
+ }
 });

@@ -1,0 +1,4 @@
+# Check out every file byte for byte on every platform. Tests and release staging
+# pin exact SHA-256 digests of shared fixtures, lockfiles and generated contracts,
+# so Git must not convert line endings (for example to CRLF on Windows).
+* -text

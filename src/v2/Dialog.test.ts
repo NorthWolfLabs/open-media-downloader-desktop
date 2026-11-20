@@ -1,3 +1,5 @@
+import {readFileSync} from 'node:fs';
+import {resolve} from 'node:path';
 import {beforeEach,afterEach,it,expect,vi} from 'vitest';
 import {render,screen,cleanup,waitFor} from '@testing-library/svelte';
 import {createRawSnippet} from 'svelte';
@@ -56,4 +58,13 @@ it('marks a body that scrolls with more content below, and clears it at the end'
  await waitFor(()=>expect(dialog.classList.contains('scroll-more')).toBe(true));
  region.scrollTop=600;region.dispatchEvent(new Event('scroll'));
  await waitFor(()=>expect(dialog.classList.contains('scroll-more')).toBe(false));
+});
+it('never starts a modal transparent, so a late or paused entrance frame cannot show a blank dialog',()=>{
+ const css=readFileSync(resolve('src/v2/ui/foundation.css'),'utf8');
+ const rule=/dialog\[open\]\s*\{[^}]*animation:\s*([\w-]+)/.exec(css);
+ expect(rule).toBeTruthy();
+ const frames=new RegExp(`@keyframes\\s+${rule![1]}\\s*\\{([\\s\\S]*?)\\n\\}`).exec(css)?.[1]??'';
+ expect(frames).toMatch(/transform/);
+ expect(frames).not.toMatch(/opacity/);
+ expect(css).not.toMatch(/dialog\[open\][^{]*\{[^}]*animation:\s*ui-enter/);
 });

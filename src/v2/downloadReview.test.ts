@@ -1,9 +1,10 @@
 import { reusableCheck, type SelectionTask } from "./downloadReview";
 import { it, expect, afterEach, vi } from "vitest";
 import { render, screen, fireEvent, cleanup } from "@testing-library/svelte";
-import { reviewCounts, type Preparation } from "./downloadReview";
+import { checkIssue, reconcileNotice, reconcileSelection, reviewCounts, type Preparation } from "./downloadReview";
 import DownloadReview from "./DownloadReview.svelte";
 import DownloadCheck from "./DownloadCheck.svelte";
+import DownloadChecks from "./DownloadChecks.svelte";
 afterEach(cleanup);
 const item = (outcome = "download") => ({
   outcome,
@@ -166,4 +167,121 @@ it("recognizes successful no-op results without hiding failed or incomplete chec
   expect(finishedWithoutDownloads({ ...task, outcomes: { already_acquired: 2, new_version: 1 } })).toBe(false);
   expect(finishedWithoutDownloads({ ...task, state: "failed", total: 0 })).toBe(false);
   expect(finishedWithoutDownloads({ ...task, state: "working", total: 0 })).toBe(false);
+});
+
+const changedBatch = (code = "selection_changed") =>
+  ({
+    id: "changed",
+    kind: "batch",
+    state: "failed",
+    processed: 1,
+    total: 3,
+    request: { snapshot_id: "snapshot", destination_id: "library", recipe: "mp4" },
+    issue: {
+      code,
+      message: "A selected release changed since enumeration. Create a new snapshot and review the new selection.",
+      retryable: false,
+      actions: [],
+    },
+    expires_at: null,
+  }) as SelectionTask;
+
+it("explains a source change in plain words with Refresh as the next step", () => {
+  expect(checkIssue(changedBatch().issue)).toEqual({
+    message: "A selected item changed on the source since it was listed. Refresh and try again.",
+    refresh: true,
+  });
+  expect(checkIssue(changedBatch("source_changed").issue)?.refresh).toBe(true);
+  expect(checkIssue({ code: "offline", message: "Source is offline", retryable: true, actions: [] })).toEqual({
+    message: "Source is offline",
+    refresh: false,
+  });
+  expect(checkIssue(null)).toBeNull();
+});
+
+it("offers Refresh in the check dialog instead of the engine's snapshot wording", async () => {
+  dialogs();
+  const onrefresh = vi.fn(async () => {});
+  const onoptions = vi.fn();
+  render(DownloadCheck, {
+    props: {
+      task: changedBatch(),
+      onclose: () => {},
+      onaction: async () => {},
+      onreview: async () => {},
+      onoptions,
+      ondismiss: () => {},
+      onrefresh,
+    },
+  });
+  expect(screen.getByRole("alert").textContent).toBe(
+    "A selected item changed on the source since it was listed. Refresh and try again.",
+  );
+  expect(screen.queryByText(/enumeration|snapshot/)).toBeNull();
+  expect(screen.queryByRole("button", { name: "Check again" })).toBeNull();
+  await fireEvent.click(screen.getByRole("button", { name: "Refresh" }));
+  expect(onrefresh).toHaveBeenCalledOnce();
+  expect(onoptions).not.toHaveBeenCalled();
+});
+
+it("keeps Check again for other unrecoverable check problems", () => {
+  dialogs();
+  render(DownloadCheck, {
+    props: {
+      task: { ...changedBatch(), issue: { code: "unsupported_operation", message: "Not supported", retryable: false, actions: [] } },
+      onclose: () => {},
+      onaction: async () => {},
+      onreview: async () => {},
+      onoptions: () => {},
+      ondismiss: () => {},
+      onrefresh: async () => {},
+    },
+  });
+  expect(screen.getByRole("button", { name: "Check again" })).toBeTruthy();
+  expect(screen.queryByRole("button", { name: "Refresh" })).toBeNull();
+});
+
+it("offers Refresh on an Activity row for a check whose items changed on the source", async () => {
+  const onrefresh = vi.fn(async () => {});
+  const onaction = vi.fn(async () => {});
+  render(DownloadChecks, {
+    props: {
+      tasks: [changedBatch()],
+      contexts: {},
+      destinations: [],
+      onchoose: async () => {},
+      onaction,
+      ondismiss: () => {},
+      onrefresh,
+    },
+  });
+  expect(screen.getByText("A selected item changed on the source since it was listed. Refresh and try again.")).toBeTruthy();
+  await fireEvent.click(screen.getByRole("button", { name: "Refresh" }));
+  expect(onrefresh).toHaveBeenCalledWith(expect.objectContaining({ id: "changed" }));
+  expect(onaction).not.toHaveBeenCalled();
+});
+
+it("matches a refreshed selection against the fresh listing of its own collection", () => {
+  const ref = (id: string) => ({ provider: "fixture", id });
+  const listed = (id: string, extra: Record<string, unknown> = {}) => ({ reference: ref(id), availability: "available" as const, language: "en", group: null, ...extra });
+  const policy = { languages: ["en"], groups: [] };
+  // Listing order wins; duplicates and unselected releases are ignored.
+  expect(reconcileSelection([ref("b"), ref("a")], [listed("a"), listed("x"), listed("b"), listed("a")], policy)).toEqual({ kept: [ref("a"), ref("b")], missing: 0, unavailable: 0 });
+  expect(reconcileSelection([ref("a"), ref("gone")], [listed("a")], policy)).toEqual({ kept: [ref("a")], missing: 1, unavailable: 0 });
+  // The engine's batch criteria: availability, then the policy's languages and groups.
+  expect(reconcileSelection([ref("a"), ref("b"), ref("c"), ref("d")], [
+    listed("a", { availability: "authentication_required" }),
+    listed("b", { language: "fr" }),
+    listed("c", { language: null }),
+    listed("d"),
+  ], { languages: ["en"], groups: ["team"] })).toEqual({ kept: [], missing: 0, unavailable: 4 });
+  expect(reconcileSelection([ref("c")], [listed("c", { language: null, group: "team" })], { languages: ["en"], groups: ["team"] }).kept).toEqual([ref("c")]);
+});
+
+it("explains what Refresh left out of a selection", () => {
+  const kept = (n: number) => Array.from({ length: n }, (_, i) => ({ provider: "fixture", id: String(i) }));
+  expect(reconcileNotice("List", { kept: kept(2), missing: 0, unavailable: 0 })).toBeNull();
+  expect(reconcileNotice("List", { kept: kept(3), missing: 2, unavailable: 0 })).toBe("2 selected items are no longer in List. They were left out; the other 3 items are being checked.");
+  expect(reconcileNotice("List", { kept: kept(1), missing: 0, unavailable: 1 })).toBe("1 selected item can’t be downloaded from List right now. It was left out; the other item is being checked.");
+  expect(reconcileNotice("List", { kept: [], missing: 1, unavailable: 2 })).toBe("1 selected item is no longer in List, and 2 can’t be downloaded right now. Nothing from this selection can be downloaded now. Open List to choose again.");
 });

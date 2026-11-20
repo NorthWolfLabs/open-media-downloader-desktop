@@ -4,10 +4,11 @@
   import RecordList from "./ui/RecordList.svelte";
   import RecordRow from "./ui/RecordRow.svelte";
   import type { Snippet } from "svelte";
-  import { Blocks, ChevronRight, UserRound } from "lucide-svelte";
+  import { Blocks, ChevronRight, Compass, Search, UserRound } from "lucide-svelte";
   let {
     sources,
     busy = false,
+    onbrowse,
     onaccounts,
     onremove,
     onfocus,
@@ -16,6 +17,8 @@
     onfocus: (title: string | null, back: () => void) => void;
     sources: { manifest: ProviderManifest }[];
     busy?: boolean;
+    /** Opens Explore on this source's catalog (or its search, without a catalog). */
+    onbrowse?: (s: ProviderManifest) => void;
     onaccounts: (s: ProviderManifest) => void;
     onremove: (id: string) => void;
     /** The shared "add a source plugin" state, shown while none is installed. */
@@ -29,11 +32,21 @@
     if (focused && !active) focused = null;
   });
   $effect(() => onfocus(active?.name ?? null, () => (focused = null)));
+  const browsable = $derived(!!active?.capabilities.includes("browse"));
+  const searchable = $derived(!!active?.capabilities.includes("search"));
 </script>
 
 {#if active}
   <section class="source-settings">
     {#if active.description}<p class="source-description">{active.description}</p>{/if}
+    {#if onbrowse && (browsable || searchable)}<div class="source-explore">
+        <Button variant="primary" onclick={() => onbrowse(active)}
+          >{#if browsable}<Compass size={16} />Browse in Explore{:else}<Search
+              size={16}
+            />Search in Explore{/if}</Button
+        >
+        <p>Sources manages installed plugins. Their catalogs and search are in Explore.</p>
+      </div>{/if}
     <section class="form-section" aria-labelledby="source-details-heading">
       <h2 id="source-details-heading">Details</h2>
       <div class="form-box">
@@ -108,6 +121,17 @@
   }
   .source-description {
     max-width: 64ch;
+  }
+  .source-explore {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+  }
+  .source-explore p {
+    color: var(--muted);
+    font-size: var(--theme-sourcespage-font-size-1, 13px);
+    min-width: 0;
   }
   .source-settings .form-section {
     margin: 0;

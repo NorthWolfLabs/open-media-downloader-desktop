@@ -33,6 +33,16 @@ vp exec node scripts/stage-v2.mjs \
   --plugin-mode public
 ```
 
+On macOS targets the engine's sign-in window is an application bundle: --engine-bin
+must contain `OMD Sign-In.app` (`Contents/Info.plist`, `Contents/MacOS/omd-signin`,
+`Contents/Resources/AppIcon.icns`), as the engine's runtime packager assembles it, and
+staging copies it unchanged to `bin/OMD Sign-In.app`. This project owns that icon: package
+the engine runtime with `--signin-icon` set to this project's reviewed
+`src-tauri/icons/icon.icns`. Staging refuses a bundle with any other icon, an extra or
+missing member, a link, a seal or a non-executable helper. A bare `omd-signin` in
+--engine-bin is ignored on macOS. Linux and Windows staging still copy `bin/omd-signin`.
+The engine's macOS signer seals the bundle before the app.
+
 Review the script's required inputs before running. Release staging additionally
 requires --staging-mode release, --materials, --materials-locks, --version and
 --supplements. The locks directory contains the exact engine Cargo, browser package,
@@ -57,7 +67,7 @@ Each entry is installed as third-party/NAME. `name` uses letters, digits, `.`, `
 and `-` (at most 128 characters); `path` is resolved relative to the JSON file and
 must be a regular file of at most 256 MiB; `sha256` must match its bytes. The array
 holds at most 100 entries. Release staging always reads `native-receipt.json`
-(schema omd-native-notices-v2 for the five engine binaries, this target triple, the
+(schema omd-native-notices-v2 for the six engine binaries, this target triple, the
 engine Cargo.lock and --version) and the generator's matching `native-NOTICES.txt`.
 Add the source/rebuild materials your materials manifest lists: every staged file,
 including each supplement, must be covered by that reviewed manifest. The engine
@@ -77,7 +87,7 @@ vp exec node scripts/stage-v2.mjs \
   --materials /absolute/materials/materials-v1.json \
   --materials-locks /absolute/materials/locks \
   --supplements /absolute/materials/supplements.json \
-  --version 0.2.1
+  --version 0.2.3
 ```
 
 Set --target to the platform you will build: darwin-arm64, darwin-x64, linux-x64 or

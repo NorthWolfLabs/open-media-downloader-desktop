@@ -2,6 +2,10 @@
   "format": 2,
   "files": [
     {
+      "source": ".gitattributes",
+      "destination": ".gitattributes"
+    },
+    {
       "source": ".github/workflows/ci.yml",
       "destination": ".github/workflows/ci.yml"
     },
@@ -881,6 +885,14 @@
     {
       "source": "src/v2/onboarding.test.ts",
       "destination": "src/v2/onboarding.test.ts"
+    },
+    {
+      "source": "src/v2/outputPreferences.test.ts",
+      "destination": "src/v2/outputPreferences.test.ts"
+    },
+    {
+      "source": "src/v2/outputPreferences.ts",
+      "destination": "src/v2/outputPreferences.ts"
     },
     {
       "source": "src/v2/pageWindow.ts",
