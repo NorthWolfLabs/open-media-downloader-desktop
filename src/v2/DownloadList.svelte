@@ -20,6 +20,7 @@
   import type { Snippet } from "svelte";
   import { formatTime } from "./dates";
   import { formatRecipe } from "./downloadReview";
+  import { needsAnotherFormat } from "./jobIssue";
   import type { Job, Destination } from "./client";
   type Group = {
     id: string;
@@ -46,6 +47,7 @@
     onsearch,
     ongroup,
     onjobaction,
+    onformat,
     ongroupaction,
     onfiles,
     onbrowse,
@@ -74,6 +76,8 @@
     onsearch: () => void;
     ongroup: (group: Group) => void;
     onjobaction: (job: Job, action: string) => void;
+    /** Prepares a failed item again so another format can be chosen (non-retryable issues). */
+    onformat: (job: Job) => void;
     ongroupaction: (action: "pause" | "resume" | "cancel") => Promise<unknown>;
     onfiles: (job: Job) => void;
     onbrowse: () => void;
@@ -88,6 +92,9 @@
   let selecting = $state(false),
     selected = $state<Set<string>>(new Set());
   const failedJob = (job: Job) => job.state === "failed" || !!job.issue;
+  // Retrying would fail the same way, so the row offers another format instead.
+  const anotherFormat = (job: Job) =>
+    job.state === "failed" && needsAnotherFormat(job.issue);
   const unfinishedGroups = $derived(
     groups.filter((g) => g.active || g.paused || g.failed),
   );
@@ -285,7 +292,10 @@
                 {job.issue.message}
               </p>{/if}
           </div>
-          {#if !selecting && job.state === "failed"}<Button
+          {#if !selecting && anotherFormat(job)}<Button
+              disabled={busy}
+              onclick={() => onformat(job)}>Choose another format</Button
+            >{:else if !selecting && job.state === "failed"}<Button
               disabled={busy}
               onclick={() => onjobaction(job, "retry")}>Retry</Button
             >{/if}
@@ -300,16 +310,20 @@
                     onclick={() => choose(() => onjobaction(job, "cancel"))}
                     >Cancel download</Button
                   >
-                {:else if ["paused", "failed", "canceled"].includes(job.state)}<Button
-                    variant="ghost"
-                    onclick={() =>
-                      choose(() =>
-                        onjobaction(
-                          job,
-                          job.state === "paused" ? "resume" : "retry",
-                        ),
-                      )}>{job.state === "paused" ? "Resume" : "Retry"}</Button
-                  >{#if job.state !== "canceled"}<Button
+                {:else if ["paused", "failed", "canceled"].includes(job.state)}{#if anotherFormat(job)}<Button
+                      variant="ghost"
+                      onclick={() => choose(() => onformat(job))}
+                      >Choose another format</Button
+                    >{:else}<Button
+                      variant="ghost"
+                      onclick={() =>
+                        choose(() =>
+                          onjobaction(
+                            job,
+                            job.state === "paused" ? "resume" : "retry",
+                          ),
+                        )}>{job.state === "paused" ? "Resume" : "Retry"}</Button
+                    >{/if}{#if job.state !== "canceled"}<Button
                       variant="danger"
                       onclick={() => choose(() => onjobaction(job, "cancel"))}
                       >Cancel download</Button

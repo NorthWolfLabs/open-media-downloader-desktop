@@ -20,11 +20,11 @@ test('the public overlay applies the stable identity and current version over th
  const config=await publicConfig(),v=await versions();
  assert.equal(config.productName,'OMD');
  assert.equal(config.identifier,'labs.northwolf.omd');
- assert.equal(config.version,'0.2.3');
+ assert.equal(config.version,'0.2.4');
  assert.equal(config.bundle.publisher,'North Wolf Labs LLC');
  assert.equal(config.bundle.copyright,'© 2026 North Wolf Labs LLC');
  assert.equal(v.npm,config.version);assert.equal(v.cargo,config.version);
- assert.deepEqual(cargoPackage(await readFile(join(tauri,'Cargo.toml'),'utf8')),{name:'open-media-downloader-desktop',version:'0.2.3'});
+ assert.deepEqual(cargoPackage(await readFile(join(tauri,'Cargo.toml'),'utf8')),{name:'open-media-downloader-desktop',version:'0.2.4'});
  checkPublicConfig(config,v);
 });
 
@@ -100,7 +100,7 @@ test('merge semantics and public configuration mistakes are refused',async()=>{
 });
 
 const releaseInventory=()=>({platform:'darwin',arch:'arm64',build_host:{platform:'darwin',arch:'arm64'},worker_profile:'release',plugins:{mode:'public',publishable:true,packages:[]},staging_mode:'release',release_accepted:false,materials:{schema:'omd-materials-v1',coverage_validated:true,release_accepted:false,binding:'two-phase',deferred:['desktop-rust','frontend']},files:[]});
-const releaseMaterials=()=>({schema:'omd-materials-v1',target:'darwin-arm64',version:'0.2.3'});
+const releaseMaterials=()=>({schema:'omd-materials-v1',target:'darwin-arm64',version:'0.2.4'});
 
 test('Windows and Linux use the public identity and the same strict release staging gates',async()=>{
  for(const [platform,triple,target] of [['win32','x86_64-pc-windows-msvc','win32-x64'],['linux','x86_64-unknown-linux-gnu','linux-x64']]){
@@ -133,7 +133,7 @@ test('the Windows installer hooks read the keys Tauri writes for the public prod
 });
 
 test('public builds accept only release-staged public resources with two-phase materials',()=>{
- const options={triple:'aarch64-apple-darwin',version:'0.2.3'};
+ const options={triple:'aarch64-apple-darwin',version:'0.2.4'};
  assert.equal(checkPublicStaging(releaseInventory(),releaseMaterials(),options),'darwin-arm64');
  const refused=[
   [inventory=>{inventory.staging_mode='development';delete inventory.materials;},/release-staged resources, not development staging/],
@@ -148,7 +148,7 @@ test('public builds accept only release-staged public resources with two-phase m
   [inventory=>{inventory.materials.coverage_validated=false;},/two-phase/],
  ];
  for(const [mutate,message] of refused){const inventory=releaseInventory();mutate(inventory);assert.throws(()=>checkPublicStaging(inventory,releaseMaterials(),options),message);}
- assert.throws(()=>checkPublicStaging(releaseInventory(),{...releaseMaterials(),version:'0.1.0'},options),/version 0\.2\.3/);
+ assert.throws(()=>checkPublicStaging(releaseInventory(),{...releaseMaterials(),version:'0.1.0'},options),/version 0\.2\.4/);
  assert.throws(()=>checkPublicStaging(releaseInventory(),{...releaseMaterials(),target:'darwin-x64'},options),/darwin-arm64 version/);
  assert.throws(()=>checkPublicStaging(releaseInventory(),null,options),/staged materials/);
  assert.throws(()=>checkPublicStaging(releaseInventory(),releaseMaterials(),{...options,triple:'x86_64-pc-windows-msvc'}),/staged for darwin-arm64, not win32-x64/);
@@ -156,7 +156,7 @@ test('public builds accept only release-staged public resources with two-phase m
 
 test('built bundle metadata must carry the public identity',async()=>{
  const config=await publicConfig();
- const info={CFBundlePackageType:'APPL',CFBundleIdentifier:'labs.northwolf.omd',CFBundleName:'OMD',CFBundleDisplayName:'OMD',CFBundleShortVersionString:'0.2.3',CFBundleVersion:'0.2.3',CFBundleExecutable:'open-media-downloader-desktop',CFBundleIconFile:'icon.icns',LSMinimumSystemVersion:'13.5',NSHumanReadableCopyright:'© 2026 North Wolf Labs LLC'};
+ const info={CFBundlePackageType:'APPL',CFBundleIdentifier:'labs.northwolf.omd',CFBundleName:'OMD',CFBundleDisplayName:'OMD',CFBundleShortVersionString:'0.2.4',CFBundleVersion:'0.2.4',CFBundleExecutable:'open-media-downloader-desktop',CFBundleIconFile:'icon.icns',LSMinimumSystemVersion:'13.5',NSHumanReadableCopyright:'© 2026 North Wolf Labs LLC'};
  assert.deepEqual(checkBundleInfo(info,config,'open-media-downloader-desktop'),info);
  assert.throws(()=>checkBundleInfo({...info,CFBundleIdentifier:DEVELOPMENT},config,'open-media-downloader-desktop'),/CFBundleIdentifier is "labs\.northwolf\.omd-v2-development"/);
  assert.throws(()=>checkBundleInfo({...info,LSMinimumSystemVersion:'11.0'},config,'open-media-downloader-desktop'),/LSMinimumSystemVersion/);

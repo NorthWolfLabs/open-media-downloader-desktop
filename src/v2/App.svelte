@@ -14,7 +14,7 @@
   import { projectLinks, openProjectLink } from "./links";
   import { plural } from "./plural";
   import { formatDate, formatTime } from "./dates";
-  import { STARTUP_SETTLED, startupFailure, type StartupFailure } from "./startup";
+  import { STARTUP_SETTLED, startupFailure, startWhileEngineStops, type StartupFailure } from "./startup";
   import { pluginReview, hostLabel, signInAuthority } from "./pluginReview";
   import StatCard from "./ui/StatCard.svelte";
   import { subscriptionActions, fileStatusLabels } from "./copy";
@@ -52,6 +52,13 @@
   import ImageDownloadDialog from './ImageDownloadDialog.svelte';
   import { imageGroups, imageRelease } from './imageSelection';
   import DownloadOptionsDialog from "./DownloadOptionsDialog.svelte";
+  import AnotherFormatDialog from "./AnotherFormatDialog.svelte";
+  import {
+    formatChoice,
+    formatPreparation,
+    needsAnotherFormat,
+    type FormatChoice,
+  } from "./jobIssue";
   import {
     checkIssue,
     contextsFromStorage,
@@ -1489,11 +1496,14 @@
       recoveryAttempt++
     ) {
       try {
-        const connection = native
-          ? await invoke<Connection>("v2_bootstrap_engine")
-          : client?.connection;
-        if (!connection) throw new Error("No saved connection.");
-        await connect(connection);
+        const saved = client?.connection;
+        await startWhileEngineStops(async () => {
+          const connection = native
+            ? await invoke<Connection>("v2_bootstrap_engine")
+            : saved;
+          if (!connection) throw new Error("No saved connection.");
+          await connect(connection);
+        });
         recovering = false;
         connectionFailure = null;
         return;
@@ -1515,7 +1525,9 @@
     connectionFailure = null;
     detailsNotice = "";
     try {
-      await connect(await invoke<Connection>("v2_bootstrap_engine"));
+      await startWhileEngineStops(async () =>
+        connect(await invoke<Connection>("v2_bootstrap_engine")),
+      );
     } catch (e) {
       client = null;
       connectionFailure = startupFailure(e);
@@ -1976,6 +1988,57 @@
         },
       });
       filesOpen = null;
+      preparation = preview;
+    });
+  }
+  // A failed download whose issue would fail again is prepared again in another format.
+  let anotherFormat = $state<FormatChoice | null>(null);
+  function chooseAnotherFormat(job: Job) {
+    anotherFormat = formatChoice(
+      {
+        title: job.title,
+        reference: job.plan.release.reference,
+        destination_id: job.destination_id,
+        credential_profile: job.plan.credential_profile,
+        policy: job.plan.policy,
+        recipe: job.plan.recipe,
+      },
+      {
+        media: isMedia(job.plan.release.reference.provider),
+        audio: isAudioCollection(job.plan.collection),
+      },
+    );
+  }
+  // A subscription's automatic download keeps the subscription's destination and filters.
+  type InboxRelease = { subscription_id: string; release: Release };
+  const inboxSubscription = (item: InboxRelease) =>
+    subscriptions.find((sub) => sub.id === item.subscription_id);
+  function chooseInboxFormat(item: InboxRelease, sub: Subscription) {
+    anotherFormat = formatChoice(
+      {
+        title: item.release.title,
+        reference: item.release.reference,
+        destination_id: sub.request.destination_id,
+        credential_profile: sub.request.credential_profile,
+        policy: sub.request.policy,
+        recipe: sub.request.recipe,
+      },
+      {
+        media: isMedia(item.release.reference.provider),
+        audio: !!item.release.preview && isAudioCollection(item.release.preview),
+      },
+    );
+  }
+  async function prepareAnotherFormat() {
+    await run("Checking files", async () => {
+      if (!client || !anotherFormat) return;
+      const choice = anotherFormat;
+      const preview = await client.request<Preparation>("/v2/preparations", {
+        method: "POST",
+        body: formatPreparation(choice),
+      });
+      if (anotherFormat !== choice) return;
+      anotherFormat = null;
       preparation = preview;
     });
   }
@@ -3697,7 +3760,12 @@
                             await refresh("inbox");
                           })}>Mark as read</Button
                       >{/if}
-                    {#if item.state === "failed"}<Button
+                    {#if item.state === "failed" && needsAnotherFormat(item.issue) && inboxSubscription(item)}<Button
+                        type="submit"
+                        disabled={!!busy}
+                        onclick={() => chooseInboxFormat(item, inboxSubscription(item)!)}
+                        >Choose another format</Button
+                      >{:else if item.state === "failed"}<Button
                         type="submit"
                         disabled={!!busy}
                         onclick={() =>
@@ -3829,6 +3897,7 @@
                       await restoreScroll();
                     })}
                   onjobaction={jobAction}
+                  onformat={chooseAnotherFormat}
                   ongroupaction={groupAction}
                   onfiles={showFiles}
                   onbrowse={() => navigate("Search")}
@@ -4502,6 +4571,13 @@
       onoptions={() => chooseCheckOptions(selectionTask!)}
       ondismiss={() => dismissCheck(selectionTask!)}
       onrefresh={() => refreshCheck(selectionTask!)}
+    />{/if}
+  {#if anotherFormat}<AnotherFormatDialog
+      bind:choice={anotherFormat}
+      busy={!!busy}
+      {error}
+      onclose={() => (anotherFormat = null)}
+      onreview={prepareAnotherFormat}
     />{/if}
   {#if imageDetailDownload}<ImageDownloadDialog items={imageDetailDownload} {destinations} onclose={() => imageDetailDownload = null} onstart={prepareImages}/>{/if}
   {#if downloadDraft}<DownloadOptionsDialog

@@ -87,7 +87,7 @@ vp exec node scripts/stage-v2.mjs \
   --materials /absolute/materials/materials-v1.json \
   --materials-locks /absolute/materials/locks \
   --supplements /absolute/materials/supplements.json \
-  --version 0.2.3
+  --version 0.2.4
 ```
 
 Set --target to the platform you will build: darwin-arm64, darwin-x64, linux-x64 or

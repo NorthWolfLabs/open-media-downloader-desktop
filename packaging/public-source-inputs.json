@@ -383,6 +383,14 @@
       "destination": "src/v2/AccountPickerHarness.svelte"
     },
     {
+      "source": "src/v2/AnotherFormatDialog.svelte",
+      "destination": "src/v2/AnotherFormatDialog.svelte"
+    },
+    {
+      "source": "src/v2/AnotherFormatDialog.test.ts",
+      "destination": "src/v2/AnotherFormatDialog.test.ts"
+    },
+    {
       "source": "src/v2/App.svelte",
       "destination": "src/v2/App.svelte"
     },
@@ -825,6 +833,14 @@
     {
       "source": "src/v2/itemCache.ts",
       "destination": "src/v2/itemCache.ts"
+    },
+    {
+      "source": "src/v2/jobIssue.test.ts",
+      "destination": "src/v2/jobIssue.test.ts"
+    },
+    {
+      "source": "src/v2/jobIssue.ts",
+      "destination": "src/v2/jobIssue.ts"
     },
     {
       "source": "src/v2/labelAppearance.test.ts",

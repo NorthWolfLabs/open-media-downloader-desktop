@@ -22,6 +22,7 @@ const fixture = vi.hoisted(() => ({
   sources: [] as any[],
   locales: ["en-US"] as string[],
   jobPage: null as unknown,
+  attachFailures: 0,
 }));
 vi.mock("@tauri-apps/api/core", () => ({ invoke: fixture.invoke }));
 vi.mock("@tauri-apps/plugin-dialog", () => ({ open: fixture.open }));
@@ -36,6 +37,13 @@ vi.mock("./client", async (importOriginal) => {
         this.connection = connection;
       }
       async attach() {
+        if (fixture.attachFailures > 0) {
+          fixture.attachFailures--;
+          throw new original.EngineError(
+            { code: "engine_stopping", message: "OMD is stopping.", retryable: true, actions: ["retry"] } as any,
+            503,
+          );
+        }
         return { id: "onboarding-fixture" };
       }
       async detach() {}
@@ -153,6 +161,7 @@ beforeEach(() => {
   fixture.open.mockResolvedValue(null);
   fixture.sources = [];
   fixture.jobPage = null;
+  fixture.attachFailures = 0;
   fixture.locales = ["en-US"];
   fixture.invoke.mockImplementation(async (name) =>
     name === "v2_bootstrap_engine"
@@ -164,6 +173,15 @@ afterEach(() => {
   cleanup();
   Reflect.deleteProperty(window, "__TAURI_INTERNALS__");
   fixture.invoke.mockReset();
+});
+
+it("waits for a stopping engine (503 engine_stopping) and starts again instead of showing an error", async()=>{
+  fixture.preferences={...fixture.preferences,onboarding_complete:true};
+  fixture.attachFailures=2;
+  render(App);
+  await screen.findByRole("heading",{name:"Overview",level:1},{timeout:6000});
+  expect(fixture.invoke.mock.calls.filter(([name])=>name==="v2_bootstrap_engine")).toHaveLength(3);
+  expect(screen.queryByRole("heading",{name:"OMD couldn’t start"})).toBeNull();
 });
 
 it("offers an explicit native update shutdown and keeps failures visible for retry", async()=>{

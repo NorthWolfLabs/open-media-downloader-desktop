@@ -1,3 +1,5 @@
+import { EngineError } from "./client";
+
 // Startup failures from the native shell (v2_bootstrap_engine). The shell sends
 // { message, retryable, newer_version, log }: the message's first line is for
 // people, any further lines are diagnostics for Technical details. Errors from
@@ -39,3 +41,32 @@ export function startupFailure(error: unknown): StartupFailure {
 /** App dispatches this on window once its startup screen has a result: connected,
  * or showing its own startup failure. main.ts stops treating errors as fatal then. */
 export const STARTUP_SETTLED = "omd-startup-settled";
+
+/** The engine refused a new window because it is already stopping (503 engine_stopping),
+ * for example when OMD opens just as an idle engine shuts down. It exits within seconds;
+ * starting again then launches a fresh engine. */
+export function engineStopping(error: unknown): boolean {
+  return (
+    error instanceof EngineError &&
+    error.status === 503 &&
+    error.problem?.code === "engine_stopping"
+  );
+}
+
+/** Runs `start` (find or launch the engine, then attach), waiting and starting again
+ * while the engine reports that it is stopping. Other failures are thrown at once. */
+export async function startWhileEngineStops<T>(
+  start: () => Promise<T>,
+  wait: (ms: number) => Promise<void> = (ms) =>
+    new Promise((resolve) => setTimeout(resolve, ms)),
+  attempts = 10,
+): Promise<T> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await start();
+    } catch (error) {
+      if (!engineStopping(error) || attempt >= attempts) throw error;
+      await wait(Math.min(500 * attempt, 3000));
+    }
+  }
+}

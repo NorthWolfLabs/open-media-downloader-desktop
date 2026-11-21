@@ -1,6 +1,6 @@
 [package]
 name = "open-media-downloader-desktop"
-version = "0.2.3"
+version = "0.2.4"
 description = "Official desktop frontend for Open Media Downloader"
 authors = ["North Wolf Labs"]
 license = "MIT"
